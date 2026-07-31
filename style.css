@@ -1,0 +1,53 @@
+/* Container Positioning */
+.bento-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 100px; /* Space for big header */
+}
+
+/* Background Title Positioning */
+.dynamic-header-wrapper {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1; /* Sits behind top of cards */
+  pointer-events: none; /* Mouse passes through to cards */
+}
+
+.dynamic-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 6rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.04em;
+  transition: opacity 0.25s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Smooth fade out during text swap */
+.dynamic-title.swapping {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Bento Cards Layering & Glass Blur */
+.bento-card {
+  position: relative;
+  z-index: 2; /* Sits over the text */
+  background: rgba(20, 20, 20, 0.75);
+  backdrop-filter: blur(20px); /* Creates the blur overlay on the text */
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 24px;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.bento-card:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(28, 28, 28, 0.85);
+}

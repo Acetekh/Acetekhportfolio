@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" class="dark bg-neutral-950 text-white">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects - ACETEKH</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Iconify CDN -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+</head>
+
+<body class="min-h-screen flex flex-col justify-between relative overflow-x-hidden pb-32">
+
+    <!-- NAVBAR / HEADER -->
+    <header class="w-full max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-6 grid grid-cols-3 items-center gap-1 sm:gap-3">
+        <!-- Left: Logo -->
+        <a href="./home.html" id="logo-link"
+            class="justify-self-start text-sm sm:text-lg font-bold tracking-wider text-white flex-shrink-0 transition-colors hover:text-neutral-400">
+            ACETEKH
+        </a>
+
+        <!-- Center: Social Icons -->
+        <div
+            class="justify-self-center flex items-center gap-2 sm:gap-4 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-full flex-shrink-0">
+            <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                <iconify-icon icon="simple-icons:x" class="text-xs sm:text-sm"></iconify-icon>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                <iconify-icon icon="simple-icons:github" class="text-xs sm:text-sm"></iconify-icon>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-[#E4405F] transition-colors">
+                <iconify-icon icon="simple-icons:instagram" class="text-xs sm:text-sm"></iconify-icon>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-[#25D366] transition-colors">
+                <iconify-icon icon="simple-icons:whatsapp" class="text-xs sm:text-sm"></iconify-icon>
+            </a>
+        </div>
+
+        <!-- Right: Location & Working Live Clock Widget (Hours and Minutes only) -->
+        <div
+            class="justify-self-end flex items-center gap-1 sm:gap-2 text-[9px] sm:text-xs font-mono text-neutral-400 flex-shrink-0">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#0adee5] animate-pulse flex-shrink-0"></span>
+            <span>Lagos</span>
+            <span>•</span>
+            <span id="live-clock">Loading...</span>
+        </div>
+    </header>
+
+    <!-- MAIN PROJECTS SECTION -->
+    <main class="w-full max-w-6xl mx-auto px-4 py-12 flex-grow">
+
+        <!-- Header & Category Filter Bar -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-20">
+            <div>
+                <span class="text-xs uppercase font-mono tracking-widest text-neutral-400">Archive</span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-1">
+                    All <span class="text-neutral-500">Projects</span>
+                </h1>
+            </div>
+
+            <!-- Filter Navigation Bar -->
+            <div
+                class="flex items-center gap-1 sm:gap-2 p-1.5 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-full">
+                <button onclick="filterProjects('all')" data-filter="all"
+                    class="filter-btn px-4 py-2 text-xs font-mono uppercase tracking-wider rounded-full transition-all duration-300 bg-white/10 text-white font-medium">
+                    All
+                </button>
+                <button onclick="filterProjects('frontend')" data-filter="frontend"
+                    class="filter-btn px-4 py-2 text-xs font-mono uppercase tracking-wider rounded-full transition-all duration-300 text-neutral-400 hover:text-white">
+                    Frontend
+                </button>
+                <button onclick="filterProjects('uiux')" data-filter="uiux"
+                    class="filter-btn px-4 py-2 text-xs font-mono uppercase tracking-wider rounded-full transition-all duration-300 text-neutral-400 hover:text-white">
+                    UI/UX
+                </button>
+                <button onclick="filterProjects('mobile')" data-filter="mobile"
+                    class="filter-btn px-4 py-2 text-xs font-mono uppercase tracking-wider rounded-full transition-all duration-300 text-neutral-400 hover:text-white">
+                    Mobile App
+                </button>
+            </div>
+        </div>
+
+        <!-- 9 Projects in Alternating Wide Layout -->
+        <div class="space-y-24" id="projects-container">
+
+            <!-- PROJECT 1 (Image Left, Text Right) -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="frontend">
+                <div class="lg:col-span-7 relative group">
+                    <a href="./coming_soon.html"
+                        class="block w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1 relative"
+                        title="View Ace Real Estate Case Study">
+                        <img src="./image/aruna.png" alt="Ace Real Estate"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                        <!-- Subtle Overlay Badge on Hover -->
+                        <div
+                            class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span
+                                class="px-4 py-2 rounded-full bg-neutral-900/90 border border-white/20 text-xs font-mono uppercase tracking-wider text-white flex items-center gap-2 shadow-xl">
+                                <span>View Case Study</span>
+                                <iconify-icon icon="lucide:arrow-right" class="text-sm text-[#0adee5]"></iconify-icon>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-5 space-y-4 pl-0 lg:pl-4">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/70">Frontend / Real
+                        Estate</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Aruna Real Estate
+                    </h3>
+                    <!-- <p class="text-neutral-400 text-sm sm:text-base leading-relaxed"> Lorem, ipsum dolor sit amet
+                        consectetur adipisicing elit. Odio id quisquam culpa rem at! Minus tempora consequatur
+                        consectetur labore explicabo sequi fuga quam fugit, dignissimos, reprehenderit delectus
+                        excepturi accusamus officiis!
+                    </p> -->
+                    <div class="pt-2">
+                        <a href="file:///Users/armanii/Ace-real-estate/index.html" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 2 (Text Left, Image Right) -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="frontend">
+                <div class="lg:col-span-5 space-y-4 pr-0 lg:pr-4 order-2 lg:order-1">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/70">Frontend /
+                        E-Commerce</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Plugonjerseys
+                    </h3>
+                    <!-- <p class="text-neutral-400 text-sm sm:text-base leading-relaxed"> Lorem, ipsum dolor sit amet
+                        consectetur adipisicing elit. Odio id quisquam culpa rem at! Minus tempora consequatur
+                        consectetur labore explicabo sequi fuga quam fugit, dignissimos, reprehenderit delectus
+                        excepturi accusamus officiis!
+                    </p> -->
+                    <div class="pt-2">
+                        <a href="https://www.plugonjerseys.com" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 relative group order-1 lg:order-2">
+                    <div
+                        class="w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
+                        <img src="./image/plugonjerseys.png" alt="Plug On Jerseys"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 (Image Left, Text Right) -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="uiux">
+                <div class="lg:col-span-7 relative group ">
+                    <div
+                        class="w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
+                        <img src="./image/living.png" alt="Authenticated Watch Hub"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                    </div>
+                </div>
+                <div class="lg:col-span-5 space-y-4 pl-0 lg:pl-4">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">Frontend /
+                        E-Commerce</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Authenticated
+                        Watch Hub</h3>
+                    <!-- <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Odio id quisquam culpa rem at! Minus tempora consequatur
+                        consectetur labore explicabo sequi fuga quam fugit, dignissimos, reprehenderit delectus
+                        excepturi accusamus officiis!</p> -->
+                    <div class="pt-2">
+                       <a href="https://www.plugonjerseys.com" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 4 (Text Left, Image Right) -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="mobile">
+                <div class="lg:col-span-5 space-y-4 pr-0 lg:pr-4 order-2 lg:order-1">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">Mobile App /
+                        Flutter</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">DartCross Mobile
+                        App</h3>
+                    <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">Cross-platform mobile application
+                        framework built with Flutter and Dart, focused on smooth navigation and state structure.</p>
+                    <div class="pt-2">
+                      <a href=""
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 relative group order-1 lg:order-2">
+                     <div
+                        class="w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
+                        <img src="./image/guideapp.png" alt="Plug On Jerseys"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 5 (Image Left, Text Right) -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="frontend">
+                <div class="lg:col-span-7 relative group">
+                    <div
+                        class="w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
+                        <img src="./image/plugonjerseys.png" alt="Plug On Jerseys"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                    </div>
+                </div>
+                <div class="lg:col-span-5 space-y-4 pl-0 lg:pl-4">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">Frontend /
+                        Dashboard</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Course
+                        Registration System</h3>
+                    <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">Optimized team eProject interface
+                        built for seamless student course management, integrated with clean data presentation layouts.
+                    </p>
+                    <div class="pt-2">
+                         <a href="https://www.plugonjerseys.com" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 6 (Text Left, Image Right) -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="uiux">
+                <div class="lg:col-span-5 space-y-4 pr-0 lg:pr-4 order-2 lg:order-1">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">UI/UX /
+                        FinTech</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">PayFlow Dashboard
+                        UI</h3>
+                    <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">Comprehensive user interface design
+                        featuring detailed financial analytics widgets, dark theme visual hierarchy, and smooth user
+                        flows.</p>
+                    <div class="pt-2">
+                      <a href="./image/authentication.png" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 relative group order-1 lg:order-2">
+                    <div
+                        class="w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
+                        <img src="./image/authentication.png" alt="Plug On Jerseys"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 7 (Image Left, Text Right) -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="uiux">
+                <div class="lg:col-span-7 relative group">
+                    <div
+                        class="w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
+                        <img src="./image/sleek.png" alt="Plug On Jerseys"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                    </div>
+                </div>
+                <div class="lg:col-span-5 space-y-4 pl-0 lg:pl-4">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">Mobile App /
+                        Utility</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">ScentVault Mobile
+                        Companion</h3>
+                    <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">A conceptual mobile utility
+                        application designed for tracking fragrance profiles, longevity stats, and custom collection
+                        layering options.</p>
+                    <div class="pt-2">
+                        <a href="https://www.plugonjerseys.com" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 8 (Text Left, Image Right) -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="frontend">
+                <div class="lg:col-span-5 space-y-4 pr-0 lg:pr-4 order-2 lg:order-1">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">Frontend /
+                        Portfolio</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Personal Gadgets
+                        Site</h3>
+                    <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">Static showcase layout engineered
+                        to highlight minimal design aesthetics, custom typography, and rapid Netlify deployment
+                        performance.</p>
+                    <div class="pt-2">
+                         <a href="https://www.plugonjerseys.com" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-7 relative group order-1 lg:order-2">
+                    <div
+                        class="w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
+                        <img src="./image/plugonjerseys.png" alt="Plug On Jerseys"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- PROJECT 9 (Image Left, Text Right) -->
+           <!-- PROJECT 1 (Image Left, Text Right) -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="uiux">
+                <div class="lg:col-span-7 relative group">
+                    <a href="./coming_soon.html"
+                        class="block w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1 relative"
+                        title="View Ace Real Estate Case Study">
+                        <img src="./image/ujobme.png" alt="Ace Real Estate"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                        <!-- Subtle Overlay Badge on Hover -->
+                        <div
+                            class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span
+                                class="px-4 py-2 rounded-full bg-neutral-900/90 border border-white/20 text-xs font-mono uppercase tracking-wider text-white flex items-center gap-2 shadow-xl">
+                                <span>View Case Study</span>
+                                <iconify-icon icon="lucide:arrow-right" class="text-sm text-[#0adee5]"></iconify-icon>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="lg:col-span-5 space-y-4 pl-0 lg:pl-4">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/70">Frontend / Real
+                        Estate</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Aruna Real Estate
+                    </h3>
+                    <!-- <p class="text-neutral-400 text-sm sm:text-base leading-relaxed"> Lorem, ipsum dolor sit amet
+                        consectetur adipisicing elit. Odio id quisquam culpa rem at! Minus tempora consequatur
+                        consectetur labore explicabo sequi fuga quam fugit, dignissimos, reprehenderit delectus
+                        excepturi accusamus officiis!
+                    </p> -->
+                    <div class="pt-2">
+                        <a href="file:///Users/armanii/Ace-real-estate/index.html" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FLOATING HOVER NAV WIDGET (Bottom Right / Center Pill) -->
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+        <div
+            class="group flex items-center gap-3 px-5 py-3 bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full shadow-2xl transition-all duration-300">
+            <span class="w-2 h-2 rounded-full bg-[#0adee5] animate-pulse"></span>
+            <span class="text-xs font-mono uppercase tracking-wider text-white font-medium">Speak to me</span>
+
+            <!-- Expanded Actions on Hover -->
+            <div
+                class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out flex items-center gap-2 pl-0 group-hover:pl-2 border-l border-white/0 group-hover:border-white/10">
+                <a href="mailto:contact@acetekh.com" title="Send an Email"
+                    class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center text-white transition-colors flex-shrink-0">
+                    <iconify-icon icon="lucide:mail" class="text-sm"></iconify-icon>
+                </a>
+                <a href="#contact" title="Book a Call / Contact"
+                    class="w-8 h-8 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center text-white transition-colors flex-shrink-0">
+                    <iconify-icon icon="lucide:calendar" class="text-sm"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING AI HINT WIDGET -->
+    <div id="ai-assistant"
+        class="fixed bottom-6 right-6 z-50 max-w-xs md:max-w-sm bg-neutral-900/90 backdrop-blur-md rounded-2xl p-3 px-4 flex items-center gap-3 border border-white/10 shadow-2xl transition-all duration-300 pointer-events-none">
+        <!-- Glowing AI Pulse Icon -->
+        <div class="relative flex items-center justify-center flex-shrink-0">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#0adee5]/70"></span>
+            <span class="absolute w-4 h-4 rounded-full bg-[#0adee5]/70 animate-ping"></span>
+        </div>
+
+        <!-- AI Message Text -->
+        <p id="ai-message" class="text-xs text-neutral-300 font-medium leading-relaxed transition-opacity duration-300">
+            <span class="text-[#0adee5] font-semibold">AI Assistant:</span> Welcome to my projects archive! Explore my
+            latest work below.
+        </p>
+    </div>
+
+    <!-- SCRIPTS FOR LIVE CLOCK, FILTER & AI HINTS -->
+    <script>
+        // Live Lagos Clock Function (Hours and Minutes only)
+        function updateClock() {
+            const options = { timeZone: 'Africa/Lagos', hour: '2-digit', minute: '2-digit', hour12: true };
+            const timeString = new Intl.DateTimeFormat([], options).format(new Date());
+            const clockElement = document.getElementById('live-clock');
+            if (clockElement) {
+                clockElement.textContent = timeString;
+            }
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Project Filtering Function
+        function filterProjects(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('bg-white/10', 'text-white', 'font-medium');
+                    btn.classList.remove('text-neutral-400');
+                } else {
+                    btn.classList.remove('bg-white/10', 'text-white', 'font-medium');
+                    btn.classList.add('text-neutral-400');
+                }
+            });
+
+            const items = document.querySelectorAll('.project-item');
+            items.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'grid';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // AI Assistant Dynamic Hints Manager for Projects Page
+        document.addEventListener('DOMContentLoaded', () => {
+            const aiMessage = document.getElementById('ai-message');
+
+            function setAIMessage(htmlText) {
+                aiMessage.style.opacity = '0';
+                setTimeout(() => {
+                    aiMessage.innerHTML = htmlText;
+                    aiMessage.style.opacity = '1';
+                }, 200);
+            }
+
+            // Initial welcome sequence sequence
+            setTimeout(() => {
+                setAIMessage('<span class="text-[#0adee5] font-semibold">AI Assistant:</span> Click to view case study or click the live link arrow on any project card.');
+            }, 4500);
+
+            setTimeout(() => {
+                setAIMessage('<span class="text-[#0adee5] font-semibold">AI Assistant:</span> Click ACETEKH in the top left anytime to head back home.');
+            }, 9500);
+
+            // Contextual Event Listeners for Hover Interactions
+            const logoLink = document.getElementById('logo-link');
+            if (logoLink) {
+                logoLink.addEventListener('mouseenter', () => {
+                    setAIMessage('<span class="text-[#0adee5] font-semibold">Navigation:</span> Click to return to the homepage');
+                });
+                logoLink.addEventListener('mouseleave', () => {
+                    setAIMessage('<span class="text-[#0adee5] font-semibold">AI Assistant:</span> Explore frontend, UI/UX & mobile builds');
+                });
+            }
+
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(btn => {
+                btn.addEventListener('mouseenter', () => {
+                    const categoryName = btn.textContent.trim();
+                    setAIMessage(`<span class="text-[#0adee5] font-semibold">Filter:</span> View only ${categoryName} projects`);
+                });
+                btn.addEventListener('mouseleave', () => {
+                    setAIMessage('<span class="text-[#0adee5] font-semibold">AI Assistant:</span> Explore frontend, UI/UX & mobile builds');
+                });
+            });
+
+            const projectLinks = document.querySelectorAll('.project-link');
+            projectLinks.forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    setAIMessage('<span class="text-[#0adee5] font-semibold">Live Link:</span> Click to open the live deployment');
+                });
+                link.addEventListener('mouseleave', () => {
+                    setAIMessage('<span class="text-[#0adee5] font-semibold">AI Assistant:</span> Explore frontend, UI/UX & mobile builds');
+                });
+            });
+        });
+
+        const projectLinks = document.querySelectorAll('.project-link');
+        projectLinks.forEach((link, index) => {
+            link.addEventListener('mouseenter', () => {
+                if (index === 0) {
+                    setAIMessage('<span class="text-[#0adee5] font-semibold">Case Study:</span> Click to view the Ace Real Estate case study');
+                } else {
+                    setAIMessage('<span class="text-[#0adee5] font-semibold">Live Link:</span> Click to open the live deployment');
+                }
+            });
+            link.addEventListener('mouseleave', () => {
+                setAIMessage('<span class="text-[#0adee5] font-semibold">AI Assistant:</span> Explore frontend, UI/UX & mobile builds');
+            });
+        });
+    </script>
+</body>
+
+</html>

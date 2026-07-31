@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACETEKH Portfolio</title>
+    <link rel="icon" href="./image/Acetekhlogo.PNG" type="image/png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #070707;
+        }
+
+        /* Custom Glass Blur Effect */
+        .glass-card {
+            background: rgba(18, 18, 18, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: rgba(22, 22, 22, 0.8);
+        }
+
+        /* Smooth text swap transition */
+        #dynamic-title {
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .title-swap {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+
+        /* Styling icon badge */
+        .icon-badge {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(25, 25, 25, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        @media (min-width: 768px) {
+            .icon-badge {
+                width: 52px;
+                height: 52px;
+                border-radius: 16px;
+            }
+        }
+
+        .icon-badge:hover {
+            transform: scale(1.08);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(35, 35, 35, 0.9);
+        }
+
+        /* Marquee Track CSS */
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            will-change: transform;
+            transform: translateZ(0);
+            animation: scrollRight 18s linear infinite;
+        }
+
+        @keyframes scrollRight {
+            0% {
+                transform: translate3d(-50%, 0, 0);
+            }
+
+            100% {
+                transform: translate3d(0%, 0, 0);
+            }
+        }
+
+        [data-title="Stack"]:hover .marquee-track {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body
+    class="text-neutral-200 min-h-screen flex flex-col justify-between p-4 sm:p-6 md:p-10 select-none overflow-x-hidden">
+
+    <!-- FULL-WIDTH LOADER -->
+    <div id="page-loader"
+        class="fixed inset-0 z-[100] bg-[#070707] flex flex-col items-center justify-center transition-opacity duration-700 overflow-hidden">
+        <div
+            class="absolute w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] bg-white/5 blur-[120px] rounded-full pointer-events-none">
+        </div>
+
+        <div
+            class="w-20 h-20 sm:w-28 sm:h-28 rounded-full overflow-hidden shadow-[0_0_40px_rgba(255,255,255,0.15)] bg-neutral-900 flex items-center justify-center z-10 animate-pulse">
+            <img src="./image/Acetekhlogo.PNG" alt="ACETEKH" class="w-full h-full object-cover">
+        </div>
+
+        <div class="absolute top-1/2 left-0 w-full transform -translate-y-1/2 z-20 pointer-events-none">
+            <div id="loader-counter"
+                class="absolute bottom-4 -translate-x-1/2 flex items-center gap-0.5 font-mono tracking-wider transition-all duration-75 ease-out"
+                style="left: 0%;">
+                <span id="loader-percent"
+                    class="text-white font-black text-xl sm:text-2xl drop-shadow-[0_0_12px_rgba(255,255,255,0.8)]">0</span>
+                <span class="text-white font-bold text-sm sm:text-base opacity-80">%</span>
+            </div>
+            <div class="w-full h-[3px] bg-neutral-900/80 overflow-hidden relative">
+                <div id="loader-bar"
+                    class="h-full bg-white w-0 transition-all duration-75 ease-out shadow-[0_0_20px_rgba(255,255,255,0.9)]">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOP NAVBAR -->
+    <header
+        class="w-full max-w-[1240px] mx-auto flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0 text-xs text-neutral-400 font-medium tracking-wide z-30">
+        <div class="flex items-center gap-6">
+            <span class="text-white font-semibold">ACETEKH</span>
+            <span class="text-neutral-500">Frontend & Design Engineer</span>
+        </div>
+
+        <!-- Interactive Location & Time Widget -->
+        <div class="flex items-center gap-2">
+            <button id="location-btn"
+                class="hover:text-white transition-colors cursor-pointer flex items-center gap-1.5 px-2 py-1 rounded-full hover:bg-neutral-800/60 border border-transparent hover:border-neutral-700/50"
+                title="Click to detect exact location">
+                <span id="user-location">Lagos</span>
+            </button>
+            <span class="text-neutral-600">•</span>
+            <span id="live-time">--:--</span>
+            <span class="w-2 h-2 rounded-full bg-[#0adee5] ml-1 animate-pulse"></span>
+        </div>
+    </header>
+
+    <!-- MAIN BENTO CONTAINER -->
+    <main class="relative w-full max-w-[1240px] mx-auto my-auto pt-12 sm:pt-16 pb-8">
+
+        <!-- DYNAMIC BACKGROUND HEADER TEXT -->
+        <div class="absolute -top-2 sm:-top-4 left-1/2 -translate-x-1/2 z-10 pointer-events-none w-full text-center">
+            <h1 id="dynamic-title"
+                class="text-[14vw] sm:text-[110px] font-semibold tracking-tight leading-none drop-shadow-2xl">
+                AceTekh
+            </h1>
+        </div>
+
+        <!-- BENTO GRID -->
+        <div id="bento-grid" class="grid grid-cols-12 gap-4 relative z-20">
+
+            <!-- 1. ABOUT CARD -->
+            <!-- About Bento Card -->
+            <div data-title="About"
+                class="glass-card bento-item col-span-12 sm:col-span-6 md:col-span-3 min-h-[200px] md:h-[280px] rounded-3xl p-6 flex flex-col justify-between cursor-pointer group transition-all duration-300">
+                <div></div>
+                <div
+                    class="flex justify-between items-center text-neutral-400 group-hover:text-white transition-colors">
+                    <span class="font-medium text-sm">About</span>
+                    <svg class="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 17L17 7M17 7H7M17 7V17"></path>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- 2. PORTFOLIO CARD -->
+            <a href="./home.html" data-title="Portfolio"
+                class="glass-card bento-item col-span-12 sm:col-span-6 md:col-span-9 min-h-[200px] md:h-[280px] rounded-3xl p-6 flex flex-col justify-between cursor-pointer group transition-all duration-300 block">
+                <div></div>
+                <div
+                    class="flex justify-between items-center text-neutral-400 group-hover:text-white transition-colors">
+                    <span class="font-medium text-sm">Portfolio</span>
+                    <svg class="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 17L17 7M17 7H7M17 7V17"></path>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- 3. CONTACT CARD -->
+            <a href="./home.html#contact" data-title="Contact"
+                class="glass-card bento-item col-span-12 md:col-span-6 min-h-[220px] md:h-[320px] rounded-3xl p-6 flex flex-col justify-between cursor-pointer group transition-all duration-300">
+                <div></div>
+                <div
+                    class="flex justify-between items-center text-neutral-400 group-hover:text-white transition-colors">
+                    <span class="font-medium text-sm">Contact</span>
+                    <svg class="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 17L17 7M17 7H7M17 7V17"></path>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- 4. PROFILE / HEADSHOT CARD -->
+            <div data-title="Hello 🙂"
+                class="glass-card bento-item col-span-12 sm:col-span-6 md:col-span-3 min-h-[260px] md:h-[320px] rounded-3xl overflow-hidden cursor-pointer relative group">
+                <img src="./image/acetekh.jpg" alt="Profile"
+                    class="w-full h-full object-cover contrast-125 opacity-80 group-hover:scale-105 transition-transform duration-500">
+            </div>
+
+            <!-- 5. RIGHT COLUMN (Stack + Resume) -->
+            <div class="col-span-12 sm:col-span-6 md:col-span-3 flex flex-col gap-4">
+
+                <!-- Tech Stack Card -->
+                <div data-title="Stack"
+                    class="glass-card bento-item h-[120px] md:h-[150px] rounded-3xl cursor-pointer relative overflow-hidden flex items-center">
+                    <div
+                        class="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#0d0d0d] to-transparent z-10 pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#0d0d0d] to-transparent z-10 pointer-events-none">
+                    </div>
+
+                    <div class="marquee-track flex gap-3 w-max">
+                        <!-- FIRST SET -->
+                        <div class="flex gap-3">
+                            <div class="icon-badge" data-tech="HTML5"><iconify-icon icon="logos:html-5"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="CSS3"><iconify-icon icon="logos:css-3"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="JavaScript"><iconify-icon icon="logos:javascript"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="React"><iconify-icon icon="logos:react"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="Dart"><iconify-icon icon="logos:dart"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="Flutter"><iconify-icon icon="logos:flutter"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="UI/UX (Figma)"><iconify-icon icon="logos:figma"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="MongoDB"><iconify-icon icon="logos:mongodb-icon"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="MySQL"><iconify-icon icon="logos:mysql"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="PostgreSQL"><iconify-icon icon="logos:postgresql"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="Python"><iconify-icon icon="logos:python"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                        </div>
+                        <!-- DUPLICATE SET -->
+                        <div class="flex gap-3" aria-hidden="true">
+                            <div class="icon-badge" data-tech="HTML5"><iconify-icon icon="logos:html-5"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="CSS3"><iconify-icon icon="logos:css-3"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="JavaScript"><iconify-icon icon="logos:javascript"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="React"><iconify-icon icon="logos:react"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="Dart"><iconify-icon icon="logos:dart"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="Flutter"><iconify-icon icon="logos:flutter"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="UI/UX (Figma)"><iconify-icon icon="logos:figma"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="MongoDB"><iconify-icon icon="logos:mongodb-icon"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="MySQL"><iconify-icon icon="logos:mysql"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="PostgreSQL"><iconify-icon icon="logos:postgresql"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="Python"><iconify-icon icon="logos:python"
+                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Resume Card -->
+                <div data-title="Resume"
+                    class="glass-card bento-item h-[126px] md:h-[154px] rounded-3xl p-6 flex flex-col justify-between cursor-pointer group relative overflow-hidden transition-all duration-300"
+                    id="resume-card">
+
+                    <div></div>
+
+                    <div
+                        class="flex justify-between items-center text-neutral-400 group-hover:text-white transition-colors">
+                        <span class="font-medium text-sm">Resume</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                            fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 17L17 7M17 7H7M17 7V17"></path>
+                        </svg>
+                    </div>
+
+                    <!-- Action Overlay / Options Menu (Appears on Click) -->
+                    <div id="resume-options"
+                        class="absolute inset-0 bg-neutral-900/90 backdrop-blur-md p-6 flex flex-col justify-center gap-3 opacity-0 pointer-events-none transition-all duration-300 z-10">
+                        <span class="text-xs font-semibold tracking-wider text-neutral-400 uppercase">Resume
+                            Options</span>
+                        <div class="grid grid-cols-2 gap-2">
+                            <a href="./Philip_Clement_Frontend_UIUX_CV.pdf" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-medium transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                                View
+                            </a>
+                            <a href="./Philip_Clement_Resume.pdf" download="Philip_Clement_Resume.pdf"
+                                class="flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-medium transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                                Download
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- FLOATING AI HINT WIDGET -->
+        <div id="ai-assistant"
+            class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 max-w-[260px] sm:max-w-xs md:max-w-sm glass-card rounded-2xl p-2.5 sm:p-3 sm:px-4 flex items-center gap-3 border border-white/10 shadow-2xl transition-all duration-300 pointer-events-none">
+            <div class="relative flex items-center justify-center flex-shrink-0">
+                <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+                <span class="absolute w-4 h-4 rounded-full bg-cyan-400/40 animate-ping"></span>
+            </div>
+            <p id="ai-message" class="text-[11px] sm:text-xs text-neutral-300 font-medium leading-relaxed">
+                <span class="text-cyan-400 font-semibold">AI Assistant:</span> Hover over any card
+            </p>
+        </div>
+
+
+        <!-- About Overlay Panel -->
+<div id="about-overlay" class="fixed inset-0 bg-neutral-950/80 backdrop-blur-xl z-50 flex items-center justify-center p-4 md:p-8 opacity-0 pointer-events-none transition-all duration-300">
+    <div class="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#0a0a0a] border border-neutral-800/80 rounded-3xl p-6 md:p-10 shadow-2xl flex flex-col gap-8 custom-scrollbar">
+        
+        <!-- Header & Close Button -->
+        <div class="flex justify-between items-center border-b border-neutral-800/60 pb-6">
+            <div>
+                <span class="text-xs font-semibold uppercase tracking-wider text-neutral-400">Engineering Workflow & Standards</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight mt-1">How Work Gets Done</h2>
+            </div>
+            <button id="close-about" class="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-neutral-400 hover:text-white transition-colors cursor-pointer">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Bio / Introduction Intro -->
+        <div class="text-neutral-300 text-sm md:text-base leading-relaxed">
+            As a Frontend and Design Engineer, my process bridges raw creative layouts and robust system architecture. Every product moves systematically from initial concept to high-performance execution, built for speed and complete client satisfaction.
+        </div>
+
+        <!-- Process Pipeline Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            
+            <!-- Step 1: UI/UX Design -->
+            <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/5 flex flex-col justify-between gap-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-mono text-neutral-400 uppercase tracking-widest">01 / Design</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-neutral-300 font-medium">Figma</span>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-1">UI/UX & Wireframing</h3>
+                    <p class="text-neutral-400 text-xs leading-relaxed">Crafting responsive interface concepts and user experience flows before writing a single line of code.</p>
+                </div>
+            </div>
+
+            <!-- Step 2: Frontend Web -->
+            <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/5 flex flex-col justify-between gap-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-mono text-neutral-400 uppercase tracking-widest">02 / Web</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-neutral-300 font-medium">Tailwind / HTML</span>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-1">Frontend Engineering</h3>
+                    <p class="text-neutral-400 text-xs leading-relaxed">Translating design frames into lightning-fast, fully responsive web interfaces with clean layouts.</p>
+                </div>
+            </div>
+
+            <!-- Step 3: Mobile Apps -->
+            <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/5 flex flex-col justify-between gap-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-mono text-neutral-400 uppercase tracking-widest">03 / Mobile</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-neutral-300 font-medium">Flutter / Dart</span>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-1">Cross-Platform Mobile Apps</h3>
+                    <p class="text-neutral-400 text-xs leading-relaxed">Building native-performance mobile applications linked directly to powerful application state and backends.</p>
+                </div>
+            </div>
+
+            <!-- Step 4: Databases -->
+            <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/5 flex flex-col justify-between gap-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-mono text-neutral-400 uppercase tracking-widest">04 / Data</span>
+                    <span class="px-2.5 py-1 rounded-lg bg-white/5 text-xs text-neutral-300 font-medium">SQL & NoSQL</span>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-1">Database Architecture</h3>
+                    <p class="text-neutral-400 text-xs leading-relaxed">Structuring data persistence and schema relationships using MySQL, PostgreSQL, and MongoDB.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- NEW: Speed & Client Satisfaction "Stunts" Section -->
+        <div class="border border-white/10 rounded-2xl p-6 bg-gradient-to-br from-white/[0.03] to-transparent flex flex-col gap-4">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-[#0adee5] animate-pulse"></span>
+                <h3 class="text-xs font-mono uppercase tracking-widest text-[#0adee5]">Speed Metrics & Client Commitments</h3>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+                <div class="p-3 bg-white/[0.02] rounded-xl border border-white/5">
+                    <span class="block text-lg font-bold text-white">48 - 72 hrs</span>
+                    <span class="text-[11px] text-neutral-400">Avg. Design-to-Prototype Turnaround</span>
+                </div>
+                <div class="p-3 bg-white/[0.02] rounded-xl border border-white/5">
+                    <span class="block text-lg font-bold text-white">100%</span>
+                    <span class="text-[11px] text-neutral-400">Mobile Responsive & Optimized</span>
+                </div>
+                <div class="p-3 bg-white/[0.02] rounded-xl border border-white/5">
+                    <span class="block text-lg font-bold text-white">Zero Bloat</span>
+                    <span class="text-[11px] text-neutral-400">Clean Code & Secure DB Schema</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Connection Summary Footer CTA -->
+        <div class="border-t border-neutral-800/60 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span class="text-xs text-neutral-400">Built to exceed expectations, ship fast, and scale smoothly.</span>
+            <button id="close-about-btn" class="relative group px-6 py-3 rounded-xl bg-neutral-900 border border-neutral-800 text-white font-medium text-xs tracking-wider uppercase transition-all duration-300 hover:border-neutral-600 flex items-center justify-center gap-2 cursor-pointer">
+                <!-- Corner Brackets Style -->
+                <span class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-neutral-400 group-hover:border-white transition-colors"></span>
+                <span class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-neutral-400 group-hover:border-white transition-colors"></span>
+                <span class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-neutral-400 group-hover:border-white transition-colors"></span>
+                <span class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-neutral-400 group-hover:border-white transition-colors"></span>
+                Got It
+            </button>
+        </div>
+
+    </div>
+</div>
+
+
+    </main>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Loader Script
+        window.addEventListener('DOMContentLoaded', () => {
+            const loader = document.getElementById('page-loader');
+            const percentText = document.getElementById('loader-percent');
+            const progressBar = document.getElementById('loader-bar');
+            const counterBox = document.getElementById('loader-counter');
+
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.floor(Math.random() * 3) + 1;
+                if (progress >= 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    percentText.textContent = progress;
+                    progressBar.style.width = '100%';
+                    counterBox.style.left = '100%';
+
+                    setTimeout(() => {
+                        loader.classList.add('opacity-0', 'pointer-events-none');
+                        setTimeout(() => { loader.style.display = 'none'; }, 700);
+                    }, 400);
+                } else {
+                    percentText.textContent = progress;
+                    progressBar.style.width = `${progress}%`;
+                    counterBox.style.left = `${progress}%`;
+                }
+            }, 50);
+        });
+
+        // Dynamic Header Title Swap
+        document.addEventListener('DOMContentLoaded', () => {
+            const titleEl = document.getElementById('dynamic-title');
+            const bentoItems = document.querySelectorAll('.bento-item');
+            const bentoGrid = document.getElementById('bento-grid');
+            const DEFAULT_TEXT = 'AceTekh';
+
+            function updateTitle(newText) {
+                if (titleEl.textContent.trim() === newText) return;
+                titleEl.classList.add('title-swap');
+                setTimeout(() => {
+                    titleEl.textContent = newText;
+                    titleEl.classList.remove('title-swap');
+                }, 120);
+            }
+
+            bentoItems.forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    const title = item.getAttribute('data-title');
+                    if (title) updateTitle(title);
+                });
+            });
+
+            bentoGrid.addEventListener('mouseleave', () => {
+                updateTitle(DEFAULT_TEXT);
+            });
+        });
+
+        // Time and Location Widget
+        document.addEventListener('DOMContentLoaded', () => {
+            const locationBtn = document.getElementById('location-btn');
+            const userLocationEl = document.getElementById('user-location');
+            const liveTimeEl = document.getElementById('live-time');
+
+            function updateTime() {
+                const now = new Date();
+                liveTimeEl.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            }
+            updateTime();
+            setInterval(updateTime, 10000);
+
+            let detailedArea = '';
+            let defaultCity = 'Lagos';
+            let isDetailed = false;
+
+            locationBtn.addEventListener('click', async () => {
+                if (isDetailed) {
+                    userLocationEl.textContent = defaultCity;
+                    isDetailed = false;
+                    return;
+                }
+                if (detailedArea) {
+                    userLocationEl.textContent = detailedArea;
+                    isDetailed = true;
+                    return;
+                }
+
+                userLocationEl.textContent = 'Locating...';
+                if ('geolocation' in navigator) {
+                    navigator.geolocation.getCurrentPosition(
+                        async (position) => {
+                            const { latitude, longitude } = position.coords;
+                            try {
+                                const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`);
+                                const data = await res.json();
+                                detailedArea = data.locality || data.city || data.principalSubdivision || 'Lagos';
+                                userLocationEl.textContent = detailedArea;
+                                isDetailed = true;
+                            } catch (err) {
+                                userLocationEl.textContent = 'Lagos';
+                                isDetailed = false;
+                            }
+                        },
+                        (error) => {
+                            userLocationEl.textContent = 'Lagos';
+                            isDetailed = false;
+                        },
+                        { timeout: 5000 }
+                    );
+                } else {
+                    userLocationEl.textContent = 'Lagos';
+                }
+            });
+        });
+
+        // AI Assistant Hints
+        document.addEventListener('DOMContentLoaded', () => {
+            const aiMessage = document.getElementById('ai-message');
+
+            const aiHints = {
+                'default': '<span class="text-cyan-400 font-semibold">AI Assistant:</span> Move your cursor to explore my work',
+                'About': '<span class="text-cyan-400 font-semibold">About:</span> Click to read about my background',
+                'Portfolio': '<span class="text-cyan-400 font-semibold">Portfolio:</span> Click to explore my builds',
+                'Contact': '<span class="text-cyan-400 font-semibold">Contact:</span> Click to send a message',
+                'Hello 🙂': '<span class="text-cyan-400 font-semibold">Profile:</span> Frontend, UI/UX & Flutter engineer',
+                'Stack': '<span class="text-cyan-400 font-semibold">Tech Stack:</span> Hover over individual badges to inspect my toolkit',
+                'Resume': '<span class="text-cyan-400 font-semibold">Resume:</span> Click to view or download my latest technical CV',
+                'location': '<span class="text-cyan-400 font-semibold">Location:</span> Click to detect your neighborhood'
+            };
+
+            const techDescriptions = {
+                'HTML5': 'Semantic structure, accessibility, and SEO markup',
+                'CSS3': 'Modern layouts, animations, and Tailwind styling',
+                'JavaScript': 'Dynamic UI interactions and DOM manipulations',
+                'React': 'Component driven frontend interfaces',
+                'Dart': 'Object oriented programming for cross-platform apps',
+                'Flutter': 'Mobile & web application development',
+                'UI/UX (Figma)': 'Interface design, wireframing, and component systems',
+                'MongoDB': 'NoSQL document database management',
+                'MySQL': 'Relational database schema and SQL queries',
+                'PostgreSQL': 'Advanced relational database design',
+                'Python': 'Data processing, scripting, and backend logic'
+            };
+
+            function setAIMessage(htmlText) {
+                aiMessage.style.opacity = '0';
+                setTimeout(() => {
+                    aiMessage.innerHTML = htmlText;
+                    aiMessage.style.opacity = '1';
+                }, 100);
+            }
+
+            document.querySelectorAll('.bento-item').forEach(item => {
+                item.addEventListener('mouseenter', () => {
+                    const title = item.getAttribute('data-title');
+                    if (aiHints[title]) setAIMessage(aiHints[title]);
+                });
+            });
+
+            document.querySelectorAll('.icon-badge').forEach(badge => {
+                badge.addEventListener('mouseenter', (e) => {
+                    e.stopPropagation();
+                    const tech = badge.getAttribute('data-tech');
+                    const desc = techDescriptions[tech] || 'Core technology tool';
+                    setAIMessage(`<span class="text-cyan-400 font-semibold">${tech}:</span> ${desc}`);
+                });
+
+                badge.addEventListener('mouseleave', (e) => {
+                    e.stopPropagation();
+                    setAIMessage(aiHints['Stack']);
+                });
+            });
+
+            const locationBtn = document.getElementById('location-btn');
+            if (locationBtn) {
+                locationBtn.addEventListener('mouseenter', () => setAIMessage(aiHints['location']));
+            }
+
+            const bentoGrid = document.getElementById('bento-grid');
+            if (bentoGrid) {
+                bentoGrid.addEventListener('mouseleave', () => setAIMessage(aiHints['default']));
+            }
+        });
+
+        const resumeCard = document.getElementById('resume-card');
+        const resumeOptions = document.getElementById('resume-options');
+
+        resumeCard.addEventListener('click', (e) => {
+            // Prevent toggling if they clicked directly on the inner action buttons
+            if (e.target.closest('a')) return;
+
+            const isOpen = resumeOptions.classList.contains('opacity-100');
+            if (isOpen) {
+                resumeOptions.classList.remove('opacity-100', 'pointer-events-auto');
+                resumeOptions.classList.add('opacity-0', 'pointer-events-none');
+            } else {
+                resumeOptions.classList.remove('opacity-0', 'pointer-events-none');
+                resumeOptions.classList.add('opacity-100', 'pointer-events-auto');
+            }
+        });
+
+
+        const aboutCard = document.querySelector('[data-title="About"]'); // Or your card ID/class selector
+        const aboutOverlay = document.getElementById('about-overlay');
+        const closeAboutBtn = document.getElementById('close-about');
+        const closeAboutActionBtn = document.getElementById('close-about-btn');
+
+        function toggleAbout(open) {
+            if (open) {
+                aboutOverlay.classList.remove('opacity-0', 'pointer-events-none');
+                aboutOverlay.classList.add('opacity-100', 'pointer-events-auto');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            } else {
+                aboutOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+                aboutOverlay.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = '';
+            }
+        }
+
+        if (aboutCard) {
+            aboutCard.addEventListener('click', () => toggleAbout(true));
+        }
+        if (closeAboutBtn) {
+            closeAboutBtn.addEventListener('click', () => toggleAbout(false));
+        }
+        if (closeAboutActionBtn) {
+            closeAboutActionBtn.addEventListener('click', () => toggleAbout(false));
+        }
+
+        // Close when clicking outside the inner modal box
+        aboutOverlay.addEventListener('click', (e) => {
+            if (e.target === aboutOverlay) toggleAbout(false);
+        });
+        document.querySelector('a[href="#contact"]').addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetSection = document.getElementById('contact');
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+
+    </script>
+</body>
+
+</html>

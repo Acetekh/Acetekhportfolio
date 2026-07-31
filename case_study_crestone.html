@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" class="dark bg-neutral-950 text-white">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitalo Case Study - ACETEKH</title>
+
+    <!-- Google Fonts (Inter + JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Iconify CDN -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    
+
+    <style>
+
+         body {
+            font-family: 'Inter', sans-serif;
+            background-color: #070707;
+            color: #ffffff;
+            
+        }
+html {
+            scroll-behavior: smooth;
+        }
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between relative overflow-x-hidden pb-32">
+
+    <!-- NAVBAR / HEADER -->
+    <header class="w-full max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-6 grid grid-cols-3 items-center gap-1 sm:gap-3">
+        <!-- Left: Logo -->
+        <a href="./index.html" id="logo-link" class="justify-self-start text-sm sm:text-lg font-bold tracking-wider text-white flex-shrink-0 transition-colors hover:text-[#0adee5]">
+            ACETEKH
+        </a>
+
+        <!-- Center: Social Icons -->
+        <div class="justify-self-center flex items-center gap-2 sm:gap-4 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-full flex-shrink-0">
+            <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                <iconify-icon icon="simple-icons:x" class="text-xs sm:text-sm"></iconify-icon>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                <iconify-icon icon="simple-icons:github" class="text-xs sm:text-sm"></iconify-icon>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-[#E4405F] transition-colors">
+                <iconify-icon icon="simple-icons:instagram" class="text-xs sm:text-sm"></iconify-icon>
+            </a>
+            <a href="#" class="text-neutral-400 hover:text-[#25D366] transition-colors">
+                <iconify-icon icon="simple-icons:whatsapp" class="text-xs sm:text-sm"></iconify-icon>
+            </a>
+        </div>
+
+        <!-- Right: Location & Working Live Clock Widget -->
+        <div class="justify-self-end flex items-center gap-1 sm:gap-2 text-[9px] sm:text-xs font-mono text-neutral-400 flex-shrink-0">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#0adee5] animate-pulse flex-shrink-0"></span>
+            <span>Lagos</span>
+            <span>•</span>
+            <span id="live-clock">Loading...</span>
+        </div>
+    </header>
+
+    <!-- MAIN CASE STUDY CONTENT -->
+    <main class="w-full max-w-5xl mx-auto px-4 py-12 flex-grow space-y-16">
+
+        <!-- BACK NAVIGATION -->
+        <div>
+            <a href="./projects.html" class="inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-[#0adee5] transition-colors">
+                <iconify-icon icon="lucide:arrow-left" class="text-sm"></iconify-icon>
+                <span>Back to All Projects</span>
+            </a>
+        </div>
+
+        <!-- HEADER SECTION -->
+        <section class="text-center space-y-8 max-w-4xl mx-auto">
+            <h1 class="text-3xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                Vitalo - Personal training & coaching Framer template
+            </h1>
+            <p class="text-neutral-400 text-base sm:text-xl font-normal leading-relaxed max-w-3xl mx-auto">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+            </p>
+        </section>
+
+        <!-- 4 METADATA GLASS BOXES -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Box 1: Client -->
+            <div class="p-6 bg-white/[0.03] backdrop-blur-md text-center border border-white/10 hover:border-neutral-500 transition-all duration-200 rounded-2xl shadow-xl space-y-2">
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Client</span>
+                <h3 class="text-lg font-semibold text-white">Aruna</h3>
+            </div>
+            <!-- Box 2: Role -->
+            <div class="p-6 bg-white/[0.03] backdrop-blur-md border text-center border-white/10 rounded-2xl shadow-xl space-y-2 hover:border-neutral-500 transition-all duration-200">
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Role</span>
+                <h3 class="text-lg font-semibold text-white">Frontend Dev</h3>
+            </div>
+            <!-- Box 3: Duration -->
+            <div class="p-6 bg-white/[0.03] text-center backdrop-blur-md border border-white/10 rounded-2xl shadow-xl space-y-2 hover:border-neutral-500 transition-all duration-200">
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Duration</span>
+                <h3 class="text-lg font-semibold text-white">2 weeks</h3>
+            </div>
+            <!-- Box 4: Year -->
+            <div class="p-6 bg-white/[0.03] backdrop-blur-md border text-center border-white/10 rounded-2xl shadow-xl space-y-2 hover:border-neutral-500 transition-all duration-200">
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Year</span>
+                <h3 class="text-lg font-semibold text-white">2026</h3>
+            </div>
+        </section>
+
+        <!-- IMAGE SHOWCASE SECTION -->
+        <section class="pt-6">
+            <div data-lightbox-src="./image/aruna.png" class="lightbox-trigger group relative w-full h-[300px] sm:h-[400px] rounded-3xl overflow-hidden cursor-pointer">
+                <img src="./image/aruna.png" alt="Vitalo project mockup" class="w-full h-[600px] sm:h-[600px]   object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
+            </div>
+        </section>
+
+        <!-- LIGHTBOX MODAL CONTAINER -->
+        <div id="imageLightbox" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-2xl hidden items-center justify-center p-4 sm:p-8">
+            <div class="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center">
+                <!-- Glass Close Button -->
+                <button type="button" id="lightboxClose" class="absolute -top-12 right-0 text-neutral-300 hover:text-white text-xs font-mono uppercase tracking-wider flex items-center gap-2 bg-white/[0.05] backdrop-blur-md border border-white/10 px-4 py-2 rounded-full transition-all hover:border-white/20">
+                    <span>Close</span>
+                    <iconify-icon icon="lucide:x" class="text-base"></iconify-icon>
+                </button>
+
+                <!-- Expanded Image Container -->
+                <img id="lightboxImg" src="" alt="Expanded Preview" class="max-w-full max-h-[85vh] object-contain rounded-3xl shadow-2xl border border-white/10">
+            </div>
+        </div>
+
+        <!-- WORK DETAILS & CASE STUDY SECTIONS (trimmed to 3 core beats) -->
+        <section class="w-full max-w-6xl mx-auto px-4 py-16 space-y-24">
+
+            <!-- SECTION 1: Problem -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-4 lg:sticky lg:top-24">
+                    <div class="flex items-center gap-3 text-neutral-400">
+                        <span class="w-8 h-[1px] bg-neutral-600"></span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">01 / Problem</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Understanding the challenge</h2>
+                </div>
+                <div class="lg:col-span-8 space-y-6 text-neutral-400 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <div data-lightbox-src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop" class="lightbox-trigger group relative w-full h-[240px] sm:h-[320px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop" alt="Challenge Overview" class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-white/10">
+
+            <!-- SECTION 2: Approach & Solution -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-4 lg:sticky lg:top-24">
+                    <div class="flex items-center gap-3 text-neutral-400">
+                        <span class="w-8 h-[1px] bg-neutral-600"></span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">02 / Approach & Solution</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Designing a seamless experience</h2>
+                </div>
+                <div class="lg:col-span-8 space-y-6 text-neutral-400 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                    </p>
+                    <div data-lightbox-src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" class="lightbox-trigger group relative w-full h-[240px] sm:h-[320px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" alt="Design Solution Mockups" class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-white/10">
+
+            <!-- SECTION 3: Result -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-4 lg:sticky lg:top-24">
+                    <div class="flex items-center gap-3 text-neutral-400">
+                        <span class="w-8 h-[1px] bg-neutral-600"></span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">03 / Result</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Design solution & results</h2>
+                </div>
+                <div class="lg:col-span-8 space-y-6 text-neutral-400 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+                    </p>
+                    <div data-lightbox-src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" class="lightbox-trigger group relative w-full h-[240px] sm:h-[320px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Conclusion Results" class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ================= CLIENT TESTIMONIAL SECTION ================= -->
+        <!-- Placeholder testimonial - swap in the real client quote, name, and role once available -->
+        <section class="w-full max-w-4xl mx-auto px-4 py-8">
+            <div class="bg-[#0f0f11]/80 backdrop-blur-md border border-white/10 hover:border-neutral-500 rounded-3xl p-8 sm:p-12 text-center transition-all duration-300 relative overflow-hidden">
+                <div class="absolute -top-10 -left-10 w-32 h-32 bg-[#0adee5]/5 rounded-full blur-2xl"></div>
+
+                <iconify-icon icon="lucide:quote" class="text-3xl text-[#0adee5]/60 mb-6 inline-block"></iconify-icon>
+
+                <p class="text-neutral-200 text-lg sm:text-2xl font-medium leading-relaxed max-w-2xl mx-auto">
+                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna."
+                </p>
+
+                <div class="flex items-center justify-center gap-3 mt-8">
+                    <div class="w-11 h-11 rounded-full bg-neutral-800 border border-white/10 flex items-center justify-center text-neutral-500">
+                        <iconify-icon icon="lucide:user" class="text-lg"></iconify-icon>
+                    </div>
+                    <div class="text-left">
+                        <h4 class="text-white font-semibold text-sm">Client Name</h4>
+                        <p class="text-neutral-500 text-xs font-mono">Role, Company</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= NEXT PROJECT SECTION ================= -->
+        <section class="w-full max-w-5xl mx-auto px-4 py-8">
+            <a href="./next-project.html"
+                class="group grid grid-cols-1 sm:grid-cols-12 gap-6 sm:gap-8 items-center bg-[#0f0f11]/60 backdrop-blur-md border border-white/10 hover:border-neutral-500 rounded-3xl p-4 sm:p-6 transition-all duration-300">
+
+                <!-- Left: Thumbnail Image -->
+                <div class="sm:col-span-5 relative w-full h-48 sm:h-40 rounded-2xl overflow-hidden">
+                    <img src="./image/plugonjerseys.png" alt="Next project preview"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                </div>
+
+                <!-- Right: Label & Button -->
+                <div class="sm:col-span-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-500">Next Project</span>
+                        <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">PlugOnJerseys</h3>
+                    </div>
+
+                    <span
+                        class="relative inline-flex items-center justify-center px-6 py-3 bg-white/[0.03] group-hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300 flex-shrink-0">
+                        <span class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white/60"></span>
+                        <span class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white/60"></span>
+                        <span class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white/60"></span>
+                        <span class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white/60"></span>
+                        <span class="text-[10px] font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2">
+                            Next Project
+                            <iconify-icon icon="lucide:arrow-up-right"
+                                class="text-sm text-[#0adee5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"></iconify-icon>
+                        </span>
+                    </span>
+                </div>
+            </a>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="relative z-10 border-t border-white/5 bg-[#070707] pt-10 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+
+                <!-- Brand + Copyright -->
+                <div class="flex flex-col items-center sm:items-start gap-1">
+                    <span class="text-lg font-bold tracking-wider text-white">ACETEKH</span>
+                    <p class="text-neutral-500 text-xs font-mono">
+                        © <span id="footer-year">2026</span> All rights reserved.
+                    </p>
+                </div>
+
+                <!-- Back to top -->
+                <button type="button" id="backToTop"
+                    class="relative group inline-flex items-center justify-center px-5 py-2.5 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300">
+                    <span class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white/60"></span>
+                    <span class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white/60"></span>
+                    <span class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white/60"></span>
+                    <span class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white/60"></span>
+                    <span class="text-[10px] font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2">
+                        Back to Top
+                        <iconify-icon icon="lucide:arrow-up"
+                            class="text-sm text-[#0adee5] group-hover:-translate-y-0.5 transition-transform duration-300"></iconify-icon>
+                    </span>
+                </button>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Live Lagos clock
+        function updateClock() {
+            const options = { timeZone: 'Africa/Lagos', hour: '2-digit', minute: '2-digit', hour12: true };
+            const timeString = new Intl.DateTimeFormat([], options).format(new Date());
+            const clockElement = document.getElementById('live-clock');
+            if (clockElement) {
+                clockElement.textContent = timeString;
+            }
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Footer year - was hardcoded before, now actually computed
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+        // Back to top
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Lightbox - single delegated handler instead of an inline onclick
+        // on every image card
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('flex');
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.querySelectorAll('.lightbox-trigger').forEach((el) => {
+            el.addEventListener('click', () => openLightbox(el.dataset.lightboxSrc));
+        });
+
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
