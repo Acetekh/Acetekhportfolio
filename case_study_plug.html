@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark bg-neutral-950 text-white">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,68 +16,89 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Iconify CDN -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    
+
 
     <style>
-
-         body {
+        body {
             font-family: 'Inter', sans-serif;
             background-color: #070707;
             color: #ffffff;
-            
+
         }
-html {
+
+        html {
             scroll-behavior: smooth;
         }
+
         .font-mono {
             font-family: 'JetBrains Mono', monospace;
         }
     </style>
 </head>
+
 <body class="min-h-screen flex flex-col justify-between relative overflow-x-hidden pb-32">
 
     <!-- NAVBAR / HEADER -->
-    <header class="w-full max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-6 grid grid-cols-3 items-center gap-1 sm:gap-3">
-        <!-- Left: Logo -->
-        <a href="./index.html" id="logo-link" class="justify-self-start text-sm sm:text-lg font-bold tracking-wider text-white flex-shrink-0 transition-colors hover:text-[#0adee5]">
-            ACETEKH
-        </a>
+    <header
+        class="fixed top-0 left-0 right-0 z-50 w-full bg-neutral-950/50 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 grid grid-cols-3 items-center gap-1 sm:gap-3">
 
-        <!-- Center: Social Icons -->
-        <div class="justify-self-center flex items-center gap-2 sm:gap-4 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-full flex-shrink-0">
-            <a href="#" class="text-neutral-400 hover:text-white transition-colors">
-                <iconify-icon icon="simple-icons:x" class="text-xs sm:text-sm"></iconify-icon>
+            <!-- Left: Logo -->
+            <a href="./index.html"
+                class="justify-self-start text-sm sm:text-lg font-bold tracking-wider text-white flex-shrink-0 hover:text-neutral-400 transition-colors">
+                ACETEKH
             </a>
-            <a href="#" class="text-neutral-400 hover:text-white transition-colors">
-                <iconify-icon icon="simple-icons:github" class="text-xs sm:text-sm"></iconify-icon>
-            </a>
-            <a href="#" class="text-neutral-400 hover:text-[#E4405F] transition-colors">
-                <iconify-icon icon="simple-icons:instagram" class="text-xs sm:text-sm"></iconify-icon>
-            </a>
-            <a href="#" class="text-neutral-400 hover:text-[#25D366] transition-colors">
-                <iconify-icon icon="simple-icons:whatsapp" class="text-xs sm:text-sm"></iconify-icon>
-            </a>
-        </div>
 
-        <!-- Right: Location & Working Live Clock Widget -->
-        <div class="justify-self-end flex items-center gap-1 sm:gap-2 text-[9px] sm:text-xs font-mono text-neutral-400 flex-shrink-0">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#0adee5] animate-pulse flex-shrink-0"></span>
-            <span>Lagos</span>
-            <span>•</span>
-            <span id="live-clock">Loading...</span>
+            <!-- Center: Social Icons -->
+            <div
+                class="justify-self-center flex items-center gap-2 sm:gap-4 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-full flex-shrink-0">
+                <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                    <iconify-icon icon="simple-icons:x" class="text-xs sm:text-sm"></iconify-icon>
+                </a>
+                <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                    <iconify-icon icon="simple-icons:github" class="text-xs sm:text-sm"></iconify-icon>
+                </a>
+                <a href="#" class="text-neutral-400 hover:text-[#E4405F] transition-colors">
+                    <iconify-icon icon="simple-icons:instagram" class="text-xs sm:text-sm"></iconify-icon>
+                </a>
+                <a href="#" class="text-neutral-400 hover:text-[#25D366] transition-colors">
+                    <iconify-icon icon="simple-icons:whatsapp" class="text-xs sm:text-sm"></iconify-icon>
+                </a>
+            </div>
+
+            <!-- Right: Location & Time Widget -->
+            <div
+                class="justify-self-end flex items-center gap-1 sm:gap-2 text-[9px] sm:text-xs font-mono text-neutral-400 flex-shrink-0">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0adee5] animate-pulse flex-shrink-0"></span>
+                <span>Lagos</span>
+                <span>•</span>
+                <span id="live-clock">04:38 PM</span>
+            </div>
+
         </div>
     </header>
 
     <!-- MAIN CASE STUDY CONTENT -->
-    <main class="w-full max-w-5xl mx-auto px-4 py-12 flex-grow space-y-16">
+    <main class="w-full max-w-7xl mx-auto px-4 py-12 flex-grow space-y-16 mt-10">
 
-        <!-- BACK NAVIGATION -->
-        <div>
-            <a href="./projects.html" class="inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-[#0adee5] transition-colors">
-                <iconify-icon icon="lucide:arrow-left" class="text-sm"></iconify-icon>
-                <span>Back to All Projects</span>
-            </a>
-        </div>
+        <a href="home.html"
+            class="relative group inline-flex items-center justify-center px-4 py-2.5 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300">
+            <span
+                class="absolute top-0 left-0 w-2.5 h-2.5 border-t-2 border-l-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"></span>
+            <span
+                class="absolute top-0 right-0 w-2.5 h-2.5 border-t-2 border-r-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></span>
+            <span
+                class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b-2 border-l-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:translate-y-0.5"></span>
+            <span
+                class="absolute bottom-0 right-0 w-2.5 h-2.5 border-b-2 border-r-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"></span>
+
+            <span
+                class="text-xs font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2 whitespace-nowrap">
+                <iconify-icon icon="lucide:arrow-left"
+                    class="text-sm text-[#0adee5] transition-transform duration-300 group-hover:-translate-x-1"></iconify-icon>
+                Back Home
+            </span>
+        </a>
 
         <!-- HEADER SECTION -->
         <section class="text-center space-y-8 max-w-4xl mx-auto">
@@ -91,22 +113,26 @@ html {
         <!-- 4 METADATA GLASS BOXES -->
         <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <!-- Box 1: Client -->
-            <div class="p-6 bg-white/[0.03] backdrop-blur-md text-center border border-white/10 hover:border-neutral-500 transition-all duration-200 rounded-2xl shadow-xl space-y-2">
+            <div
+                class="p-6 bg-white/[0.03] backdrop-blur-md text-center border border-white/10 hover:border-neutral-500 transition-all duration-200 rounded-2xl shadow-xl space-y-2">
                 <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Client</span>
                 <h3 class="text-lg font-semibold text-white">Aruna</h3>
             </div>
             <!-- Box 2: Role -->
-            <div class="p-6 bg-white/[0.03] backdrop-blur-md border text-center border-white/10 rounded-2xl shadow-xl space-y-2 hover:border-neutral-500 transition-all duration-200">
+            <div
+                class="p-6 bg-white/[0.03] backdrop-blur-md border text-center border-white/10 rounded-2xl shadow-xl space-y-2 hover:border-neutral-500 transition-all duration-200">
                 <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Role</span>
                 <h3 class="text-lg font-semibold text-white">Frontend Dev</h3>
             </div>
             <!-- Box 3: Duration -->
-            <div class="p-6 bg-white/[0.03] text-center backdrop-blur-md border border-white/10 rounded-2xl shadow-xl space-y-2 hover:border-neutral-500 transition-all duration-200">
+            <div
+                class="p-6 bg-white/[0.03] text-center backdrop-blur-md border border-white/10 rounded-2xl shadow-xl space-y-2 hover:border-neutral-500 transition-all duration-200">
                 <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Duration</span>
                 <h3 class="text-lg font-semibold text-white">2 weeks</h3>
             </div>
             <!-- Box 4: Year -->
-            <div class="p-6 bg-white/[0.03] backdrop-blur-md border text-center border-white/10 rounded-2xl shadow-xl space-y-2 hover:border-neutral-500 transition-all duration-200">
+            <div
+                class="p-6 bg-white/[0.03] backdrop-blur-md border text-center border-white/10 rounded-2xl shadow-xl space-y-2 hover:border-neutral-500 transition-all duration-200">
                 <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Year</span>
                 <h3 class="text-lg font-semibold text-white">2026</h3>
             </div>
@@ -114,22 +140,27 @@ html {
 
         <!-- IMAGE SHOWCASE SECTION -->
         <section class="pt-6">
-            <div data-lightbox-src="./image/aruna.png" class="lightbox-trigger group relative w-full h-[300px] sm:h-[400px] rounded-3xl overflow-hidden cursor-pointer">
-                <img src="./image/aruna.png" alt="Vitalo project mockup" class="w-full h-[600px] sm:h-[600px]   object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
+            <div data-lightbox-src="./image/plugonjerseys.png"
+                class="lightbox-trigger group relative w-full h-[300px] sm:h-[400px] rounded-3xl overflow-hidden cursor-pointer">
+                <img src="./image/plugonjerseys.png" alt="Vitalo project mockup"
+                    class="w-full h-[600px] sm:h-[690px]   object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
             </div>
         </section>
 
         <!-- LIGHTBOX MODAL CONTAINER -->
-        <div id="imageLightbox" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-2xl hidden items-center justify-center p-4 sm:p-8">
+        <div id="imageLightbox"
+            class="fixed inset-0 z-50 bg-black/80 backdrop-blur-2xl hidden items-center justify-center p-4 sm:p-8">
             <div class="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center">
                 <!-- Glass Close Button -->
-                <button type="button" id="lightboxClose" class="absolute -top-12 right-0 text-neutral-300 hover:text-white text-xs font-mono uppercase tracking-wider flex items-center gap-2 bg-white/[0.05] backdrop-blur-md border border-white/10 px-4 py-2 rounded-full transition-all hover:border-white/20">
+                <button type="button" id="lightboxClose"
+                    class="absolute -top-12 right-0 text-neutral-300 hover:text-white text-xs font-mono uppercase tracking-wider flex items-center gap-2 bg-white/[0.05] backdrop-blur-md border border-white/10 px-4 py-2 rounded-full transition-all hover:border-white/20">
                     <span>Close</span>
                     <iconify-icon icon="lucide:x" class="text-base"></iconify-icon>
                 </button>
 
                 <!-- Expanded Image Container -->
-                <img id="lightboxImg" src="" alt="Expanded Preview" class="max-w-full max-h-[85vh] object-contain rounded-3xl shadow-2xl border border-white/10">
+                <img id="lightboxImg" src="" alt="Expanded Preview"
+                    class="max-w-full max-h-[85vh] object-contain rounded-3xl shadow-2xl border border-white/10">
             </div>
         </div>
 
@@ -147,10 +178,14 @@ html {
                 </div>
                 <div class="lg:col-span-8 space-y-6 text-neutral-400 text-base sm:text-lg leading-relaxed">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                    <div data-lightbox-src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop" class="lightbox-trigger group relative w-full h-[240px] sm:h-[320px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
-                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop" alt="Challenge Overview" class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
+                        The Nigerian luxury real estate market lacks digital platforms that seamlessly blend high end
+                        aesthetics with real time property data, advanced investment forecasting, and lightning fast
+                        search filters. High net worth buyers in locations like Lekki and Ikoyi require an immersive,
+                        friction free digital experience that mirrors physical exclusivity. </p>
+                    <div data-lightbox-src="./image/aruna.png"
+                        class="lightbox-trigger group relative w-full h-[340px] sm:h-[350px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
+                        <img src="./image/aruna.png" alt="Challenge Overview"
+                            class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
                 </div>
             </div>
@@ -162,16 +197,26 @@ html {
                 <div class="lg:col-span-4 lg:sticky lg:top-24">
                     <div class="flex items-center gap-3 text-neutral-400">
                         <span class="w-8 h-[1px] bg-neutral-600"></span>
-                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">02 / Approach & Solution</span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">02 / Approach &
+                            Solution</span>
                     </div>
                     <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Designing a seamless experience</h2>
                 </div>
                 <div class="lg:col-span-8 space-y-6 text-neutral-400 text-base sm:text-lg leading-relaxed">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
-                    </p>
-                    <div data-lightbox-src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" class="lightbox-trigger group relative w-full h-[240px] sm:h-[320px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
-                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1200&auto=format&fit=crop" alt="Design Solution Mockups" class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <ul class="space-y-4 list-disc pl-5">
+                        <li><strong class="text-white">Tech Stack:</strong> Built entirely using HTML5, Tailwind CSS for
+                            custom styling, and vanilla JavaScript to handle dynamic API image integration and
+                            interactive UI components.</li>
+                        <li><strong class="text-white">Interactive Investment Calculators:</strong> Developed live
+                            calculation components allowing users to dynamically forecast property appreciation, ROI
+                            percentages, and hold periods over decades.</li>
+                        <li><strong class="text-white">Curated Layout System:</strong> Designed bespoke Bento-style
+                            service cards and property grid structures optimized for luxury branding.</li>
+                    </ul>
+                    <div data-lightbox-src="./image/investment.png"
+                        class="lightbox-trigger group relative w-full h-[340px] sm:h-[350px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
+                        <img src="./image/investment.png" alt="Design Solution Mockups"
+                            class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
                 </div>
             </div>
@@ -188,72 +233,76 @@ html {
                     <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Design solution & results</h2>
                 </div>
                 <div class="lg:col-span-8 space-y-6 text-neutral-400 text-base sm:text-lg leading-relaxed">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse.
-                    </p>
-                    <div data-lightbox-src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" class="lightbox-trigger group relative w-full h-[240px] sm:h-[320px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop" alt="Conclusion Results" class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <ul class="space-y-4 list-disc pl-5">
+                        <li>Delivered a fully responsive, high-performance luxury real estate platform featuring dynamic
+                            property listings, cinematic tour video embeds, and precise financial projection tools.</li>
+                        <li>Achieved a flawless cross-device layout with smooth transitions, meeting the high standards
+                            expected by modern real estate buyers and tech recruiters alike.</li>
+                    </ul>
+                    <div data-lightbox-src="./image/properties.png"
+                        class="lightbox-trigger group relative w-full h-[340px] sm:h-[350px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
+                        <img src="./image/properties.png" alt="Conclusion Results"
+                            class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
                 </div>
             </div>
-
         </section>
 
         <!-- ================= CLIENT TESTIMONIAL SECTION ================= -->
-        <!-- Placeholder testimonial - swap in the real client quote, name, and role once available -->
-        <section class="w-full max-w-4xl mx-auto px-4 py-8">
-            <div class="bg-[#0f0f11]/80 backdrop-blur-md border border-white/10 hover:border-neutral-500 rounded-3xl p-8 sm:p-12 text-center transition-all duration-300 relative overflow-hidden">
-                <div class="absolute -top-10 -left-10 w-32 h-32 bg-[#0adee5]/5 rounded-full blur-2xl"></div>
+        <section class="w-full max-w-4xl mx-auto px-4 py-12">
+            <div class="border-l-2 border-white/20 pl-6 sm:pl-10 py-2 space-y-6">
 
-                <iconify-icon icon="lucide:quote" class="text-3xl text-[#0adee5]/60 mb-6 inline-block"></iconify-icon>
-
-                <p class="text-neutral-200 text-lg sm:text-2xl font-medium leading-relaxed max-w-2xl mx-auto">
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna."
-                </p>
-
-                <div class="flex items-center justify-center gap-3 mt-8">
-                    <div class="w-11 h-11 rounded-full bg-neutral-800 border border-white/10 flex items-center justify-center text-neutral-500">
-                        <iconify-icon icon="lucide:user" class="text-lg"></iconify-icon>
-                    </div>
-                    <div class="text-left">
-                        <h4 class="text-white font-semibold text-sm">Client Name</h4>
-                        <p class="text-neutral-500 text-xs font-mono">Role, Company</p>
-                    </div>
+                <!-- Metadata bar -->
+                <div class="flex items-center gap-3 text-xs font-mono text-neutral-500 uppercase tracking-wider">
+                    <span>Feedback</span>
+                    <span>•</span>
+                    <span>Verified Project</span>
                 </div>
+
+                <!-- Raw Quote -->
+                <blockquote class="text-xl sm:text-2xl text-neutral-200 font-normal leading-relaxed max-w-2xl">
+                    "Execution was fast, communication was clear, and the visual detail on the frontend was top-tier."
+                </blockquote>
+
+                <!-- Sign-off -->
+                <div class="text-sm font-mono text-neutral-400">
+                    <strong class="text-white font-normal">Client Name</strong>, Role @ Company
+                </div>
+
             </div>
         </section>
-
-        <!-- ================= NEXT PROJECT SECTION ================= -->
         <section class="w-full max-w-5xl mx-auto px-4 py-8">
-            <a href="./next-project.html"
-                class="group grid grid-cols-1 sm:grid-cols-12 gap-6 sm:gap-8 items-center bg-[#0f0f11]/60 backdrop-blur-md border border-white/10 hover:border-neutral-500 rounded-3xl p-4 sm:p-6 transition-all duration-300">
+            <a href="./case_study_plug.htm"
+                class="group relative block w-full overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 p-8 sm:p-12 transition-all duration-300 hover:border-neutral-700">
 
-                <!-- Left: Thumbnail Image -->
-                <div class="sm:col-span-5 relative w-full h-48 sm:h-40 rounded-2xl overflow-hidden">
-                    <img src="./image/plugonjerseys.png" alt="Next project preview"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
-                </div>
-
-                <!-- Right: Label & Button -->
-                <div class="sm:col-span-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div>
-                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-500">Next Project</span>
-                        <h3 class="text-xl sm:text-2xl font-bold text-white mt-1">PlugOnJerseys</h3>
+                <!-- Background Image with Subtle Hover Zoom -->
+                <div class="absolute inset-0 z-0">
+                    <img src="./image/plugonjerseys.png" alt="PlugOnJerseys preview"
+                        class="h-full w-full object-cover object-center opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-500 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-transparent">
                     </div>
-
-                    <span
-                        class="relative inline-flex items-center justify-center px-6 py-3 bg-white/[0.03] group-hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300 flex-shrink-0">
-                        <span class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white/60"></span>
-                        <span class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white/60"></span>
-                        <span class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white/60"></span>
-                        <span class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white/60"></span>
-                        <span class="text-[10px] font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2">
-                            Next Project
-                            <iconify-icon icon="lucide:arrow-up-right"
-                                class="text-sm text-[#0adee5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"></iconify-icon>
-                        </span>
-                    </span>
                 </div>
+
+                <!-- Card Content -->
+                <div class="relative z-10 flex flex-col justify-end min-h-[220px]">
+                    <div class="flex items-end justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">Next
+                                Project</span>
+                            <h3 class="text-3xl sm:text-4xl font-semibold text-white mt-1 tracking-tight">
+                                PlugOnJerseys
+                            </h3>
+                        </div>
+
+                        <!-- Minimal Action Icon -->
+                        <div
+                            class="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300">
+                            <iconify-icon icon="lucide:arrow-up-right"
+                                class="text-xl transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+
             </a>
         </section>
 
@@ -279,7 +328,8 @@ html {
                     <span class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white/60"></span>
                     <span class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white/60"></span>
                     <span class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white/60"></span>
-                    <span class="text-[10px] font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2">
+                    <span
+                        class="text-[10px] font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2">
                         Back to Top
                         <iconify-icon icon="lucide:arrow-up"
                             class="text-sm text-[#0adee5] group-hover:-translate-y-0.5 transition-transform duration-300"></iconify-icon>
@@ -343,4 +393,5 @@ html {
         });
     </script>
 </body>
+
 </html>

@@ -14,15 +14,46 @@
             darkMode: 'class',
         }
     </script>
+    <style>
+        /* Tilt-on-hover: transform is driven by JS (mousemove), this just
+           smooths each frame and the return-to-flat on mouseleave. */
+        .tilt-card {
+            transition: transform 0.15s ease-out;
+            will-change: transform;
+        }
+
+        /* Animated filter transitions: cards fade + settle instead of
+           snapping in/out when the filter changes. */
+        .project-item {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+
+        .project-item.item-hidden {
+            opacity: 0;
+            transform: translateY(16px) scale(0.97);
+            pointer-events: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .tilt-card {
+                transition: none;
+            }
+
+            .project-item {
+                transition: none;
+            }
+        }
+    </style>
 </head>
 
 <body class="min-h-screen flex flex-col justify-between relative overflow-x-hidden pb-32">
 
-    <!-- NAVBAR / HEADER -->
-    <header class="w-full max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-6 grid grid-cols-3 items-center gap-1 sm:gap-3">
+     <!-- NAVBAR / HEADER -->
+<header class="fixed top-0 left-0 right-0 z-50 w-full bg-neutral-950/50 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 grid grid-cols-3 items-center gap-1 sm:gap-3">
+
         <!-- Left: Logo -->
-        <a href="./home.html" id="logo-link"
-            class="justify-self-start text-sm sm:text-lg font-bold tracking-wider text-white flex-shrink-0 transition-colors hover:text-neutral-400">
+        <a href="./index.html" class="justify-self-start text-sm sm:text-lg font-bold tracking-wider text-white flex-shrink-0 hover:text-neutral-400 transition-colors">
             ACETEKH
         </a>
 
@@ -43,18 +74,19 @@
             </a>
         </div>
 
-        <!-- Right: Location & Working Live Clock Widget (Hours and Minutes only) -->
-        <div
-            class="justify-self-end flex items-center gap-1 sm:gap-2 text-[9px] sm:text-xs font-mono text-neutral-400 flex-shrink-0">
+        <!-- Right: Location & Time Widget -->
+        <div class="justify-self-end flex items-center gap-1 sm:gap-2 text-[9px] sm:text-xs font-mono text-neutral-400 flex-shrink-0">
             <span class="w-1.5 h-1.5 rounded-full bg-[#0adee5] animate-pulse flex-shrink-0"></span>
             <span>Lagos</span>
             <span>•</span>
-            <span id="live-clock">Loading...</span>
+            <span id="live-clock">04:38 PM</span>
         </div>
-    </header>
+
+    </div>
+</header>
 
     <!-- MAIN PROJECTS SECTION -->
-    <main class="w-full max-w-6xl mx-auto px-4 py-12 flex-grow">
+    <main class="w-full max-w-7xl mx-auto px-4 py-12 flex-grow mt-10">
 
         <!-- Header & Category Filter Bar -->
         <div class="flex flex-col md:flex-row items-center justify-between gap-6 mb-20">
@@ -87,40 +119,42 @@
             </div>
         </div>
 
-        <!-- 9 Projects in Alternating Wide Layout -->
+        <!-- 10 Projects in Alternating Wide Layout -->
+        <!-- NOTE: every card has the SAME physical DOM order — media block first,
+             text block second — tagged with data-role="media" / data-role="text".
+             Left/right alternation is applied entirely by JS (syncAlternation),
+             recomputed on every filter change from the currently-visible set.
+
+             Every image is now wrapped in a link to its own case-study page
+             (matching the pattern project 1 already used), with a shared hover
+             treatment: dark tint + a circular frosted "+" badge. Each image
+             container also carries .tilt-card for the mouse-follow tilt effect
+             (see initTiltEffect() in the script below). -->
         <div class="space-y-24" id="projects-container">
 
-            <!-- PROJECT 1 (Image Left, Text Right) -->
+            <!-- PROJECT 1 -->
             <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
                 data-category="frontend">
-                <div class="lg:col-span-7 relative group">
-                    <a href="./coming_soon.html"
-                        class="block w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1 relative"
-                        title="View Ace Real Estate Case Study">
-                        <img src="./image/aruna.png" alt="Ace Real Estate"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
-                        <!-- Subtle Overlay Badge on Hover -->
-                        <div
-                            class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span
-                                class="px-4 py-2 rounded-full bg-neutral-900/90 border border-white/20 text-xs font-mono uppercase tracking-wider text-white flex items-center gap-2 shadow-xl">
-                                <span>View Case Study</span>
-                                <iconify-icon icon="lucide:arrow-right" class="text-sm text-[#0adee5]"></iconify-icon>
-                            </span>
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./case_study_aruna.html" class="block" title="View Ace Real Estate Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/aruna.png" alt="Ace Real Estate"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
                         </div>
                     </a>
                 </div>
-
-                <div class="lg:col-span-5 space-y-4 pl-0 lg:pl-4">
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
                     <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/70">Frontend / Real
                         Estate</span>
                     <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Aruna Real Estate
                     </h3>
-                    <!-- <p class="text-neutral-400 text-sm sm:text-base leading-relaxed"> Lorem, ipsum dolor sit amet
-                        consectetur adipisicing elit. Odio id quisquam culpa rem at! Minus tempora consequatur
-                        consectetur labore explicabo sequi fuga quam fugit, dignissimos, reprehenderit delectus
-                        excepturi accusamus officiis!
-                    </p> -->
                     <div class="pt-2">
                         <a href="file:///Users/armanii/Ace-real-estate/index.html" target="_blank"
                             class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
@@ -130,161 +164,29 @@
                 </div>
             </div>
 
-            <!-- PROJECT 2 (Text Left, Image Right) -->
+            <!-- PROJECT 2 -->
             <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
                 data-category="frontend">
-                <div class="lg:col-span-5 space-y-4 pr-0 lg:pr-4 order-2 lg:order-1">
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./case_study_plug.html" class="block" title="View Plugonjerseys Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/plugonjerseys.png" alt="Plug On Jerseys"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
                     <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/70">Frontend /
                         E-Commerce</span>
                     <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Plugonjerseys
                     </h3>
-                    <!-- <p class="text-neutral-400 text-sm sm:text-base leading-relaxed"> Lorem, ipsum dolor sit amet
-                        consectetur adipisicing elit. Odio id quisquam culpa rem at! Minus tempora consequatur
-                        consectetur labore explicabo sequi fuga quam fugit, dignissimos, reprehenderit delectus
-                        excepturi accusamus officiis!
-                    </p> -->
-                    <div class="pt-2">
-                        <a href="https://www.plugonjerseys.com" target="_blank"
-                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
-                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
-                        </a>
-                    </div>
-                </div>
-                <div class="lg:col-span-7 relative group order-1 lg:order-2">
-                    <div
-                        class="w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
-                        <img src="./image/plugonjerseys.png" alt="Plug On Jerseys"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROJECT 3 (Image Left, Text Right) -->
-            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
-                data-category="uiux">
-                <div class="lg:col-span-7 relative group ">
-                    <div
-                        class="w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
-                        <img src="./image/living.png" alt="Authenticated Watch Hub"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
-                    </div>
-                </div>
-                <div class="lg:col-span-5 space-y-4 pl-0 lg:pl-4">
-                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">Frontend /
-                        E-Commerce</span>
-                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Authenticated
-                        Watch Hub</h3>
-                    <!-- <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">lorem ipsum dolor sit amet
-                        consectetur adipisicing elit. Odio id quisquam culpa rem at! Minus tempora consequatur
-                        consectetur labore explicabo sequi fuga quam fugit, dignissimos, reprehenderit delectus
-                        excepturi accusamus officiis!</p> -->
-                    <div class="pt-2">
-                       <a href="https://www.plugonjerseys.com" target="_blank"
-                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
-                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROJECT 4 (Text Left, Image Right) -->
-            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
-                data-category="mobile">
-                <div class="lg:col-span-5 space-y-4 pr-0 lg:pr-4 order-2 lg:order-1">
-                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">Mobile App /
-                        Flutter</span>
-                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">DartCross Mobile
-                        App</h3>
-                    <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">Cross-platform mobile application
-                        framework built with Flutter and Dart, focused on smooth navigation and state structure.</p>
-                    <div class="pt-2">
-                      <a href=""
-                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
-                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
-                        </a>
-                    </div>
-                </div>
-                <div class="lg:col-span-7 relative group order-1 lg:order-2">
-                     <div
-                        class="w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
-                        <img src="./image/guideapp.png" alt="Plug On Jerseys"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROJECT 5 (Image Left, Text Right) -->
-            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
-                data-category="frontend">
-                <div class="lg:col-span-7 relative group">
-                    <div
-                        class="w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
-                        <img src="./image/plugonjerseys.png" alt="Plug On Jerseys"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
-                    </div>
-                </div>
-                <div class="lg:col-span-5 space-y-4 pl-0 lg:pl-4">
-                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">Frontend /
-                        Dashboard</span>
-                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Course
-                        Registration System</h3>
-                    <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">Optimized team eProject interface
-                        built for seamless student course management, integrated with clean data presentation layouts.
-                    </p>
-                    <div class="pt-2">
-                         <a href="https://www.plugonjerseys.com" target="_blank"
-                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
-                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROJECT 6 (Text Left, Image Right) -->
-            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
-                data-category="uiux">
-                <div class="lg:col-span-5 space-y-4 pr-0 lg:pr-4 order-2 lg:order-1">
-                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">UI/UX /
-                        FinTech</span>
-                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">PayFlow Dashboard
-                        UI</h3>
-                    <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">Comprehensive user interface design
-                        featuring detailed financial analytics widgets, dark theme visual hierarchy, and smooth user
-                        flows.</p>
-                    <div class="pt-2">
-                      <a href="./image/authentication.png" target="_blank"
-                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
-                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
-                        </a>
-                    </div>
-                </div>
-                <div class="lg:col-span-7 relative group order-1 lg:order-2">
-                    <div
-                        class="w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
-                        <img src="./image/authentication.png" alt="Plug On Jerseys"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
-                    </div>
-                </div>
-            </div>
-
-            <!-- PROJECT 7 (Image Left, Text Right) -->
-            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
-                data-category="uiux">
-                <div class="lg:col-span-7 relative group">
-                    <div
-                        class="w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
-                        <img src="./image/sleek.png" alt="Plug On Jerseys"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
-                    </div>
-                </div>
-                <div class="lg:col-span-5 space-y-4 pl-0 lg:pl-4">
-                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">Mobile App /
-                        Utility</span>
-                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">ScentVault Mobile
-                        Companion</h3>
-                    <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">A conceptual mobile utility
-                        application designed for tracking fragrance profiles, longevity stats, and custom collection
-                        layering options.</p>
                     <div class="pt-2">
                         <a href="https://www.plugonjerseys.com" target="_blank"
                             class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
@@ -294,68 +196,255 @@
                 </div>
             </div>
 
-            <!-- PROJECT 8 (Text Left, Image Right) -->
-            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
-                data-category="frontend">
-                <div class="lg:col-span-5 space-y-4 pr-0 lg:pr-4 order-2 lg:order-1">
-                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">Frontend /
-                        Portfolio</span>
-                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Personal Gadgets
-                        Site</h3>
-                    <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">Static showcase layout engineered
-                        to highlight minimal design aesthetics, custom typography, and rapid Netlify deployment
-                        performance.</p>
-                    <div class="pt-2">
-                         <a href="https://www.plugonjerseys.com" target="_blank"
-                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
-                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
-                        </a>
-                    </div>
-                </div>
-                <div class="lg:col-span-7 relative group order-1 lg:order-2">
-                    <div
-                        class="w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1">
-                        <img src="./image/plugonjerseys.png" alt="Plug On Jerseys"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- PROJECT 9 (Image Left, Text Right) -->
-           <!-- PROJECT 1 (Image Left, Text Right) -->
+            <!-- PROJECT 3 -->
             <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
                 data-category="uiux">
-                <div class="lg:col-span-7 relative group">
-                    <a href="./coming_soon.html"
-                        class="block w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-1 relative"
-                        title="View Ace Real Estate Case Study">
-                        <img src="./image/ujobme.png" alt="Ace Real Estate"
-                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
-                        <!-- Subtle Overlay Badge on Hover -->
-                        <div
-                            class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                            <span
-                                class="px-4 py-2 rounded-full bg-neutral-900/90 border border-white/20 text-xs font-mono uppercase tracking-wider text-white flex items-center gap-2 shadow-xl">
-                                <span>View Case Study</span>
-                                <iconify-icon icon="lucide:arrow-right" class="text-sm text-[#0adee5]"></iconify-icon>
-                            </span>
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./ux_caseStudy_crestone.html" class="block" title="View Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/living.png" alt="Authenticated Watch Hub"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
                         </div>
                     </a>
                 </div>
-
-                <div class="lg:col-span-5 space-y-4 pl-0 lg:pl-4">
-                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/70">Frontend / Real
-                        Estate</span>
-                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Aruna Real Estate
-                    </h3>
-                    <!-- <p class="text-neutral-400 text-sm sm:text-base leading-relaxed"> Lorem, ipsum dolor sit amet
-                        consectetur adipisicing elit. Odio id quisquam culpa rem at! Minus tempora consequatur
-                        consectetur labore explicabo sequi fuga quam fugit, dignissimos, reprehenderit delectus
-                        excepturi accusamus officiis!
-                    </p> -->
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">Frontend /
+                        Portfolio</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Crestone Living
+                        Watch Hub</h3>
                     <div class="pt-2">
-                        <a href="file:///Users/armanii/Ace-real-estate/index.html" target="_blank"
+                       <a href="./coming_soon.html" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 4 -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="mobile">
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./flutter_casestudy_guideapp.html" class="block" title="View Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/guideapp.png" alt="DartCross Mobile App"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">Mobile App /
+                        Flutter</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Sustainable Living Guide app
+                        </h3>
+                    <div class="pt-2">
+                      <a href="./coming_soon.html"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 5 -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="frontend">
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./case_study_awh.html" class="block" title="View Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/awh.png" alt="Course Registration System"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">Frontend /
+                        E-Commerce</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Authenticated Watch Hub
+                         </h3>
+                    <div class="pt-2">
+                         <a href="https://acetekh.io/authentic_watch_hub" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 6 -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="uiux">
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./case_study_authentication.html" class="block" title="View Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/authentication.png" alt="PayFlow Dashboard UI"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">UI/UX /
+                        Authentication</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Authentication Login
+                        UI</h3>
+                    <div class="pt-2">
+                      <a href="./coming_soon.html" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 7 -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="uiux">
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./case_study_sleek.html" class="block" title="View Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/sleek.png" alt="ScentVault Mobile Companion"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">UI/UX /
+                        E-Commerce</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Sleek 
+                        </h3>
+                    <div class="pt-2">
+                        <a href="./coming_soon.html" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 8 -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="frontend">
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./case_study_pmc.html" class="block" title="View Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/pmc.png" alt="Personal Gadgets Site"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">Frontend /
+                        Healthcare</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">PMC 
+                        </h3>
+                    <div class="pt-2">
+                         <a href="https://acetekh.github.io/pmc/" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 9 -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="uiux">
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./case_study_ujobme.html" class="block" title="View Ujobme Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/ujobme.png" alt="Ujobme"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/70">UI/UX / Job platform
+                        </span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Ujobme
+                    </h3>
+                    <div class="pt-2">
+                        <a href="./coming_soon.html" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 10 (duplicate "Crestone Living" entry from the source) -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="frontend">
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./case_study_crestone_living.html" class="block" title="View Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/living.png" alt="Personal Gadgets Site"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">Frontend /
+                        Interior decor</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Crestone Living
+                        </h3>
+                    <div class="pt-2">
+                         <a href="https://acetekh.github.io/Living/" target="_blank"
                             class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
                             <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
                         </a>
@@ -366,8 +455,8 @@
         </div>
     </main>
 
-    <!-- FLOATING HOVER NAV WIDGET (Bottom Right / Center Pill) -->
-    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+    <!-- FLOATING SPEAK TO ME WIDGET (Bottom Right, Stacked Above AI Assistant) -->
+    <div class="fixed bottom-[95px] right-6 z-50">
         <div
             class="group flex items-center gap-3 px-5 py-3 bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full shadow-2xl transition-all duration-300">
             <span class="w-2 h-2 rounded-full bg-[#0adee5] animate-pulse"></span>
@@ -403,7 +492,7 @@
             latest work below.
         </p>
     </div>
-
+    
     <!-- SCRIPTS FOR LIVE CLOCK, FILTER & AI HINTS -->
     <script>
         // Live Lagos Clock Function (Hours and Minutes only)
@@ -418,8 +507,39 @@
         setInterval(updateClock, 1000);
         updateClock();
 
-        // Project Filtering Function
+        // ================= DYNAMIC LEFT/RIGHT ALTERNATION =================
+        // Tracks which filter is active and alternates media-left / media-right
+        // across the cards that WILL be visible for that filter — computed from
+        // the target category, not from current display state, so it stays
+        // correct even mid-transition.
+        let currentFilter = 'all';
+
+        function syncAlternation() {
+            const visibleItems = Array.from(document.querySelectorAll('.project-item'))
+                .filter(item => currentFilter === 'all' || item.getAttribute('data-category') === currentFilter);
+
+            visibleItems.forEach((item, index) => {
+                const media = item.querySelector('[data-role="media"]');
+                const text = item.querySelector('[data-role="text"]');
+                if (!media || !text) return;
+
+                const shouldMirror = index % 2 === 1; // 2nd, 4th, 6th... visible card
+                if (shouldMirror) {
+                    text.classList.add('order-2', 'lg:order-1');
+                    media.classList.add('order-1', 'lg:order-2');
+                } else {
+                    text.classList.remove('order-2', 'lg:order-1');
+                    media.classList.remove('order-1', 'lg:order-2');
+                }
+            });
+        }
+
+        // ================= ANIMATED FILTER TRANSITIONS =================
+        // Cards fade + settle in/out instead of snapping, respecting
+        // prefers-reduced-motion.
         function filterProjects(category) {
+            currentFilter = category;
+
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => {
                 if (btn.getAttribute('data-filter') === category) {
@@ -431,15 +551,69 @@
                 }
             });
 
-            const items = document.querySelectorAll('.project-item');
-            items.forEach(item => {
-                if (category === 'all' || item.getAttribute('data-category') === category) {
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            document.querySelectorAll('.project-item').forEach(item => {
+                const shouldShow = category === 'all' || item.getAttribute('data-category') === category;
+
+                if (shouldShow) {
                     item.style.display = 'grid';
+                    if (prefersReduced) {
+                        item.classList.remove('item-hidden');
+                    } else {
+                        // Double rAF so the browser registers the "hidden" state
+                        // before we remove it, guaranteeing the fade-in actually
+                        // transitions instead of jumping straight to visible.
+                        requestAnimationFrame(() => {
+                            requestAnimationFrame(() => item.classList.remove('item-hidden'));
+                        });
+                    }
                 } else {
-                    item.style.display = 'none';
+                    if (prefersReduced) {
+                        item.style.display = 'none';
+                        item.classList.add('item-hidden');
+                    } else {
+                        item.classList.add('item-hidden');
+                        setTimeout(() => {
+                            if (item.classList.contains('item-hidden')) {
+                                item.style.display = 'none';
+                            }
+                        }, 400);
+                    }
                 }
             });
+
+            syncAlternation();
         }
+
+        // Set the correct alternation for the initial "All" view on page load
+        syncAlternation();
+
+        // ================= TILT-ON-HOVER =================
+        // Subtle mouse-follow tilt on each project image card. Skipped for
+        // touch devices (no hover) and for prefers-reduced-motion.
+        function initTiltEffect() {
+            const supportsHover = window.matchMedia('(hover: hover)').matches;
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (!supportsHover || prefersReduced) return;
+
+            const maxTilt = 7; // degrees — kept subtle
+            document.querySelectorAll('.tilt-card').forEach((card) => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width - 0.5;
+                    const y = (e.clientY - rect.top) / rect.height - 0.5;
+                    const rotateY = x * maxTilt * 2;
+                    const rotateX = -y * maxTilt * 2;
+                    card.style.transform =
+                        `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px) scale3d(1.015,1.015,1.015)`;
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0) scale3d(1,1,1)';
+                });
+            });
+        }
+        initTiltEffect();
 
         // AI Assistant Dynamic Hints Manager for Projects Page
         document.addEventListener('DOMContentLoaded', () => {
@@ -455,7 +629,7 @@
 
             // Initial welcome sequence sequence
             setTimeout(() => {
-                setAIMessage('<span class="text-[#0adee5] font-semibold">AI Assistant:</span> Click to view case study or click the live link arrow on any project card.');
+                setAIMessage('<span class="text-[#0adee5] font-semibold">AI Assistant:</span> Click to view case study or the live link arrow on any project card.');
             }, 4500);
 
             setTimeout(() => {
@@ -501,7 +675,7 @@
                 if (index === 0) {
                     setAIMessage('<span class="text-[#0adee5] font-semibold">Case Study:</span> Click to view the Ace Real Estate case study');
                 } else {
-                    setAIMessage('<span class="text-[#0adee5] font-semibold">Live Link:</span> Click to open the live deployment');
+                    setAIMessage('<span class="text-[#0adee5] font-semibold">Live Link:</span> Click to open live deployment');
                 }
             });
             link.addEventListener('mouseleave', () => {
