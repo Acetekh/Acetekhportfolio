@@ -24,11 +24,13 @@
             font-family: 'Inter', sans-serif;
             background-color: #070707;
             color: #ffffff;
-            
+
         }
-html {
+
+        html {
             scroll-behavior: smooth;
         }
+
         .font-mono {
             font-family: 'JetBrains Mono', monospace;
         }
@@ -155,163 +157,182 @@ html {
             }
         }
 
-          /* Gentle floating animation for the About section skill pills */
-    @keyframes gentle-float {
-        0%, 100% { transform: translateY(0) rotate(var(--rot, 0deg)); }
-        50% { transform: translateY(-10px) rotate(var(--rot, 0deg)); }
-    }
-    .floating-pill {
-        animation: gentle-float 6s ease-in-out infinite;
-    }
+        /* Gentle floating animation for the About section skill pills */
+        @keyframes gentle-float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(var(--rot, 0deg));
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(var(--rot, 0deg));
+            }
+        }
+
+        .floating-pill {
+            animation: gentle-float 6s ease-in-out infinite;
+        }
     </style>
 </head>
 
 <body class="min-h-screen flex flex-col justify-between relative overflow-x-hidden pb-28">
 
     <!-- NAVBAR / HEADER -->
-<header class="fixed top-0 left-0 right-0 z-50 w-full bg-neutral-950/50 backdrop-blur-md border-b border-white/10 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 grid grid-cols-3 items-center gap-1 sm:gap-3">
+    <header
+        class="fixed top-0 left-0 right-0 z-50 w-full bg-neutral-950/50 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 grid grid-cols-3 items-center gap-1 sm:gap-3">
 
-        <!-- Left: Logo -->
-        <a href="./index.html" class="justify-self-start text-sm sm:text-lg font-bold tracking-wider text-white flex-shrink-0 hover:text-neutral-400 transition-colors">
-            ACETEKH
-        </a>
+            <!-- Left: Logo -->
+            <a href="./index.html"
+                class="justify-self-start text-sm sm:text-lg font-bold tracking-wider text-white flex-shrink-0 hover:text-neutral-400 transition-colors">
+                ACETEKH
+            </a>
 
-        <!-- Center: Social Icons -->
-        <div
-            class="justify-self-center flex items-center gap-2 sm:gap-4 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-full flex-shrink-0">
-            <a href="#" class="text-neutral-400 hover:text-white transition-colors">
-                <iconify-icon icon="simple-icons:x" class="text-xs sm:text-sm"></iconify-icon>
-            </a>
-            <a href="#" class="text-neutral-400 hover:text-white transition-colors">
-                <iconify-icon icon="simple-icons:github" class="text-xs sm:text-sm"></iconify-icon>
-            </a>
-            <a href="#" class="text-neutral-400 hover:text-[#E4405F] transition-colors">
-                <iconify-icon icon="simple-icons:instagram" class="text-xs sm:text-sm"></iconify-icon>
-            </a>
-            <a href="#" class="text-neutral-400 hover:text-[#25D366] transition-colors">
-                <iconify-icon icon="simple-icons:whatsapp" class="text-xs sm:text-sm"></iconify-icon>
-            </a>
+            <!-- Center: Social Icons -->
+            <div
+                class="justify-self-center flex items-center gap-2 sm:gap-4 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-full flex-shrink-0">
+                <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                    <iconify-icon icon="simple-icons:x" class="text-xs sm:text-sm"></iconify-icon>
+                </a>
+                <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                    <iconify-icon icon="simple-icons:github" class="text-xs sm:text-sm"></iconify-icon>
+                </a>
+                <a href="#" class="text-neutral-400 hover:text-[#E4405F] transition-colors">
+                    <iconify-icon icon="simple-icons:instagram" class="text-xs sm:text-sm"></iconify-icon>
+                </a>
+                <a href="#" class="text-neutral-400 hover:text-[#25D366] transition-colors">
+                    <iconify-icon icon="simple-icons:whatsapp" class="text-xs sm:text-sm"></iconify-icon>
+                </a>
+            </div>
+
+            <!-- Right: Location & Time Widget -->
+            <div
+                class="justify-self-end flex items-center gap-1 sm:gap-2 text-[9px] sm:text-xs font-mono text-neutral-400 flex-shrink-0">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0adee5] animate-pulse flex-shrink-0"></span>
+                <span>Lagos</span>
+                <span>•</span>
+                <span id="live-clock">04:38 PM</span>
+            </div>
+
         </div>
+    </header>
 
-        <!-- Right: Location & Time Widget -->
-        <div class="justify-self-end flex items-center gap-1 sm:gap-2 text-[9px] sm:text-xs font-mono text-neutral-400 flex-shrink-0">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#0adee5] animate-pulse flex-shrink-0"></span>
-            <span>Lagos</span>
-            <span>•</span>
-            <span id="live-clock">04:38 PM</span>
-        </div>
-
-    </div>
-</header>
-
-<!-- MAIN CONTENT CONTAINER -->
+    <!-- MAIN CONTENT CONTAINER -->
     <main class="w-full max-w-7xl mx-auto px-4 py-8 flex-grow">
 
-  <section id="home"
-        class="min-h-[75vh] mt-5 flex flex-col justify-center items-center text-center px-4 py-12 relative overflow-hidden">
- 
-    
+        <section id="home"
+            class="min-h-[75vh] mt-5 flex flex-col justify-center items-center text-center px-4 py-12 relative overflow-hidden">
 
-        <!-- Particle Constellation Canvas — scoped to this section only, faster parallax layer -->
-        <canvas id="hero-particle-canvas" class="absolute inset-0 pointer-events-none z-0"></canvas>
- 
-        <!-- Content wrapper: sits above the canvas -->
-        <div class="relative z-10 w-full flex flex-col items-center">
- 
-            <!-- Availability Badge -->
-            <div
-                class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-neutral-900 border border-white/10 text-neutral-300 text-xs font-medium tracking-wide mb-8 shadow-inner">
-                <span class="w-2 h-2 rounded-full bg-[#0adee5] animate-pulse"></span>
-                <span class="text-neutral-200">Available for Work</span>
-            </div>
- 
-           <!-- Giant Dynamic Title Grid -->
-            <div class="space-y-1 mb-10 max-w-5xl mx-auto">
-                <h2 class="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight uppercase text-neutral-500">
-                    CREATIVE
-                </h2>
-                <!-- Dynamic Rotating Skill Line -->
-                <div class="h-[55px] sm:h-[85px] md:h-[110px] overflow-hidden flex justify-center items-center">
-                    <span id="rotating-skill"
-                        class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter uppercase text-white transition-all duration-500 transform translate-y-0 opacity-100 block">
-                        FRONTEND DEV
-                    </span>
+
+
+            <!-- Particle Constellation Canvas — scoped to this section only, faster parallax layer -->
+            <canvas id="hero-particle-canvas" class="absolute inset-0 pointer-events-none z-0"></canvas>
+
+            <!-- Content wrapper: sits above the canvas -->
+            <div class="relative z-10 w-full flex flex-col items-center">
+
+                <!-- Availability Badge -->
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-neutral-900 border border-white/10 text-neutral-300 text-xs font-medium tracking-wide mb-8 shadow-inner">
+                    <span class="w-2 h-2 rounded-full bg-[#0adee5] animate-pulse"></span>
+                    <span class="text-neutral-200">Available for Work</span>
                 </div>
-            </div>
- 
-            <!-- DUAL CTA BUTTONS (HIRE ME LEFT, RESUME RIGHT) -->
-            <div class="mt-4 sm:mt-2 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 z-10 relative mb-16">
- 
-                <!-- Hire Me Button (Left) -->
-                <a href="#contact"
-                    class="relative group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-[#0adee5]/10 hover:bg-[#0adee5]/20 backdrop-blur-md border border-[#0adee5]/30 transition-all duration-300">
-                    <span
-                        class="absolute top-0 left-0 w-2.5 h-2.5 border-t-2 border-l-2 border-[#0adee5] pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"></span>
-                    <span
-                        class="absolute top-0 right-0 w-2.5 h-2.5 border-t-2 border-r-2 border-[#0adee5] pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></span>
-                    <span
-                        class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b-2 border-l-2 border-[#0adee5] pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:translate-y-0.5"></span>
-                    <span
-                        class="absolute bottom-0 right-0 w-2.5 h-2.5 border-b-2 border-r-2 border-[#0adee5] pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"></span>
-                    <span
-                        class="text-xs sm:text-sm font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2.5 whitespace-nowrap">
-                        Hire Me
-                    </span>
-                </a>
- 
-                <!-- View Resume Button (Right) -->
-                <a href="./Philip_Clement_Frontend_UIUX_CV.pdf" target="_blank" rel="noopener noreferrer"
-                    class="relative group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300">
-                    <span
-                        class="absolute top-0 left-0 w-2.5 h-2.5 border-t-2 border-l-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"></span>
-                    <span
-                        class="absolute top-0 right-0 w-2.5 h-2.5 border-t-2 border-r-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></span>
-                    <span
-                        class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b-2 border-l-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:translate-y-0.5"></span>
-                    <span
-                        class="absolute bottom-0 right-0 w-2.5 h-2.5 border-b-2 border-r-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"></span>
-                    <span
-                        class="text-xs sm:text-sm font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2.5 whitespace-nowrap">
-                        View Resume
-                        <iconify-icon icon="lucide:arrow-up-right"
-                            class="text-base text-[#0adee5] transition-transform duration-300 group-hover:translate-x-1"></iconify-icon>
-                    </span>
-                </a>
- 
-            </div>
- 
-            <!-- Quick Stats Counter Row -->
-            <div id="stats-section"
-                class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-16 max-w-3xl w-full pt-10 border-t border-white/10 break-words">
-                <div class="flex flex-col items-center">
-                    <span class="text-3xl sm:text-5xl font-black font-mono tracking-tight text-white flex items-center">
-                        <span class="counter" data-target="15">0</span><span>+</span>
-                    </span>
-                    <span class="text-[10px] sm:text-xs text-neutral-400 font-medium uppercase tracking-wider mt-2">Projects
-                        Built</span>
+
+                <!-- Giant Dynamic Title Grid -->
+                <div class="space-y-1 mb-10 max-w-5xl mx-auto">
+                    <h2
+                        class="text-3xl sm:text-5xl md:text-7xl font-extrabold tracking-tight uppercase text-neutral-500">
+                        CREATIVE
+                    </h2>
+                    <!-- Dynamic Rotating Skill Line -->
+                    <div class="h-[55px] sm:h-[85px] md:h-[110px] overflow-hidden flex justify-center items-center">
+                        <span id="rotating-skill"
+                            class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter uppercase text-white transition-all duration-500 transform translate-y-0 opacity-100 block">
+                            FRONTEND DEV
+                        </span>
+                    </div>
                 </div>
- 
-                <div class="flex flex-col items-center">
-                    <span class="text-3xl sm:text-5xl font-black font-mono tracking-tight text-white flex items-center">
-                        <span class="counter" data-target="2">0</span><span>+</span>
-                    </span>
-                    <span class="text-[10px] sm:text-xs text-neutral-400 font-medium uppercase tracking-wider mt-2">Years
-                        Experience</span>
+
+                <!-- DUAL CTA BUTTONS (HIRE ME LEFT, RESUME RIGHT) -->
+                <div
+                    class="mt-4 sm:mt-2 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 z-10 relative mb-16">
+
+                    <!-- Hire Me Button (Left) -->
+                    <a href="#contact"
+                        class="relative group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-[#0adee5]/10 hover:bg-[#0adee5]/20 backdrop-blur-md border border-[#0adee5]/30 transition-all duration-300">
+                        <span
+                            class="absolute top-0 left-0 w-2.5 h-2.5 border-t-2 border-l-2 border-[#0adee5] pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"></span>
+                        <span
+                            class="absolute top-0 right-0 w-2.5 h-2.5 border-t-2 border-r-2 border-[#0adee5] pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></span>
+                        <span
+                            class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b-2 border-l-2 border-[#0adee5] pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:translate-y-0.5"></span>
+                        <span
+                            class="absolute bottom-0 right-0 w-2.5 h-2.5 border-b-2 border-r-2 border-[#0adee5] pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"></span>
+                        <span
+                            class="text-xs sm:text-sm font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2.5 whitespace-nowrap">
+                            Hire Me
+                        </span>
+                    </a>
+
+                    <!-- View Resume Button (Right) -->
+                    <a href="./Philip_Clement_Frontend_UIUX_CV.pdf" target="_blank" rel="noopener noreferrer"
+                        class="relative group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300">
+                        <span
+                            class="absolute top-0 left-0 w-2.5 h-2.5 border-t-2 border-l-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"></span>
+                        <span
+                            class="absolute top-0 right-0 w-2.5 h-2.5 border-t-2 border-r-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></span>
+                        <span
+                            class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b-2 border-l-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:translate-y-0.5"></span>
+                        <span
+                            class="absolute bottom-0 right-0 w-2.5 h-2.5 border-b-2 border-r-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"></span>
+                        <span
+                            class="text-xs sm:text-sm font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2.5 whitespace-nowrap">
+                            View Resume
+                            <iconify-icon icon="lucide:arrow-up-right"
+                                class="text-base text-[#0adee5] transition-transform duration-300 group-hover:translate-x-1"></iconify-icon>
+                        </span>
+                    </a>
+
                 </div>
- 
-                <div class="flex flex-col items-center">
-                    <span class="text-3xl sm:text-5xl font-black font-mono tracking-tight text-white flex items-center">
-                        <span class="counter" data-target="100">0</span><span>%</span>
-                    </span>
-                    <span class="text-[10px] sm:text-xs text-neutral-400 font-medium uppercase tracking-wider mt-2">Client
-                        Satisfaction</span>
+
+                <!-- Quick Stats Counter Row -->
+                <div id="stats-section"
+                    class="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-16 max-w-3xl w-full pt-10 border-t border-white/10 break-words">
+                    <div class="flex flex-col items-center">
+                        <span
+                            class="text-3xl sm:text-5xl font-black font-mono tracking-tight text-white flex items-center">
+                            <span class="counter" data-target="15">0</span><span>+</span>
+                        </span>
+                        <span
+                            class="text-[10px] sm:text-xs text-neutral-400 font-medium uppercase tracking-wider mt-2">Projects
+                            Built</span>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <span
+                            class="text-3xl sm:text-5xl font-black font-mono tracking-tight text-white flex items-center">
+                            <span class="counter" data-target="2">0</span><span>+</span>
+                        </span>
+                        <span
+                            class="text-[10px] sm:text-xs text-neutral-400 font-medium uppercase tracking-wider mt-2">Years
+                            Experience</span>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <span
+                            class="text-3xl sm:text-5xl font-black font-mono tracking-tight text-white flex items-center">
+                            <span class="counter" data-target="100">0</span><span>%</span>
+                        </span>
+                        <span
+                            class="text-[10px] sm:text-xs text-neutral-400 font-medium uppercase tracking-wider mt-2">Client
+                            Satisfaction</span>
+                    </div>
                 </div>
+
             </div>
- 
-        </div>
-    </section>
-           <!-- Scroll Down Indicator -->
+        </section>
+        <!-- Scroll Down Indicator -->
         <a href="#featured-work" class="flex flex-col items-center text-neutral-500 group cursor-pointer">
             <!-- <span class="text-[10px] uppercase font-mono tracking-widest text-neutral-400 group-hover:text-white transition-colors">Scroll</span> -->
             <iconify-icon icon="lucide:arrow-down"
@@ -320,7 +341,7 @@ html {
 
         <!-- FEATURED PROJECTS SECTION -->
         <span id="featured-work"> </span>
-        <section  class="w-full max-w-6xl mx-auto px-4 py-16 sm:py-24" id="projects">
+        <section class="w-full max-w-6xl mx-auto px-4 py-16 sm:py-24" id="projects">
 
             <!-- Section Heading -->
             <div class="text-center mb-16 space-y-2">
@@ -354,10 +375,13 @@ html {
                             Aruna Real Estate
                         </h3>
                         <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio id quisquam culpa rem at! Minus tempora consequatur consectetur labore explicabo sequi fuga quam fugit, dignissimos, reprehenderit delectus excepturi accusamus officiis!
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio id quisquam culpa rem at!
+                            Minus tempora consequatur consectetur labore explicabo sequi fuga quam fugit, dignissimos,
+                            reprehenderit delectus excepturi accusamus officiis!
                         </p>
                         <div class="pt-2">
-                            <a href="file:///Users/armanii/Ace-real-estate/index.html" target="_blank" rel="noopener noreferrer"
+                            <a href="file:///Users/armanii/Ace-real-estate/index.html" target="_blank"
+                                rel="noopener noreferrer"
                                 class="w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
                                 <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
                             </a>
@@ -378,7 +402,9 @@ html {
                             Plugonjerseys
                         </h3>
                         <p class="text-neutral-400 text-sm sm:text-base leading-relaxed">
-                                                       Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio id quisquam culpa rem at! Minus tempora consequatur consectetur labore explicabo sequi fuga quam fugit, dignissimos, reprehenderit delectus excepturi accusamus officiis!
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio id quisquam culpa rem at!
+                            Minus tempora consequatur consectetur labore explicabo sequi fuga quam fugit, dignissimos,
+                            reprehenderit delectus excepturi accusamus officiis!
 
                         </p>
                         <div class="pt-2">
@@ -434,157 +460,183 @@ html {
             </div>
         </section>
 
-   <!-- ================= ABOUT ME SECTION ================= -->
-<section id="about" class="py-24 max-w-7xl mx-auto px-6 relative z-10">
+        <!-- ================= ABOUT ME SECTION ================= -->
+        <section id="about" class="py-24 max-w-7xl mx-auto px-6 relative z-10">
 
-    <!-- Section Title (Matching 'The Stack Behind' Style) -->
-    <div class="text-center mb-12">
-        <span class="text-xs uppercase font-mono tracking-widest text-neutral-400">About Me</span>
+            <!-- Section Title (Matching 'The Stack Behind' Style) -->
+            <div class="text-center mb-12">
+                <span class="text-xs uppercase font-mono tracking-widest text-neutral-400">About Me</span>
 
-        <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-white mt-2">
-            Crafting Digital <span class="text-neutral-500">Experiences</span>
-        </h2>
-    </div>
+                <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-white mt-2">
+                    Crafting Digital <span class="text-neutral-500">Experiences</span>
+                </h2>
+            </div>
 
-    <!-- Main Narrative Box + Floating Skill Pills -->
-    <div class="relative max-w-4xl mx-auto text-center space-y-6 mb-14">
+            <!-- Main Narrative Box + Floating Skill Pills -->
+            <div class="relative max-w-4xl mx-auto text-center space-y-6 mb-14">
 
-        <!-- ===== DESKTOP FLOATING PILLS (hidden below lg) ===== -->
-        <!-- Each side is a flex column spanning the full height of this box,
+                <!-- ===== DESKTOP FLOATING PILLS (hidden below lg) ===== -->
+                <!-- Each side is a flex column spanning the full height of this box,
              so the 3 pills auto-space themselves — no manual top/middle/bottom
              guessing, and no overlap regardless of paragraph length. -->
 
-        <!-- LEFT SIDE -->
-        <div class="hidden lg:flex flex-col justify-between absolute inset-y-2 -left-36 xl:-left-40 w-36 xl:w-44 pointer-events-none z-20">
+                <!-- LEFT SIDE -->
+                <div
+                    class="hidden lg:flex flex-col justify-between absolute inset-y-2 -left-36 xl:-left-40 w-36 xl:w-44 pointer-events-none z-20">
 
-            <div class="floating-pill flex items-center gap-2 bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full pl-2 pr-3 py-2 shadow-xl self-start"
-                style="--rot: -6deg; transform: rotate(-6deg); animation-delay: 0s;">
-                <span class="w-8 h-8 rounded-full bg-[#0adee5]/20 border border-[#0adee5]/30 flex items-center justify-center text-[#0adee5] flex-shrink-0">
-                    <iconify-icon icon="lucide:layout-template" class="text-base"></iconify-icon>
-                </span>
-                <span class="text-white text-sm font-medium whitespace-nowrap">UI/UX Design</span>
+                    <div class="floating-pill flex items-center gap-2 bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full pl-2 pr-3 py-2 shadow-xl self-start"
+                        style="--rot: -6deg; transform: rotate(-6deg); animation-delay: 0s;">
+                        <span
+                            class="w-8 h-8 rounded-full bg-[#0adee5]/20 border border-[#0adee5]/30 flex items-center justify-center text-[#0adee5] flex-shrink-0">
+                            <iconify-icon icon="lucide:layout-template" class="text-base"></iconify-icon>
+                        </span>
+                        <span class="text-white text-sm font-medium whitespace-nowrap">UI/UX Design</span>
+                    </div>
+
+                    <div class="floating-pill flex items-center gap-2 bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full pl-2 pr-3 py-2 shadow-xl self-end"
+                        style="--rot: 4deg; transform: rotate(4deg); animation-delay: 3s;">
+                        <span
+                            class="w-8 h-8 rounded-full bg-yellow-500/20 border border-yellow-400/30 flex items-center justify-center text-yellow-400 flex-shrink-0">
+                            <iconify-icon icon="lucide:smartphone" class="text-base"></iconify-icon>
+                        </span>
+                        <span class="text-white text-sm font-medium whitespace-nowrap">Responsive Design</span>
+                    </div>
+
+                    <div class="floating-pill flex items-center gap-2 bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full pl-2 pr-3 py-2 shadow-xl self-start"
+                        style="--rot: -4deg; transform: rotate(-4deg); animation-delay: 2.4s;">
+                        <span
+                            class="w-8 h-8 rounded-full bg-pink-500/20 border border-pink-400/30 flex items-center justify-center text-pink-400 flex-shrink-0">
+                            <iconify-icon icon="lucide:database" class="text-base"></iconify-icon>
+                        </span>
+                        <span class="text-white text-sm font-medium whitespace-nowrap">Database Design</span>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT SIDE -->
+                <div
+                    class="hidden lg:flex flex-col justify-between absolute inset-y-2 -right-36 xl:-right-40 w-36 xl:w-44 pointer-events-none z-20">
+
+                    <div class="floating-pill flex items-center gap-2 bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full pl-2 pr-3 py-2 shadow-xl self-end"
+                        style="--rot: 6deg; transform: rotate(6deg); animation-delay: 0.6s;">
+                        <span
+                            class="w-8 h-8 rounded-full bg-amber-500/20 border border-amber-400/30 flex items-center justify-center text-amber-400 flex-shrink-0">
+                            <iconify-icon icon="lucide:code-2" class="text-base"></iconify-icon>
+                        </span>
+                        <span class="text-white text-sm font-medium whitespace-nowrap">Frontend Dev</span>
+                    </div>
+
+                    <div class="floating-pill flex items-center gap-2 bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full pl-2 pr-3 py-2 shadow-xl self-end"
+                        style="--rot: -3deg; transform: rotate(-3deg); animation-delay: 1.8s;">
+                        <span
+                            class="w-8 h-8 rounded-full bg-sky-500/20 border border-sky-400/30 flex items-center justify-center text-sky-400 flex-shrink-0">
+                            <iconify-icon icon="logos:flutter" class="text-base"></iconify-icon>
+                        </span>
+                        <span class="text-white text-sm font-medium whitespace-nowrap">Flutter & Dart</span>
+                    </div>
+
+                    <div class="floating-pill flex items-center gap-2 bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full pl-2 pr-3 py-2 shadow-xl self-start"
+                        style="--rot: 3deg; transform: rotate(3deg); animation-delay: 1.2s;">
+                        <span
+                            class="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                            <iconify-icon icon="logos:figma" class="text-base"></iconify-icon>
+                        </span>
+                        <span class="text-white text-sm font-medium whitespace-nowrap">Figma Prototyping</span>
+                    </div>
+
+                </div>
+
+                <!-- ===== MOBILE FALLBACK: same 6 skills as a wrapped chip row (shown below lg) ===== -->
+                <div class="flex lg:hidden flex-wrap justify-center gap-2 mb-2">
+                    <span
+                        class="inline-flex items-center gap-1.5 bg-neutral-900/90 border border-white/10 rounded-full pl-1.5 pr-3 py-1.5">
+                        <span
+                            class="w-5 h-5 rounded-full bg-[#0adee5]/20 flex items-center justify-center text-[#0adee5]"><iconify-icon
+                                icon="lucide:layout-template" class="text-xs"></iconify-icon></span>
+                        <span class="text-white text-xs font-medium">UI/UX Design</span>
+                    </span>
+                    <span
+                        class="inline-flex items-center gap-1.5 bg-neutral-900/90 border border-white/10 rounded-full pl-1.5 pr-3 py-1.5">
+                        <span
+                            class="w-5 h-5 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400"><iconify-icon
+                                icon="lucide:code-2" class="text-xs"></iconify-icon></span>
+                        <span class="text-white text-xs font-medium">Frontend Dev</span>
+                    </span>
+                    <span
+                        class="inline-flex items-center gap-1.5 bg-neutral-900/90 border border-white/10 rounded-full pl-1.5 pr-3 py-1.5">
+                        <span
+                            class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400"><iconify-icon
+                                icon="lucide:smartphone" class="text-xs"></iconify-icon></span>
+                        <span class="text-white text-xs font-medium">Mobile App</span>
+                    </span>
+                    <span
+                        class="inline-flex items-center gap-1.5 bg-neutral-900/90 border border-white/10 rounded-full pl-1.5 pr-3 py-1.5">
+                        <span
+                            class="w-5 h-5 rounded-full bg-sky-500/20 flex items-center justify-center text-sky-400"><iconify-icon
+                                icon="logos:flutter" class="text-xs"></iconify-icon></span>
+                        <span class="text-white text-xs font-medium">Flutter & Dart</span>
+                    </span>
+                    <span
+                        class="inline-flex items-center gap-1.5 bg-neutral-900/90 border border-white/10 rounded-full pl-1.5 pr-3 py-1.5">
+                        <span
+                            class="w-5 h-5 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-400"><iconify-icon
+                                icon="lucide:database" class="text-xs"></iconify-icon></span>
+                        <span class="text-white text-xs font-medium">Database Design</span>
+                    </span>
+                    <span
+                        class="inline-flex items-center gap-1.5 bg-neutral-900/90 border border-white/10 rounded-full pl-1.5 pr-3 py-1.5">
+                        <span
+                            class="w-5 h-5 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-400"><iconify-icon
+                                icon="lucide:server" class="text-xs"></iconify-icon></span>
+                        <span class="text-white text-xs font-medium">SQL & MongoDB</span>
+                    </span>
+                </div>
+
+                <p class="text-neutral-400 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto pt-2">
+                    I'm a <strong class="text-white font-medium">Frontend Developer & UI/UX Designer</strong> who cares
+                    about how things look, feel, and function on screen. I build fast, responsive websites and mobile
+                    apps using modern web tools and Flutter.
+                </p>
+
+                <p class="text-neutral-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+                    From drafting wireframes in Figma to writing crisp frontend code and structuring databases, I bring
+                    projects from initial idea to production without cutting corners.
+                </p>
             </div>
 
-          <div class="floating-pill flex items-center gap-2 bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full pl-2 pr-3 py-2 shadow-xl self-end"
-    style="--rot: 4deg; transform: rotate(4deg); animation-delay: 3s;">
-    <span class="w-8 h-8 rounded-full bg-yellow-500/20 border border-yellow-400/30 flex items-center justify-center text-yellow-400 flex-shrink-0">
-        <iconify-icon icon="lucide:smartphone" class="text-base"></iconify-icon>
-    </span>
-    <span class="text-white text-sm font-medium whitespace-nowrap">Responsive Design</span>
-</div>
+            <!-- Centered Focus Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto" data-reveal-group>
 
-            <div class="floating-pill flex items-center gap-2 bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full pl-2 pr-3 py-2 shadow-xl self-start"
-                style="--rot: -4deg; transform: rotate(-4deg); animation-delay: 2.4s;">
-                <span class="w-8 h-8 rounded-full bg-pink-500/20 border border-pink-400/30 flex items-center justify-center text-pink-400 flex-shrink-0">
-                    <iconify-icon icon="lucide:database" class="text-base"></iconify-icon>
-                </span>
-                <span class="text-white text-sm font-medium whitespace-nowrap">Database Design</span>
+                <!-- UI/UX Card -->
+                <div
+                    class="reveal p-8 bg-[#0f0f11] border border-white/10 hover:border-neutral-500 rounded-2xl transition-all duration-300 text-left">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-[#0adee5]/10 border border-[#0adee5]/20 flex items-center justify-center text-[#0adee5] mb-5">
+                        <iconify-icon icon="lucide:layout-template" class="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-white font-bold text-xl mb-2">UI/UX & Interface Design</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">
+                        Figma wireframes, interactive prototypes, and design systems built with clear structure and
+                        typography.
+                    </p>
+                </div>
+
+                <!-- Frontend Card -->
+                <div
+                    class="reveal p-8 bg-[#0f0f11] border border-white/10 hover:border-neutral-500 rounded-2xl transition-all duration-300 text-left">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-[#0adee5]/10 border border-[#0adee5]/20 flex items-center justify-center text-[#0adee5] mb-5">
+                        <iconify-icon icon="lucide:code-2" class="text-2xl"></iconify-icon>
+                    </div>
+                    <h3 class="text-white font-bold text-xl mb-2">Frontend & Mobile Build</h3>
+                    <p class="text-neutral-400 text-sm leading-relaxed">
+                        Semantic web components, Tailwind CSS styling, and cross-platform apps built with Flutter &
+                        Dart.
+                    </p>
+                </div>
+
             </div>
-
-        </div>
-
-        <!-- RIGHT SIDE -->
-        <div class="hidden lg:flex flex-col justify-between absolute inset-y-2 -right-36 xl:-right-40 w-36 xl:w-44 pointer-events-none z-20">
-
-            <div class="floating-pill flex items-center gap-2 bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full pl-2 pr-3 py-2 shadow-xl self-end"
-                style="--rot: 6deg; transform: rotate(6deg); animation-delay: 0.6s;">
-                <span class="w-8 h-8 rounded-full bg-amber-500/20 border border-amber-400/30 flex items-center justify-center text-amber-400 flex-shrink-0">
-                    <iconify-icon icon="lucide:code-2" class="text-base"></iconify-icon>
-                </span>
-                <span class="text-white text-sm font-medium whitespace-nowrap">Frontend Dev</span>
-            </div>
-
-            <div class="floating-pill flex items-center gap-2 bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full pl-2 pr-3 py-2 shadow-xl self-end"
-                style="--rot: -3deg; transform: rotate(-3deg); animation-delay: 1.8s;">
-                <span class="w-8 h-8 rounded-full bg-sky-500/20 border border-sky-400/30 flex items-center justify-center text-sky-400 flex-shrink-0">
-                    <iconify-icon icon="logos:flutter" class="text-base"></iconify-icon>
-                </span>
-                <span class="text-white text-sm font-medium whitespace-nowrap">Flutter & Dart</span>
-            </div>
-
-           <div class="floating-pill flex items-center gap-2 bg-neutral-900/90 backdrop-blur-md border border-white/10 rounded-full pl-2 pr-3 py-2 shadow-xl self-start"
-    style="--rot: 3deg; transform: rotate(3deg); animation-delay: 1.2s;">
-    <span class="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-400 flex-shrink-0">
-        <iconify-icon icon="logos:figma" class="text-base"></iconify-icon>
-    </span>
-    <span class="text-white text-sm font-medium whitespace-nowrap">Figma Prototyping</span>
-</div>
-
-        </div>
-
-        <!-- ===== MOBILE FALLBACK: same 6 skills as a wrapped chip row (shown below lg) ===== -->
-        <div class="flex lg:hidden flex-wrap justify-center gap-2 mb-2">
-            <span class="inline-flex items-center gap-1.5 bg-neutral-900/90 border border-white/10 rounded-full pl-1.5 pr-3 py-1.5">
-                <span class="w-5 h-5 rounded-full bg-[#0adee5]/20 flex items-center justify-center text-[#0adee5]"><iconify-icon icon="lucide:layout-template" class="text-xs"></iconify-icon></span>
-                <span class="text-white text-xs font-medium">UI/UX Design</span>
-            </span>
-            <span class="inline-flex items-center gap-1.5 bg-neutral-900/90 border border-white/10 rounded-full pl-1.5 pr-3 py-1.5">
-                <span class="w-5 h-5 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400"><iconify-icon icon="lucide:code-2" class="text-xs"></iconify-icon></span>
-                <span class="text-white text-xs font-medium">Frontend Dev</span>
-            </span>
-            <span class="inline-flex items-center gap-1.5 bg-neutral-900/90 border border-white/10 rounded-full pl-1.5 pr-3 py-1.5">
-                <span class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400"><iconify-icon icon="lucide:smartphone" class="text-xs"></iconify-icon></span>
-                <span class="text-white text-xs font-medium">Mobile App</span>
-            </span>
-            <span class="inline-flex items-center gap-1.5 bg-neutral-900/90 border border-white/10 rounded-full pl-1.5 pr-3 py-1.5">
-                <span class="w-5 h-5 rounded-full bg-sky-500/20 flex items-center justify-center text-sky-400"><iconify-icon icon="logos:flutter" class="text-xs"></iconify-icon></span>
-                <span class="text-white text-xs font-medium">Flutter & Dart</span>
-            </span>
-            <span class="inline-flex items-center gap-1.5 bg-neutral-900/90 border border-white/10 rounded-full pl-1.5 pr-3 py-1.5">
-                <span class="w-5 h-5 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-400"><iconify-icon icon="lucide:database" class="text-xs"></iconify-icon></span>
-                <span class="text-white text-xs font-medium">Database Design</span>
-            </span>
-            <span class="inline-flex items-center gap-1.5 bg-neutral-900/90 border border-white/10 rounded-full pl-1.5 pr-3 py-1.5">
-                <span class="w-5 h-5 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-400"><iconify-icon icon="lucide:server" class="text-xs"></iconify-icon></span>
-                <span class="text-white text-xs font-medium">SQL & MongoDB</span>
-            </span>
-        </div>
-
-        <p class="text-neutral-400 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto pt-2">
-            I'm a <strong class="text-white font-medium">Frontend Developer & UI/UX Designer</strong> who cares
-            about how things look, feel, and function on screen. I build fast, responsive websites and mobile
-            apps using modern web tools and Flutter.
-        </p>
-
-        <p class="text-neutral-400 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-            From drafting wireframes in Figma to writing crisp frontend code and structuring databases, I bring
-            projects from initial idea to production without cutting corners.
-        </p>
-    </div>
-
-    <!-- Centered Focus Cards Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto" data-reveal-group>
-
-        <!-- UI/UX Card -->
-        <div
-            class="reveal p-8 bg-[#0f0f11] border border-white/10 hover:border-neutral-500 rounded-2xl transition-all duration-300 text-left">
-            <div
-                class="w-12 h-12 rounded-xl bg-[#0adee5]/10 border border-[#0adee5]/20 flex items-center justify-center text-[#0adee5] mb-5">
-                <iconify-icon icon="lucide:layout-template" class="text-2xl"></iconify-icon>
-            </div>
-            <h3 class="text-white font-bold text-xl mb-2">UI/UX & Interface Design</h3>
-            <p class="text-neutral-400 text-sm leading-relaxed">
-                Figma wireframes, interactive prototypes, and design systems built with clear structure and
-                typography.
-            </p>
-        </div>
-
-        <!-- Frontend Card -->
-        <div
-            class="reveal p-8 bg-[#0f0f11] border border-white/10 hover:border-neutral-500 rounded-2xl transition-all duration-300 text-left">
-            <div
-                class="w-12 h-12 rounded-xl bg-[#0adee5]/10 border border-[#0adee5]/20 flex items-center justify-center text-[#0adee5] mb-5">
-                <iconify-icon icon="lucide:code-2" class="text-2xl"></iconify-icon>
-            </div>
-            <h3 class="text-white font-bold text-xl mb-2">Frontend & Mobile Build</h3>
-            <p class="text-neutral-400 text-sm leading-relaxed">
-                Semantic web components, Tailwind CSS styling, and cross-platform apps built with Flutter &
-                Dart.
-            </p>
-        </div>
-
-    </div>
-</section>
+        </section>
 
 
         <!-- ================= SERVICES BENTO GRID SECTION ================= -->
@@ -732,7 +784,8 @@ html {
             </div>
 
             <!-- Tech Cards Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto" data-reveal-group>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto"
+                data-reveal-group>
 
                 <!-- 1. FIGMA -->
                 <div class="reveal group h-60 perspective-1000 relative overflow-hidden rounded-2xl">
@@ -1108,260 +1161,354 @@ html {
         </section>
 
 
-       <!-- ================= TESTIMONIALS SECTION ================= -->
-<section class="py-24 relative overflow-hidden z-10">
+        <!-- ================= TESTIMONIALS SECTION ================= -->
+        <section class="py-24 relative overflow-hidden z-10">
 
-    <!-- Section Header -->
-    <div class="text-center max-w-3xl mx-auto mb-16 px-6">
-        <span class="text-xs uppercase font-mono tracking-widest text-neutral-400 ">Testimonials</span>
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 px-6">
+                <span class="text-xs uppercase font-mono tracking-widest text-neutral-400 ">Testimonials</span>
 
-        <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight mt-2">
-            Don't just take my <span class="text-neutral-500">words for it</span>
-        </h2>
-        <p class="text-neutral-400 text-sm mt-3">
-            Words from people who've worked with me and experienced my process and results firsthand.
-        </p>
-    </div>
+                <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight mt-2">
+                    Don't just take my <span class="text-neutral-500">words for it</span>
+                </h2>
+                <p class="text-neutral-400 text-sm mt-3">
+                    Words from people who've worked with me and experienced my process and results firsthand.
+                </p>
+            </div>
 
-    <!-- Marquee Wrapper -->
-    <div class="marquee-container relative w-full overflow-hidden flex flex-col gap-6">
+            <!-- Marquee Wrapper -->
+            <div class="marquee-container relative w-full overflow-hidden flex flex-col gap-6">
 
-        <!-- Gradient Edge Blur Masks -->
-        <div class="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-48 bg-gradient-to-r from-black via-black/70 to-transparent z-20"></div>
-        <div class="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-48 bg-gradient-to-l from-black via-black/70 to-transparent z-20"></div>
-
-        <!-- ================= ROW 1: SCROLLS LEFT ================= -->
-        <div class="flex overflow-hidden">
-            <div class="animate-marquee-left flex gap-6">
-
-                <!-- === CARD 1: Harrison === -->
-                <div class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center gap-3">
-                                <img src="./image/male.png" alt="Harrison" class="w-10 h-10 rounded-full object-cover border border-white/10" />
-                                <div>
-                                    <div class="flex items-center gap-1.5">
-                                        <h4 class="text-white font-semibold text-sm">Harrison</h4>
-                                        <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
-                                            <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
-                                        </svg>
-                                    </div>
-                                    <p class="text-neutral-400 text-xs">UI/UX Designer</p>
-                                </div>
-                            </div>
-                            <iconify-icon icon="lucide:quote" class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
-                        </div>
-                        <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
-                            I’ve had the opportunity to see Bobby Philip Clement’s work as both a Frontend Engineer and UI/UX Designer, and one thing that stands out is his ability to bridge design and development seamlessly. He creates interfaces that are not only visually appealing but also intuitive, responsive, and user-focused. Bobby has a strong eye for detail, communicates ideas clearly, and approaches every project with professionalism and a problem solving mindset. Whether he’s designing user experiences in Figma or bringing them to life with clean, maintainable frontend code, he consistently delivers high quality results. I would confidently recommend Bobby to any team or organization looking for someone who combines technical expertise with a deep understanding of user-centered design. He’s a valuable asset to any product team.
-                        </p>
-                    </div>
-                    <button onclick="openTestimonialModal('Harrison', 'UI/UX Designer', './image/male.png', `I’ve had the opportunity to see Bobby Philip Clement’s work as both a Frontend Engineer and UI/UX Designer, and one thing that stands out is his ability to bridge design and development seamlessly. He creates interfaces that are not only visually appealing but also intuitive, responsive, and user-focused.\n\nBobby has a strong eye for detail, communicates ideas clearly, and approaches every project with professionalism and a problem solving mindset. Whether he’s designing user experiences in Figma or bringing them to life with clean, maintainable frontend code, he consistently delivers high quality results.\n\nI would confidently recommend Bobby to any team or organization looking for someone who combines technical expertise with a deep understanding of user-centered design. He’s a valuable asset to any product team.`)" class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
-                        Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
-                    </button>
+                <!-- Gradient Edge Blur Masks -->
+                <div
+                    class="pointer-events-none absolute inset-y-0 left-0 w-24 sm:w-48 bg-gradient-to-r from-black via-black/70 to-transparent z-20">
+                </div>
+                <div
+                    class="pointer-events-none absolute inset-y-0 right-0 w-24 sm:w-48 bg-gradient-to-l from-black via-black/70 to-transparent z-20">
                 </div>
 
-                <!-- === CARD 2: Samuel === -->
-                <div class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center gap-3">
-                                <img src="./image/male1.png" alt="Samuel" class="w-10 h-10 rounded-full object-cover border border-white/10" />
-                                <div>
-                                    <div class="flex items-center gap-1.5">
-                                        <h4 class="text-white font-semibold text-sm">Samuel</h4>
-                                        <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
-                                            <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
-                                        </svg>
+                <!-- ================= ROW 1: SCROLLS LEFT ================= -->
+                <div class="flex overflow-hidden">
+                    <div class="animate-marquee-left flex gap-6">
+
+                        <!-- === CARD 1: Harrison === -->
+                        <div
+                            class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <img src="./image/male.png" alt="Harrison"
+                                            class="w-10 h-10 rounded-full object-cover border border-white/10" />
+                                        <div>
+                                            <div class="flex items-center gap-1.5">
+                                                <h4 class="text-white font-semibold text-sm">Harrison</h4>
+                                                <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
+                                                </svg>
+                                            </div>
+                                            <p class="text-neutral-400 text-xs">UI/UX Designer</p>
+                                        </div>
                                     </div>
-                                    <p class="text-neutral-400 text-xs">Frontend Engineer</p>
+                                    <iconify-icon icon="lucide:quote"
+                                        class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
                                 </div>
+                                <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
+                                    I’ve had the opportunity to see Bobby Philip Clement’s work as both a Frontend
+                                    Engineer and UI/UX Designer, and one thing that stands out is his ability to bridge
+                                    design and development seamlessly. He creates interfaces that are not only visually
+                                    appealing but also intuitive, responsive, and user-focused. Bobby has a strong eye
+                                    for detail, communicates ideas clearly, and approaches every project with
+                                    professionalism and a problem solving mindset. Whether he’s designing user
+                                    experiences in Figma or bringing them to life with clean, maintainable frontend
+                                    code, he consistently delivers high quality results. I would confidently recommend
+                                    Bobby to any team or organization looking for someone who combines technical
+                                    expertise with a deep understanding of user-centered design. He’s a valuable asset
+                                    to any product team.
+                                </p>
                             </div>
-                            <iconify-icon icon="lucide:quote" class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
+                            <button
+                                onclick="openTestimonialModal('Harrison', 'UI/UX Designer', './image/male.png', `I’ve had the opportunity to see Bobby Philip Clement’s work as both a Frontend Engineer and UI/UX Designer, and one thing that stands out is his ability to bridge design and development seamlessly. He creates interfaces that are not only visually appealing but also intuitive, responsive, and user-focused.\n\nBobby has a strong eye for detail, communicates ideas clearly, and approaches every project with professionalism and a problem solving mindset. Whether he’s designing user experiences in Figma or bringing them to life with clean, maintainable frontend code, he consistently delivers high quality results.\n\nI would confidently recommend Bobby to any team or organization looking for someone who combines technical expertise with a deep understanding of user-centered design. He’s a valuable asset to any product team.`)"
+                                class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
+                                Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
+                            </button>
                         </div>
-                        <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
-                            I really like how clean and intentional your layouts feel. The typography choices show a strong sense of hierarchy, and the way you balance white space makes the content feel really approachable. Also, your project case studies tell a clear story, which makes it easy to see your thinking process. That’s a big plus.
-                        </p>
+
+                        <!-- === CARD 2: Samuel === -->
+                        <div
+                            class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <img src="./image/male1.png" alt="Samuel"
+                                            class="w-10 h-10 rounded-full object-cover border border-white/10" />
+                                        <div>
+                                            <div class="flex items-center gap-1.5">
+                                                <h4 class="text-white font-semibold text-sm">Samuel</h4>
+                                                <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
+                                                </svg>
+                                            </div>
+                                            <p class="text-neutral-400 text-xs">Frontend Engineer</p>
+                                        </div>
+                                    </div>
+                                    <iconify-icon icon="lucide:quote"
+                                        class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
+                                </div>
+                                <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
+                                    I really like how clean and intentional your layouts feel. The typography choices
+                                    show a strong sense of hierarchy, and the way you balance white space makes the
+                                    content feel really approachable. Also, your project case studies tell a clear
+                                    story, which makes it easy to see your thinking process. That’s a big plus.
+                                </p>
+                            </div>
+                            <button
+                                onclick="openTestimonialModal('Samuel', 'Frontend Engineer, Shopify', './image/male1.png', `I really like how clean and intentional your layouts feel. The typography choices show a strong sense of hierarchy, and the way you balance white space makes the content feel really approachable. Also, your project case studies tell a clear story, which makes it easy to see your thinking process. That’s a big plus.`)"
+                                class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
+                                Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
+                            </button>
+                        </div>
+
+                        <!-- === CARD 3: Vanessa === -->
+                        <div
+                            class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <img src="./image/female.png" alt="Vanessa"
+                                            class="w-10 h-10 rounded-full object-cover border border-white/10" />
+                                        <div>
+                                            <div class="flex items-center gap-1.5">
+                                                <h4 class="text-white font-semibold text-sm">Vanessa</h4>
+                                                <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
+                                                </svg>
+                                            </div>
+                                            <p class="text-neutral-400 text-xs">UI/UX Designer</p>
+                                        </div>
+                                    </div>
+                                    <iconify-icon icon="lucide:quote"
+                                        class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
+                                </div>
+                                <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
+                                    Working with Philip was an absolute pleasure. From start to finish, he was
+                                    professional, reliable, and incredibly easy to communicate with. He paid close
+                                    attention to detail, delivered exactly what was promised, and went above and beyond
+                                    to ensure everything turned out perfectly. His dedication, patience, and positive
+                                    attitude made the entire experience smooth and enjoyable. I truly appreciate his
+                                    hard work and would confidently recommend Philip to anyone looking for someone
+                                    dependable and excellent at what he does. Thank you, Philip, for such an outstanding
+                                    experience! </p>
+                            </div>
+                            <button
+                                onclick="openTestimonialModal('Vanessa', 'UI/UX Designer', './image/female.png', `Working with Philip was an absolute pleasure. From start to finish, he was professional, reliable, and incredibly easy to communicate with. He paid close attention to detail, delivered exactly what was promised, and went above and beyond to ensure everything turned out perfectly. His dedication, patience, and positive attitude made the entire experience smooth and enjoyable. I truly appreciate his hard work and would confidently recommend Philip to anyone looking for someone dependable and excellent at what he does. Thank you, Philip, for such an outstanding experience!.`)"
+                                class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
+                                Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
+                            </button>
+                        </div>
+
+                        <!-- === CARD 4: Obi === -->
+                        <div
+                            class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <img src="./image/male2.png" alt="Obi"
+                                            class="w-10 h-10 rounded-full object-cover border border-white/10" />
+                                        <div>
+                                            <div class="flex items-center gap-1.5">
+                                                <h4 class="text-white font-semibold text-sm">Obi</h4>
+                                                <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
+                                                </svg>
+                                            </div>
+                                            <p class="text-neutral-400 text-xs">Java Developer</p>
+                                        </div>
+                                    </div>
+                                    <iconify-icon icon="lucide:quote"
+                                        class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
+                                </div>
+                                <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
+                                    Phillip during the sustainability project demonstrated exemplary leadership,
+                                    integrity, and initiative. Additionally, he was communicative, reliable to his role
+                                    and organized with relevant files and resources.
+                                </p>
+                            </div>
+                            <button
+                                onclick="openTestimonialModal('Obi', 'Java Engineer', './image/male2.png', `Phillip during the sustainability project demonstrated exemplary leadership, integrity, and initiative. Additionally, he was communicative, reliable to his role and organized with relevant files and resources.`)"
+                                class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
+                                Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
+                            </button>
+                        </div>
+
                     </div>
-                    <button onclick="openTestimonialModal('Samuel', 'Frontend Engineer, Shopify', './image/male1.png', `I really like how clean and intentional your layouts feel. The typography choices show a strong sense of hierarchy, and the way you balance white space makes the content feel really approachable. Also, your project case studies tell a clear story, which makes it easy to see your thinking process. That’s a big plus.`)" class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
-                        Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
-                    </button>
                 </div>
 
-                <!-- === CARD 3: Vanessa === -->
-                <div class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center gap-3">
-                                <img src="./image/female.png" alt="Vanessa" class="w-10 h-10 rounded-full object-cover border border-white/10" />
-                                <div>
-                                    <div class="flex items-center gap-1.5">
-                                        <h4 class="text-white font-semibold text-sm">Vanessa</h4>
-                                        <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
-                                            <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
-                                        </svg>
-                                    </div>
-                                    <p class="text-neutral-400 text-xs">UI/UX Designer</p>
-                                </div>
-                            </div>
-                            <iconify-icon icon="lucide:quote" class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
-                        </div>
-                        <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
-Working with Philip was an absolute pleasure. From start to finish, he was professional, reliable, and incredibly easy to communicate with. He paid close attention to detail, delivered exactly what was promised, and went above and beyond to ensure everything turned out perfectly. His dedication, patience, and positive attitude made the entire experience smooth and enjoyable. I truly appreciate his hard work and would confidently recommend Philip to anyone looking for someone dependable and excellent at what he does. Thank you, Philip, for such an outstanding experience!                        </p>
-                    </div>
-                    <button onclick="openTestimonialModal('Vanessa', 'UI/UX Designer', './image/female.png', `Working with Philip was an absolute pleasure. From start to finish, he was professional, reliable, and incredibly easy to communicate with. He paid close attention to detail, delivered exactly what was promised, and went above and beyond to ensure everything turned out perfectly. His dedication, patience, and positive attitude made the entire experience smooth and enjoyable. I truly appreciate his hard work and would confidently recommend Philip to anyone looking for someone dependable and excellent at what he does. Thank you, Philip, for such an outstanding experience!.`)" class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
-                        Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
-                    </button>
-                </div>
 
-                <!-- === CARD 4: Obi === -->
-                <div class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center gap-3">
-                                <img src="./image/male2.png" alt="Obi" class="w-10 h-10 rounded-full object-cover border border-white/10" />
-                                <div>
-                                    <div class="flex items-center gap-1.5">
-                                        <h4 class="text-white font-semibold text-sm">Obi</h4>
-                                        <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
-                                            <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
-                                        </svg>
+                <!-- ================= ROW 2: SCROLLS RIGHT ================= -->
+                <div class="flex overflow-hidden">
+                    <div class="animate-marquee-right flex gap-6">
+
+                        <!-- === CARD 5: vivian === -->
+                        <div
+                            class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <img src="./image/female1.png" alt="Olivia"
+                                            class="w-10 h-10 rounded-full object-cover border border-white/10" />
+                                        <div>
+                                            <div class="flex items-center gap-1.5">
+                                                <h4 class="text-white font-semibold text-sm">Vivian </h4>
+                                                <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
+                                                </svg>
+                                            </div>
+                                            <p class="text-neutral-400 text-xs">Marketing</p>
+                                        </div>
                                     </div>
-                                    <p class="text-neutral-400 text-xs">Java Developer</p>
+                                    <iconify-icon icon="lucide:quote"
+                                        class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
                                 </div>
+                                <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
+                                    His work is clean, modern, and well presented he makes sure everything is well
+                                    planned and doesn't ignore any details.
+                                </p>
                             </div>
-                            <iconify-icon icon="lucide:quote" class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
+                            <button
+                                onclick="openTestimonialModal('Olivia Martinez', 'Creative Dev, Webflow', './image/female1.png', `His work is clean, modern, and polished. He consistently delivers mobile & web interfaces that feel intuitive and well-crafted.`)"
+                                class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
+                                Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
+                            </button>
                         </div>
-                        <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
-                            Phillip during the sustainability project demonstrated exemplary leadership, integrity, and initiative. Additionally, he was communicative, reliable to his role and organized with relevant files and resources.
-                        </p>
+
+                        <!-- === CARD 6: Felic === -->
+                        <div
+                            class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <img src="./image/male.png" alt="Felic"
+                                            class="w-10 h-10 rounded-full object-cover border border-white/10" />
+                                        <div>
+                                            <div class="flex items-center gap-1.5">
+                                                <h4 class="text-white font-semibold text-sm">Felix</h4>
+                                                <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
+                                                </svg>
+                                            </div>
+                                            <p class="text-neutral-400 text-xs">Software / Gym coach</p>
+                                        </div>
+                                    </div>
+                                    <iconify-icon icon="lucide:quote"
+                                        class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
+                                </div>
+                                <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
+                                    As a developer myself, I look up to Phillip for several reasons. What sets him apart
+                                    though, is that he doesn’t stop at the UI/UX part of development, He’s equally
+                                    strong in frontend development. He builds interfaces with React.js that feel clean
+                                    and he also has a real eye for how users actually experience the product. Underneath
+                                    the React sits solid fundamentals in HTML, well organized CSS, and modern JavaScript
+                                    that doesn’t fight the framework. He’s the kind of engineer who makes the people
+                                    around him better simply by how he approaches problems. Reliable friend, skilled
+                                    practitioner, and also considering the fact we both studied at the same varsity
+                                    Phillip is someone whose example I actively try to learn from. If you’re looking for
+                                    someone who cares deeply about the interface people actually use, he’s that person.
+                                </p>
+                            </div>
+                            <button
+                                onclick="openTestimonialModal('Felic', 'Software / Gym coach', './image/male.png', `As a developer myself, I look up to Phillip for several reasons. What sets him apart though, is that he doesn’t stop at the UI/UX part of development, He’s equally strong in frontend development. He builds interfaces with React.js that feel clean and he also has a real eye for how users actually experience the product.\n\nUnderneath the React sits solid fundamentals in HTML, well organized CSS, and modern JavaScript that doesn’t fight the framework. He’s the kind of engineer who makes the people around him better simply by how he approaches problems.\n\nReliable friend, skilled practitioner, and also considering the fact we both studied at the same varsity Phillip is someone whose example I actively try to learn from. If you’re looking for someone who cares deeply about the interface people actually use, he’s that person.`)"
+                                class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
+                                Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
+                            </button>
+                        </div>
+
+                        <!-- === CARD 7: Daniel === -->
+                        <div
+                            class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <img src="./image/male2.png" alt="Daniel"
+                                            class="w-10 h-10 rounded-full object-cover border border-white/10" />
+                                        <div>
+                                            <div class="flex items-center gap-1.5">
+                                                <h4 class="text-white font-semibold text-sm">Daniel</h4>
+                                                <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
+                                                </svg>
+                                            </div>
+                                            <p class="text-neutral-400 text-xs">Software Engineer</p>
+                                        </div>
+                                    </div>
+                                    <iconify-icon icon="lucide:quote"
+                                        class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
+                                </div>
+                                <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
+                                    Working with Philip has been an amazing experience. We’ve collaborated on several
+                                    projects, and his professionalism, creativity, and technical expertise consistently
+                                    stand out. Through Acetech, he delivers high-quality solutions with great attention
+                                    to detail and always ensures projects are completed to an excellent standard. He’s
+                                    reliable, easy to work with, and genuinely passionate about what he does. I highly
+                                    recommend Philip and Acetech to anyone looking for exceptional web development
+                                    services.
+                                </p>
+                            </div>
+                            <button
+                                onclick="openTestimonialModal('Daniel', 'Software Engineer', './image/male2.png', `Working with Philip has been an amazing experience. We’ve collaborated on several projects, and his professionalism, creativity, and technical expertise consistently stand out. Through Acetech, he delivers high-quality solutions with great attention to detail and always ensures projects are completed to an excellent standard. He’s reliable, easy to work with, and genuinely passionate about what he does. I highly recommend Philip and Acetech to anyone looking for exceptional web development services.`)"
+                                class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
+                                Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
+                            </button>
+                        </div>
+
+                        <!-- === CARD 8: Precious === -->
+                        <div
+                            class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <img src="./image/male2.png" alt="Precious"
+                                            class="w-10 h-10 rounded-full object-cover border border-white/10" />
+                                        <div>
+                                            <div class="flex items-center gap-1.5">
+                                                <h4 class="text-white font-semibold text-sm">Precious</h4>
+                                                <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
+                                                </svg>
+                                            </div>
+                                            <p class="text-neutral-400 text-xs">Backend Developer</p>
+                                        </div>
+                                    </div>
+                                    <iconify-icon icon="lucide:quote"
+                                        class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
+                                </div>
+                                <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
+                                    I have had the pleasure of working alongside Philip on two major projects, and I can
+                                    confidently say he is an exceptionally skilled developer. He possesses the technical
+                                    depth and problem solving ability to tackle any challenge successfully. Beyond his
+                                    technical expertise, he is a fantastic collaborator and an absolute pleasure to work
+                                    with on any team.
+                                </p>
+                            </div>
+                            <button
+                                onclick="openTestimonialModal('Precious', 'Backend Developer', './image/male2.png', `I have had the pleasure of working alongside Philip on two major projects, and I can confidently say he is an exceptionally skilled developer. He possesses the technical depth and problem solving ability to tackle any challenge successfully. Beyond his technical expertise, he is a fantastic collaborator and an absolute pleasure to work with on any team.`)"
+                                class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
+                                Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
+                            </button>
+                        </div>
+
                     </div>
-                    <button onclick="openTestimonialModal('Obi', 'Java Engineer', './image/male2.png', `Phillip during the sustainability project demonstrated exemplary leadership, integrity, and initiative. Additionally, he was communicative, reliable to his role and organized with relevant files and resources.`)" class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
-                        Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
-                    </button>
                 </div>
 
             </div>
-        </div>
-
-
-        <!-- ================= ROW 2: SCROLLS RIGHT ================= -->
-        <div class="flex overflow-hidden">
-            <div class="animate-marquee-right flex gap-6">
-
-                <!-- === CARD 5: vivian === -->
-                <div class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center gap-3">
-                                <img src="./image/female1.png" alt="Olivia" class="w-10 h-10 rounded-full object-cover border border-white/10" />
-                                <div>
-                                    <div class="flex items-center gap-1.5">
-                                        <h4 class="text-white font-semibold text-sm">Vivian </h4>
-                                        <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
-                                            <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
-                                        </svg>
-                                    </div>
-                                    <p class="text-neutral-400 text-xs">Marketing</p>
-                                </div>
-                            </div>
-                            <iconify-icon icon="lucide:quote" class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
-                        </div>
-                        <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
-                            His work is clean, modern, and well presented he makes sure everything is well planned and doesn't ignore any details.
-                        </p>
-                    </div>
-                    <button onclick="openTestimonialModal('Olivia Martinez', 'Creative Dev, Webflow', './image/female1.png', `His work is clean, modern, and polished. He consistently delivers mobile & web interfaces that feel intuitive and well-crafted.`)" class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
-                        Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
-                    </button>
-                </div>
-
-                <!-- === CARD 6: Felic === -->
-                <div class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center gap-3">
-                                <img src="./image/male.png" alt="Felic" class="w-10 h-10 rounded-full object-cover border border-white/10" />
-                                <div>
-                                    <div class="flex items-center gap-1.5">
-                                        <h4 class="text-white font-semibold text-sm">Felix</h4>
-                                        <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
-                                            <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
-                                        </svg>
-                                    </div>
-                                    <p class="text-neutral-400 text-xs">Software / Gym coach</p>
-                                </div>
-                            </div>
-                            <iconify-icon icon="lucide:quote" class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
-                        </div>
-                        <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
-                            As a developer myself, I look up to Phillip for several reasons. What sets him apart though, is that he doesn’t stop at the UI/UX part of development, He’s equally strong in frontend development. He builds interfaces with React.js that feel clean and he also has a real eye for how users actually experience the product. Underneath the React sits solid fundamentals in HTML, well organized CSS, and modern JavaScript that doesn’t fight the framework. He’s the kind of engineer who makes the people around him better simply by how he approaches problems. Reliable friend, skilled practitioner, and also considering the fact we both studied at the same varsity Phillip is someone whose example I actively try to learn from. If you’re looking for someone who cares deeply about the interface people actually use, he’s that person.
-                        </p>
-                    </div>
-                    <button onclick="openTestimonialModal('Felic', 'Software / Gym coach', './image/male.png', `As a developer myself, I look up to Phillip for several reasons. What sets him apart though, is that he doesn’t stop at the UI/UX part of development, He’s equally strong in frontend development. He builds interfaces with React.js that feel clean and he also has a real eye for how users actually experience the product.\n\nUnderneath the React sits solid fundamentals in HTML, well organized CSS, and modern JavaScript that doesn’t fight the framework. He’s the kind of engineer who makes the people around him better simply by how he approaches problems.\n\nReliable friend, skilled practitioner, and also considering the fact we both studied at the same varsity Phillip is someone whose example I actively try to learn from. If you’re looking for someone who cares deeply about the interface people actually use, he’s that person.`)" class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
-                        Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
-                    </button>
-                </div>
-
-                <!-- === CARD 7: Daniel === -->
-                <div class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center gap-3">
-                                <img src="./image/male2.png" alt="Daniel" class="w-10 h-10 rounded-full object-cover border border-white/10" />
-                                <div>
-                                    <div class="flex items-center gap-1.5">
-                                        <h4 class="text-white font-semibold text-sm">Daniel</h4>
-                                        <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
-                                            <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
-                                        </svg>
-                                    </div>
-                                    <p class="text-neutral-400 text-xs">Software Engineer</p>
-                                </div>
-                            </div>
-                            <iconify-icon icon="lucide:quote" class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
-                        </div>
-                        <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
-                            Working with Philip has been an amazing experience. We’ve collaborated on several projects, and his professionalism, creativity, and technical expertise consistently stand out. Through Acetech, he delivers high-quality solutions with great attention to detail and always ensures projects are completed to an excellent standard. He’s reliable, easy to work with, and genuinely passionate about what he does. I highly recommend Philip and Acetech to anyone looking for exceptional web development services.
-                        </p>
-                    </div>
-                    <button onclick="openTestimonialModal('Daniel', 'Software Engineer', './image/male2.png', `Working with Philip has been an amazing experience. We’ve collaborated on several projects, and his professionalism, creativity, and technical expertise consistently stand out. Through Acetech, he delivers high-quality solutions with great attention to detail and always ensures projects are completed to an excellent standard. He’s reliable, easy to work with, and genuinely passionate about what he does. I highly recommend Philip and Acetech to anyone looking for exceptional web development services.`)" class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
-                        Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
-                    </button>
-                </div>
-
-                <!-- === CARD 8: Precious === -->
-                <div class="w-[350px] sm:w-[420px] bg-[#0f0f11]/70 backdrop-blur-md border border-white/10 hover:border-neutral-500 p-6 rounded-3xl transition-all duration-300 flex-shrink-0 flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="flex items-center gap-3">
-                                <img src="./image/male2.png" alt="Precious" class="w-10 h-10 rounded-full object-cover border border-white/10" />
-                                <div>
-                                    <div class="flex items-center gap-1.5">
-                                        <h4 class="text-white font-semibold text-sm">Precious</h4>
-                                        <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
-                                            <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
-                                        </svg>
-                                    </div>
-                                    <p class="text-neutral-400 text-xs">Backend Developer</p>
-                                </div>
-                            </div>
-                            <iconify-icon icon="lucide:quote" class="text-neutral-600 group-hover:text-[#0adee5] transition-colors duration-300 text-xl"></iconify-icon>
-                        </div>
-                        <p class="text-neutral-300 text-sm leading-relaxed line-clamp-4">
-                            I have had the pleasure of working alongside Philip on two major projects, and I can confidently say he is an exceptionally skilled developer. He possesses the technical depth and problem solving ability to tackle any challenge successfully. Beyond his technical expertise, he is a fantastic collaborator and an absolute pleasure to work with on any team.
-                        </p>
-                    </div>
-                    <button onclick="openTestimonialModal('Precious', 'Backend Developer', './image/male2.png', `I have had the pleasure of working alongside Philip on two major projects, and I can confidently say he is an exceptionally skilled developer. He possesses the technical depth and problem solving ability to tackle any challenge successfully. Beyond his technical expertise, he is a fantastic collaborator and an absolute pleasure to work with on any team.`)" class="mt-3 text-xs font-mono text-[#0adee5] hover:underline cursor-pointer text-left self-start flex items-center gap-1">
-                        Read more <iconify-icon icon="lucide:arrow-up-right" class="text-xs"></iconify-icon>
-                    </button>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-</section>
+        </section>
 
 
         <!-- ================= FAQ SECTION ================= -->
@@ -1556,281 +1703,310 @@ Working with Philip was an absolute pleasure. From start to finish, he was profe
 
 
     <!-- ================= CONTACT SECTION ================= -->
-<section id="contact" class="py-28 relative overflow-x-hidden z-10 border-t border-white/5 bg-[#0b0b0e]">
-  
-  <!-- ================= EDGE-TO-EDGE FULL BLEED BACKGROUND ================= -->
-  <div class="absolute inset-0 w-full h-full z-0 opacity-25 pointer-events-none">
-    <div class="absolute inset-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center filter grayscale contrast-125 brightness-50"></div>
-    
-    <!-- Center Pinpoint Marker -->
-    <div class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-0 flex flex-col items-center">
-      <div class="bg-black/90 border border-[#0adee5]/50 px-3 py-1 rounded text-[11px] font-mono text-[#0adee5]  mb-1">
-        Lagos, Nigeria
-      </div>
-      <div class="w-4 h-4 bg-[#0adee5] rounded-full flex items-center justify-center shadow-[0_0_25px_#0adee5]">
-        <div class="w-1.5 h-1.5 bg-black rounded-full"></div>
-      </div>
-    </div>
-  </div>
+    <section id="contact" class="py-28 relative overflow-x-hidden z-10 border-t border-white/5 bg-[#0b0b0e]">
 
-  <!-- Soft Vignette Gradient to blend map edges -->
-  <div class="absolute inset-0 bg-gradient-to-t from-[#0b0b0e] via-transparent to-[#0b0b0e] pointer-events-none z-0"></div>
-
-  <!-- ================= MAIN CONTENT CONTAINER ================= -->
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-      
-      <!-- ================= LEFT COLUMN ================= -->
-      <div class="lg:col-span-5 flex flex-col gap-6">
-        
-        <!-- Status Tag -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/5 border border-neutral-700 rounded-full w-fit backdrop-blur-md">
-          <span class="relative flex h-2.5 w-2.5">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white/50 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#0adee5]"></span>
-          </span>
-          <span class="text-xs font-mono text-[#0adee5] uppercase tracking-widest">Lagos, Nigeria • Available</span>
-        </div>
-
-        <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
-          Let’s build <br />
-          <span class="text-neutral-500">something great.</span>
-        </h2>
-
-        
-        <!-- Glass Action Cards (Email & Call) -->
-        <div class="flex flex-col gap-3 mt-2">
-          
-          <!-- EMAIL US CARD -->
-          <a href="mailto:philipclementt@outlook.com" class="group flex items-center justify-between p-4 bg-[#121216]/90 hover:bg-[#121216] border border-white/10 hover:border-neutral-500 rounded-2xl backdrop-blur-md transition-all duration-300 shadow-xl">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 bg-white/[0.04] border border-white/10 rounded-xl flex items-center justify-center text-white  transition-all duration-300">
-                <iconify-icon icon="lucide:mail" class="text-xl"></iconify-icon>
-              </div>
-              <div class="flex flex-col">
-                <span class="text-sm font-semibold text-white">Email us</span>
-                <span class="text-xs text-neutral-400 group-hover:text-neutral-200 transition-colors">philipclementt@outlook.com</span>
-              </div>
-            </div>
-            <iconify-icon icon="lucide:arrow-up-right" class="text-neutral-400 text-xl group-hover:text-[#0adee5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 pr-2"></iconify-icon>
-          </a>
-
-          <!-- CALL US CARD -->
-          <a href="tel:+2349167270900" class="group flex items-center justify-between p-4 bg-[#121216]/90 hover:bg-[#121216] border border-white/10 hover:border-neutral-500 rounded-2xl backdrop-blur-md transition-all duration-300 shadow-xl">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 bg-white/[0.04] border border-white/10 rounded-xl flex items-center justify-center text-white  transition-all duration-300">
-                <iconify-icon icon="lucide:phone-call" class="text-xl"></iconify-icon>
-              </div>
-              <div class="flex flex-col">
-                <span class="text-sm font-semibold text-white">Call us</span>
-                <span class="text-xs text-neutral-400 group-hover:text-neutral-200 transition-colors">+234 916 727 0900</span>
-              </div>
-            </div>
-            <iconify-icon icon="lucide:arrow-up-right" class="text-neutral-400 text-xl group-hover:text-[#0adee5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 pr-2"></iconify-icon>
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <!-- ================= RIGHT COLUMN: FORM ================= -->
-      <div class="lg:col-span-7">
-        
-        <div class="bg-[#121216]/95 backdrop-blur-xl border border-white/10 p-8 sm:p-10 rounded-3xl relative shadow-2xl">
-          
-          <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-6">
-            <input type="hidden" name="access_key" value="5fc5b21a-4dbb-4ac7-a6a5-454cf41478a7">
-            <input type="hidden" name="redirect" value="https://yourwebsite.com/success.html">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div class="flex flex-col gap-2">
-                <label for="name" class="text-xs font-mono text-neutral-400 uppercase tracking-wider">Your Name</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  name="name" 
-                  placeholder="Your Name" 
-                  required
-                  class="w-full bg-white/[0.03] border border-white/10 focus:border-neutral-500 text-white text-sm px-4 py-3.5 outline-none transition-all duration-300 placeholder:text-neutral-600 focus:bg-white/[0.05]"
-                />
-              </div>
-
-              <div class="flex flex-col gap-2">
-                <label for="email" class="text-xs font-mono text-neutral-400 uppercase tracking-wider">Your Email</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  name="email" 
-                  placeholder="your.email@example.com" 
-                  required
-                  class="w-full bg-white/[0.03] border border-white/10 focus:border-neutral-500 text-white text-sm px-4 py-3.5 outline-none transition-all duration-300 placeholder:text-neutral-600 focus:bg-white/[0.05]"
-                />
-              </div>
+        <!-- ================= EDGE-TO-EDGE FULL BLEED BACKGROUND ================= -->
+        <div class="absolute inset-0 w-full h-full z-0 opacity-25 pointer-events-none">
+            <div
+                class="absolute inset-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center filter grayscale contrast-125 brightness-50">
             </div>
 
-            <div class="flex flex-col gap-2">
-              <label class="text-xs font-mono text-neutral-400 uppercase tracking-wider">Services Needed</label>
-              <div class="flex flex-wrap gap-2 pt-1">
-                <label class="cursor-pointer">
-                  <input type="checkbox" name="services" value="frontend" class="peer hidden" />
-                  <span class="inline-block text-xs font-mono text-neutral-400 px-4 py-2 bg-white/[0.03] border border-white/10 peer-checked:border-[#0adee5] peer-checked:text-[#0adee5] peer-checked:bg-[#0adee5]/10 transition-all duration-300">
-                    Frontend Dev
-                  </span>
-                </label>
-
-                <label class="cursor-pointer">
-                  <input type="checkbox" name="services" value="mobile" class="peer hidden" />
-                  <span class="inline-block text-xs font-mono text-neutral-400 px-4 py-2 bg-white/[0.03] border border-white/10 peer-checked:border-[#0adee5] peer-checked:text-[#0adee5] peer-checked:bg-[#0adee5]/10 transition-all duration-300">
-                    Flutter App
-                  </span>
-                </label>
-
-                <label class="cursor-pointer">
-                  <input type="checkbox" name="services" value="uiux" class="peer hidden" />
-                  <span class="inline-block text-xs font-mono text-neutral-400 px-4 py-2 bg-white/[0.03] border border-white/10 peer-checked:border-[#0adee5] peer-checked:text-[#0adee5] peer-checked:bg-[#0adee5]/10 transition-all duration-300">
-                    UI/UX Design
-                  </span>
-                </label>
-
-                 <label class="cursor-pointer">
-                  <input type="checkbox" name="services" value="database" class="peer hidden" />
-                  <span class="inline-block text-xs font-mono text-neutral-400 px-4 py-2 bg-white/[0.03] border border-white/10 peer-checked:border-[#0adee5] peer-checked:text-[#0adee5] peer-checked:bg-[#0adee5]/10 transition-all duration-300">
-                   Database
-                  </span>
-                </label>
-              </div>
-            </div>
-
-            <div class="flex flex-col gap-2">
-              <label for="message" class="text-xs font-mono text-neutral-400 uppercase tracking-wider">Project Details</label>
-              <textarea 
-                id="message" 
-                name="message" 
-                rows="4" 
-                placeholder="Tell me about your project, timeline, or scope..." 
-                required
-                class="w-full bg-white/[0.03] border border-white/10 focus:border-neutral-500 text-white text-sm p-4 outline-none transition-all duration-300 placeholder:text-neutral-600 focus:bg-white/[0.05] resize-none"
-              ></textarea>
-            </div>
-
-            <div class="pt-2">
-              <button type="submit" class="w-full relative group inline-flex items-center justify-center px-6 py-4 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300 cursor-pointer">
-                <span class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white"></span>
-                <span class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white"></span>
-                <span class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white"></span>
-                <span class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white"></span>
-
-                <span class="text-white text-xs sm:text-sm font-mono font-semibold tracking-wider uppercase">Send Message</span>
-                <iconify-icon icon="lucide:send" class="text-[#0adee5] ml-2 text-base group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
-              </button>
-            </div>
-
-          </form>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-<!-- Testimonial Popup Modal -->
-<div id="testimonialModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
-    <div class="bg-[#0f0f11] border border-white/10 max-w-lg w-full rounded-3xl p-6 sm:p-8 relative shadow-2xl scale-95 transition-transform duration-300" id="modalContainer">
-        
-        <!-- Close Button -->
-        <button onclick="closeTestimonialModal()" class="absolute top-5 right-5 text-neutral-400 hover:text-white p-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/30 transition-all cursor-pointer">
-            <iconify-icon icon="lucide:x" class="text-lg flex"></iconify-icon>
-        </button>
-
-        <!-- Header Info -->
-        <div class="flex items-center gap-3 mb-6 pr-8">
-            <img id="modalAvatar" src="" alt="" class="w-12 h-12 rounded-full object-cover border border-white/10" />
-            <div>
-                <div class="flex items-center gap-1.5">
-                    <h3 id="modalName" class="text-white font-semibold text-base"></h3>
-                    <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
-                        <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
-                    </svg>
+            <!-- Center Pinpoint Marker -->
+            <div class="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 z-0 flex flex-col items-center">
+                <div
+                    class="bg-black/90 border border-[#0adee5]/50 px-3 py-1 rounded text-[11px] font-mono text-[#0adee5]  mb-1">
+                    Lagos, Nigeria
                 </div>
-                <p id="modalRole" class="text-neutral-400 text-xs"></p>
+                <div
+                    class="w-4 h-4 bg-[#0adee5] rounded-full flex items-center justify-center shadow-[0_0_25px_#0adee5]">
+                    <div class="w-1.5 h-1.5 bg-black rounded-full"></div>
+                </div>
             </div>
         </div>
 
-        <!-- Full Review Body -->
-        <div class="max-h-[60vh] overflow-y-auto pr-2">
-            <p id="modalMessage" class="text-neutral-300 text-sm leading-relaxed whitespace-pre-line"></p>
+        <!-- Soft Vignette Gradient to blend map edges -->
+        <div
+            class="absolute inset-0 bg-gradient-to-t from-[#0b0b0e] via-transparent to-[#0b0b0e] pointer-events-none z-0">
         </div>
 
-    </div>
-</div>
+        <!-- ================= MAIN CONTENT CONTAINER ================= -->
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
 
-<script>
-    function openTestimonialModal(name, role, avatar, message) {
-        const modal = document.getElementById('testimonialModal');
-        const container = document.getElementById('modalContainer');
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
-        document.getElementById('modalName').innerText = name;
-        document.getElementById('modalRole').innerText = role;
-        document.getElementById('modalAvatar').src = avatar;
-        document.getElementById('modalMessage').innerText = message;
+                <!-- ================= LEFT COLUMN ================= -->
+                <div class="lg:col-span-5 flex flex-col gap-6">
 
-        modal.classList.remove('opacity-0', 'pointer-events-none');
-        container.classList.remove('scale-95');
-        container.classList.add('scale-100');
-        document.body.style.overflow = 'hidden';
-    }
+                    <!-- Status Tag -->
+                    <div
+                        class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/5 border border-neutral-700 rounded-full w-fit backdrop-blur-md">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white/50 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#0adee5]"></span>
+                        </span>
+                        <span class="text-xs font-mono text-[#0adee5] uppercase tracking-widest">Lagos, Nigeria •
+                            Available</span>
+                    </div>
 
-    function closeTestimonialModal() {
-        const modal = document.getElementById('testimonialModal');
-        const container = document.getElementById('modalContainer');
+                    <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-[1.1]">
+                        Let’s build <br />
+                        <span class="text-neutral-500">something great.</span>
+                    </h2>
 
-        modal.classList.add('opacity-0', 'pointer-events-none');
-        container.classList.remove('scale-100');
-        container.classList.add('scale-95');
-        document.body.style.overflow = 'auto';
-    }
 
-    document.getElementById('testimonialModal')?.addEventListener('click', function (e) {
-        if (e.target === this) closeTestimonialModal();
-    });
-</script>
+                    <!-- Glass Action Cards (Email & Call) -->
+                    <div class="flex flex-col gap-3 mt-2">
 
-<!-- ================= FOOTER ================= -->
-<footer class="relative z-10 border-t border-white/5 bg-[#070707] pt-10 pb-10">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                        <!-- EMAIL US CARD -->
+                        <a href="mailto:philipclementt@outlook.com"
+                            class="group flex items-center justify-between p-4 bg-[#121216]/90 hover:bg-[#121216] border border-white/10 hover:border-neutral-500 rounded-2xl backdrop-blur-md transition-all duration-300 shadow-xl">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 bg-white/[0.04] border border-white/10 rounded-xl flex items-center justify-center text-white  transition-all duration-300">
+                                    <iconify-icon icon="lucide:mail" class="text-xl"></iconify-icon>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-sm font-semibold text-white">Email us</span>
+                                    <span
+                                        class="text-xs text-neutral-400 group-hover:text-neutral-200 transition-colors">philipclementt@outlook.com</span>
+                                </div>
+                            </div>
+                            <iconify-icon icon="lucide:arrow-up-right"
+                                class="text-neutral-400 text-xl group-hover:text-[#0adee5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 pr-2"></iconify-icon>
+                        </a>
 
-            <!-- Brand + Copyright -->
-            <div class="flex flex-col items-center sm:items-start gap-1">
-                <span class="text-lg font-bold tracking-wider text-white">ACETEKH</span>
-                <p class="text-neutral-500 text-xs font-mono">
-                    © <span id="footer-year">2026</span> All rights reserved.
-                </p>
+                        <!-- CALL US CARD -->
+                        <a href="tel:+2349167270900"
+                            class="group flex items-center justify-between p-4 bg-[#121216]/90 hover:bg-[#121216] border border-white/10 hover:border-neutral-500 rounded-2xl backdrop-blur-md transition-all duration-300 shadow-xl">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 bg-white/[0.04] border border-white/10 rounded-xl flex items-center justify-center text-white  transition-all duration-300">
+                                    <iconify-icon icon="lucide:phone-call" class="text-xl"></iconify-icon>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-sm font-semibold text-white">Call us</span>
+                                    <span
+                                        class="text-xs text-neutral-400 group-hover:text-neutral-200 transition-colors">+234
+                                        916 727 0900</span>
+                                </div>
+                            </div>
+                            <iconify-icon icon="lucide:arrow-up-right"
+                                class="text-neutral-400 text-xl group-hover:text-[#0adee5] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 pr-2"></iconify-icon>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= RIGHT COLUMN: FORM ================= -->
+                <div class="lg:col-span-7">
+
+                    <div
+                        class="bg-[#121216]/95 backdrop-blur-xl border border-white/10 p-8 sm:p-10 rounded-3xl relative shadow-2xl">
+
+                        <form action="https://api.web3forms.com/submit" method="POST" class="flex flex-col gap-6">
+                            <input type="hidden" name="access_key" value="5fc5b21a-4dbb-4ac7-a6a5-454cf41478a7">
+                            <input type="hidden" name="redirect"
+                                value="https://acetekhportfolio.vercel.app/success.html">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="flex flex-col gap-2">
+                                    <label for="name"
+                                        class="text-xs font-mono text-neutral-400 uppercase tracking-wider">Your
+                                        Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Your Name" required
+                                        class="w-full bg-white/[0.03] border border-white/10 focus:border-neutral-500 text-white text-sm px-4 py-3.5 outline-none transition-all duration-300 placeholder:text-neutral-600 focus:bg-white/[0.05]" />
+                                </div>
+
+                                <div class="flex flex-col gap-2">
+                                    <label for="email"
+                                        class="text-xs font-mono text-neutral-400 uppercase tracking-wider">Your
+                                        Email</label>
+                                    <input type="email" id="email" name="email" placeholder="your.email@example.com"
+                                        required
+                                        class="w-full bg-white/[0.03] border border-white/10 focus:border-neutral-500 text-white text-sm px-4 py-3.5 outline-none transition-all duration-300 placeholder:text-neutral-600 focus:bg-white/[0.05]" />
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-2">
+                                <label class="text-xs font-mono text-neutral-400 uppercase tracking-wider">Services
+                                    Needed</label>
+                                <div class="flex flex-wrap gap-2 pt-1">
+                                    <label class="cursor-pointer">
+                                        <input type="checkbox" name="services" value="frontend" class="peer hidden" />
+                                        <span
+                                            class="inline-block text-xs font-mono text-neutral-400 px-4 py-2 bg-white/[0.03] border border-white/10 peer-checked:border-[#0adee5] peer-checked:text-[#0adee5] peer-checked:bg-[#0adee5]/10 transition-all duration-300">
+                                            Frontend Dev
+                                        </span>
+                                    </label>
+
+                                    <label class="cursor-pointer">
+                                        <input type="checkbox" name="services" value="mobile" class="peer hidden" />
+                                        <span
+                                            class="inline-block text-xs font-mono text-neutral-400 px-4 py-2 bg-white/[0.03] border border-white/10 peer-checked:border-[#0adee5] peer-checked:text-[#0adee5] peer-checked:bg-[#0adee5]/10 transition-all duration-300">
+                                            Flutter App
+                                        </span>
+                                    </label>
+
+                                    <label class="cursor-pointer">
+                                        <input type="checkbox" name="services" value="uiux" class="peer hidden" />
+                                        <span
+                                            class="inline-block text-xs font-mono text-neutral-400 px-4 py-2 bg-white/[0.03] border border-white/10 peer-checked:border-[#0adee5] peer-checked:text-[#0adee5] peer-checked:bg-[#0adee5]/10 transition-all duration-300">
+                                            UI/UX Design
+                                        </span>
+                                    </label>
+
+                                    <label class="cursor-pointer">
+                                        <input type="checkbox" name="services" value="database" class="peer hidden" />
+                                        <span
+                                            class="inline-block text-xs font-mono text-neutral-400 px-4 py-2 bg-white/[0.03] border border-white/10 peer-checked:border-[#0adee5] peer-checked:text-[#0adee5] peer-checked:bg-[#0adee5]/10 transition-all duration-300">
+                                            Database
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="flex flex-col gap-2">
+                                <label for="message"
+                                    class="text-xs font-mono text-neutral-400 uppercase tracking-wider">Project
+                                    Details</label>
+                                <textarea id="message" name="message" rows="4"
+                                    placeholder="Tell me about your project, timeline, or scope..." required
+                                    class="w-full bg-white/[0.03] border border-white/10 focus:border-neutral-500 text-white text-sm p-4 outline-none transition-all duration-300 placeholder:text-neutral-600 focus:bg-white/[0.05] resize-none"></textarea>
+                            </div>
+
+                            <div class="pt-2">
+                                <button type="submit"
+                                    class="w-full relative group inline-flex items-center justify-center px-6 py-4 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300 cursor-pointer">
+                                    <span
+                                        class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white"></span>
+                                    <span
+                                        class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white"></span>
+                                    <span
+                                        class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white"></span>
+                                    <span
+                                        class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white"></span>
+
+                                    <span
+                                        class="text-white text-xs sm:text-sm font-mono font-semibold tracking-wider uppercase">Send
+                                        Message</span>
+                                    <iconify-icon icon="lucide:send"
+                                        class="text-[#0adee5] ml-2 text-base group-hover:translate-x-1 transition-transform duration-300"></iconify-icon>
+                                </button>
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <!-- Back to top -->
-            <button onclick="scrollToTop()"
-                class="relative group inline-flex items-center justify-center px-5 py-2.5 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300">
-                <span class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white/60"></span>
-                <span class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white/60"></span>
-                <span class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white/60"></span>
-                <span class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white/60"></span>
-                <span class="text-[10px] font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2">
-                    Back to Top
-                    <iconify-icon icon="lucide:arrow-up"
-                        class="text-sm text-[#0adee5] group-hover:-translate-y-0.5 transition-transform duration-300"></iconify-icon>
-                </span>
+        </div>
+
+    </section>
+
+    <!-- Testimonial Popup Modal -->
+    <div id="testimonialModal"
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-[#0f0f11] border border-white/10 max-w-lg w-full rounded-3xl p-6 sm:p-8 relative shadow-2xl scale-95 transition-transform duration-300"
+            id="modalContainer">
+
+            <!-- Close Button -->
+            <button onclick="closeTestimonialModal()"
+                class="absolute top-5 right-5 text-neutral-400 hover:text-white p-2 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/30 transition-all cursor-pointer">
+                <iconify-icon icon="lucide:x" class="text-lg flex"></iconify-icon>
             </button>
 
+            <!-- Header Info -->
+            <div class="flex items-center gap-3 mb-6 pr-8">
+                <img id="modalAvatar" src="" alt=""
+                    class="w-12 h-12 rounded-full object-cover border border-white/10" />
+                <div>
+                    <div class="flex items-center gap-1.5">
+                        <h3 id="modalName" class="text-white font-semibold text-base"></h3>
+                        <svg class="w-4 h-4 text-[#1d9bf0] fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M22.25 12c0-1.43-.88-2.67-2.19-3.19.46-1.39.02-2.97-1.1-3.83-1.12-.86-2.67-.86-3.79 0-.52-1.31-1.76-2.19-3.19-2.19s-2.67.88-3.19 2.19c-1.12-.86-2.67-.86-3.79 0-1.12.86-1.56 2.44-1.1 3.83C2.68 9.33 1.8 10.57 1.8 12s.88 2.67 2.19 3.19c-.46 1.39-.02 2.97 1.1 3.83 1.12.86 2.67.86 3.79 0 .52 1.31 1.76 2.19 3.19 2.19s2.67-.88 3.19-2.19c1.12.86 2.67.86 3.79 0 1.12-.86 1.56-2.44 1.1-3.83 1.31-.52 2.19-1.76 2.19-3.19zm-11.71 4.2l-3.54-3.54 1.41-1.41 2.13 2.12 6.36-6.36 1.41 1.41-7.77 7.78z" />
+                        </svg>
+                    </div>
+                    <p id="modalRole" class="text-neutral-400 text-xs"></p>
+                </div>
+            </div>
+
+            <!-- Full Review Body -->
+            <div class="max-h-[60vh] overflow-y-auto pr-2">
+                <p id="modalMessage" class="text-neutral-300 text-sm leading-relaxed whitespace-pre-line"></p>
+            </div>
+
         </div>
     </div>
-</footer>
-<!-- FLOATING AI HINT WIDGET -->
+
+    <script>
+        function openTestimonialModal(name, role, avatar, message) {
+            const modal = document.getElementById('testimonialModal');
+            const container = document.getElementById('modalContainer');
+
+            document.getElementById('modalName').innerText = name;
+            document.getElementById('modalRole').innerText = role;
+            document.getElementById('modalAvatar').src = avatar;
+            document.getElementById('modalMessage').innerText = message;
+
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            container.classList.remove('scale-95');
+            container.classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTestimonialModal() {
+            const modal = document.getElementById('testimonialModal');
+            const container = document.getElementById('modalContainer');
+
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            container.classList.remove('scale-100');
+            container.classList.add('scale-95');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('testimonialModal')?.addEventListener('click', function (e) {
+            if (e.target === this) closeTestimonialModal();
+        });
+    </script>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="relative z-10 border-t border-white/5 bg-[#070707] pt-10 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+
+                <!-- Brand + Copyright -->
+                <div class="flex flex-col items-center sm:items-start gap-1">
+                    <span class="text-lg font-bold tracking-wider text-white">ACETEKH</span>
+                    <p class="text-neutral-500 text-xs font-mono">
+                        © <span id="footer-year">2026</span> All rights reserved.
+                    </p>
+                </div>
+
+                <!-- Back to top -->
+                <button onclick="scrollToTop()"
+                    class="relative group inline-flex items-center justify-center px-5 py-2.5 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300">
+                    <span class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white/60"></span>
+                    <span class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white/60"></span>
+                    <span class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white/60"></span>
+                    <span class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white/60"></span>
+                    <span
+                        class="text-[10px] font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2">
+                        Back to Top
+                        <iconify-icon icon="lucide:arrow-up"
+                            class="text-sm text-[#0adee5] group-hover:-translate-y-0.5 transition-transform duration-300"></iconify-icon>
+                    </span>
+                </button>
+
+            </div>
+        </div>
+    </footer>
+    <!-- FLOATING AI HINT WIDGET -->
     <div id="ai-assistant"
         class="fixed bottom-[80px] right-4 sm:right-6 z-50 max-w-[240px] sm:max-w-xs bg-neutral-900/90 backdrop-blur-md rounded-2xl p-3 px-4 flex items-center gap-3 border border-white/10 shadow-2xl transition-all duration-300 pointer-events-none">
         <!-- Glowing AI Pulse Icon -->
@@ -1840,8 +2016,10 @@ Working with Philip was an absolute pleasure. From start to finish, he was profe
         </div>
 
         <!-- AI Message Text -->
-        <p id="ai-message" class="text-[11px] sm:text-xs text-neutral-300 font-medium leading-relaxed transition-opacity duration-300">
-            <span class="text-[#0adee5] font-semibold">AI Assistant:</span> Welcome! Explore my work, stack, and get in touch below.
+        <p id="ai-message"
+            class="text-[11px] sm:text-xs text-neutral-300 font-medium leading-relaxed transition-opacity duration-300">
+            <span class="text-[#0adee5] font-semibold">AI Assistant:</span> Welcome! Explore my work, stack, and get in
+            touch below.
         </p>
     </div>
 
@@ -2018,7 +2196,7 @@ Working with Philip was an absolute pleasure. From start to finish, he was profe
         });
 
 
-          const canvas = document.getElementById('hero-particle-canvas');
+        const canvas = document.getElementById('hero-particle-canvas');
         const section = document.getElementById('home');
         const ctx = canvas.getContext('2d');
 
@@ -2112,7 +2290,7 @@ Working with Philip was an absolute pleasure. From start to finish, he was profe
             for (let a = 0; a < particlesArray.length; a++) {
                 for (let b = a + 1; b < particlesArray.length; b++) {
                     let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
-                                 ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
+                        ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
 
                     if (distance < (canvasWidth / 9) * (canvasHeight / 9)) {
                         opacityValue = 1 - (distance / 18000);
@@ -2263,7 +2441,7 @@ Working with Philip was an absolute pleasure. From start to finish, he was profe
             }
         })();
 
-       
+
     </script>
 </body>
 
