@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ACETEKH Home</title>
+    <link rel="icon" href="./image/Acetekhlogo.PNG" type="image/png">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -174,6 +175,26 @@
             animation: gentle-float 6s ease-in-out infinite;
         }
     </style>
+
+
+
+<!-- Primary Meta Tags -->
+    <meta name="title" content="ACETEKH — Frontend Developer & UI/UX Designer Portfolio">
+    <meta name="description" content="Portfolio of Philip Clement, showcasing frontend development projects, UI/UX design case studies, and web applications.">
+
+    <!-- Open Graph / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://acetekhportfolio.vercel.app/">
+    <meta property="og:title" content="ACETEKH — Frontend Developer & UI/UX Designer Portfolio">
+    <meta property="og:description" content="Explore my latest projects, case studies, and UI/UX design work.">
+    <meta property="og:image" content="./image/Acetekhlogo.PNG">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://acetekh.vercel.app/">
+    <meta property="twitter:title" content="ACETEKH — Frontend Developer & UI/UX Designer Portfolio">
+    <meta property="twitter:description" content="Explore my latest projects, case studies, and UI/UX design work.">
+    <meta property="twitter:image" content="./image/Acetekhlogo.PNG">
 </head>
 
 <body class="min-h-screen flex flex-col justify-between relative overflow-x-hidden pb-28">
@@ -192,16 +213,16 @@
             <!-- Center: Social Icons -->
             <div
                 class="justify-self-center flex items-center gap-2 sm:gap-4 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-full flex-shrink-0">
-                <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                <a href="https://x.com/acetekh" target="_blank" class="text-neutral-400 hover:text-white transition-colors">
                     <iconify-icon icon="simple-icons:x" class="text-xs sm:text-sm"></iconify-icon>
                 </a>
-                <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                <a href="https://github.com/Ace-tech1" target="_blank" class="text-neutral-400 hover:text-white transition-colors">
                     <iconify-icon icon="simple-icons:github" class="text-xs sm:text-sm"></iconify-icon>
                 </a>
-                <a href="#" class="text-neutral-400 hover:text-[#E4405F] transition-colors">
+                <a href="https://www.instagram.com/armanii_beecroft/" target="_blank" class="text-neutral-400 hover:text-[#E4405F] transition-colors">
                     <iconify-icon icon="simple-icons:instagram" class="text-xs sm:text-sm"></iconify-icon>
                 </a>
-                <a href="#" class="text-neutral-400 hover:text-[#25D366] transition-colors">
+                <a href="https://wa.me/2349167270900" target="_blank" class="text-neutral-400 hover:text-[#25D366] transition-colors">
                     <iconify-icon icon="simple-icons:whatsapp" class="text-xs sm:text-sm"></iconify-icon>
                 </a>
             </div>
@@ -276,7 +297,7 @@
                     </a>
 
                     <!-- View Resume Button (Right) -->
-                    <a href="./Philip_Clement_Frontend_UIUX_CV.pdf" target="_blank" rel="noopener noreferrer"
+                    <a href="./Philip.Clement CV.pdf" target="_blank" rel="noopener noreferrer"
                         class="relative group w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300">
                         <span
                             class="absolute top-0 left-0 w-2.5 h-2.5 border-t-2 border-l-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"></span>
@@ -2008,7 +2029,7 @@
     </footer>
     <!-- FLOATING AI HINT WIDGET -->
     <div id="ai-assistant"
-        class="fixed bottom-[80px] right-4 sm:right-6 z-50 max-w-[240px] sm:max-w-xs bg-neutral-900/90 backdrop-blur-md rounded-2xl p-3 px-4 flex items-center gap-3 border border-white/10 shadow-2xl transition-all duration-300 pointer-events-none">
+        class="fixed bottom-[80px] mb-4 right-4 sm:right-6 z-50 max-w-[240px] sm:max-w-xs bg-neutral-900/90 backdrop-blur-md rounded-2xl p-3 px-4 flex items-center gap-3 border border-white/10 shadow-2xl transition-all duration-300 pointer-events-none">
         <!-- Glowing AI Pulse Icon -->
         <div class="relative flex items-center justify-center flex-shrink-0">
             <span class="w-2.5 h-2.5 rounded-full bg-[#0adee5]/70"></span>
@@ -2018,41 +2039,97 @@
         <!-- AI Message Text -->
         <p id="ai-message"
             class="text-[11px] sm:text-xs text-neutral-300 font-medium leading-relaxed transition-opacity duration-300">
-            <span class="text-[#0adee5] font-semibold">AI Assistant:</span> Welcome! Explore my work, stack, and get in
+            <span class="text-[#0adee5] font-semibold">ACE Hint:</span> Welcome! Explore my work, stack, and get in
             touch below.
         </p>
     </div>
 
-    <!-- RESPONSIVE FLOATING BOTTOM DOCK -->
-    <nav
-        class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-[620px] glass-card rounded-full p-2 px-3 sm:px-4 flex items-center justify-between shadow-2xl border border-white/10 backdrop-blur-2xl bg-neutral-900/90">
+<!-- RESPONSIVE FLOATING BOTTOM DOCK -->
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-[620px] glass-card rounded-full p-2 px-3 sm:px-4 grid grid-cols-3 items-center shadow-2xl border border-white/10 backdrop-blur-2xl bg-neutral-900/90 ">
 
-        <!-- Left Avatar / Brand Icon -->
+    <!-- Left Avatar / Brand Icon -->
+    <div class="flex items-center justify-start">
         <a href="./index.html"
             class="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden border border-white/20 flex-shrink-0 flex items-center justify-center bg-neutral-800">
             <img src="./image/Acetekhlogo.PNG" alt="ACETEKH" class="w-full h-full object-cover">
         </a>
+    </div>
 
-        <!-- Center Nav Links -->
-        <div
-            class="flex items-center gap-2.5 sm:gap-5 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-neutral-400">
+    <!-- Center Nav Links (Desktop) / Hamburger (Mobile) -->
+    <div class="flex items-center justify-center">
+        <!-- Desktop Links -->
+        <div class="hidden md:flex items-center gap-2.5 sm:gap-5 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-neutral-400 whitespace-nowrap">
             <a href="#home" class="hover:text-white transition-colors">Home</a>
             <a href="#about" class="hover:text-white transition-colors">About</a>
             <a href="#projects" class="hover:text-white transition-colors">Projects</a>
             <a href="#services" class="hover:text-white transition-colors">Services</a>
         </div>
 
-        <!-- Right Contact CTA Button -->
+        <!-- Mobile Hamburger Button with Corner Brackets -->
+        <div class="flex md:hidden items-center justify-center relative">
+            <button id="menu-toggle" class="relative px-5 py-3 text-white focus:outline-none flex items-center justify-center">
+                
+                <!-- Top-Left Corner Bracket (White) -->
+                <span class="absolute top-0 left-0 w-2 h-2 border-t border-l border-white"></span>
+                <!-- Top-Right Corner Bracket (White) -->
+                <span class="absolute top-0 right-0 w-2 h-2 border-t border-r border-white"></span>
+                <!-- Bottom-Left Corner Bracket (White) -->
+                <span class="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white"></span>
+                <!-- Bottom-Right Corner Bracket (White) -->
+                <span class="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white"></span>
+
+                <!-- 3-Line Hamburger Icon -->
+                <div class="flex flex-col space-y-1 items-center justify-center">
+                    <span class="w-5 h-0.5 bg-white block"></span>
+                    <span class="w-5 h-0.5 bg-white block"></span>
+                    <span class="w-5 h-0.5 bg-white block"></span>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Right Contact CTA Button -->
+    <div class="flex items-center justify-end">
         <a href="#contact"
             class="bg-white text-black hover:bg-neutral-200 text-[10px] sm:text-xs font-bold uppercase px-3 sm:px-4 py-2 sm:py-2.5 rounded-full transition-all duration-200 flex items-center gap-1 flex-shrink-0">
             <span>Contact</span>
             <span class="text-xs font-bold">+</span>
         </a>
+    </div>
 
-    </nav>
+</nav>
 
+<!-- Mobile Dropdown Menu (Full width matching the dock) -->
+<div id="mobile-menu" class="hidden md:hidden fixed bottom-24 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-[620px] glass-card rounded-2xl p-5 flex flex-col items-center gap-4 shadow-2xl border border-white/10 backdrop-blur-2xl bg-neutral-900/90 text-center">
+    <a href="#home" class="mobile-nav-link text-sm font-semibold uppercase tracking-wider text-neutral-300 hover:text-white py-2 w-full block transition-colors">Home</a>
+    <a href="#about" class="mobile-nav-link text-sm font-semibold uppercase tracking-wider text-neutral-300 hover:text-white py-2 w-full block transition-colors">About</a>
+    <a href="#projects" class="mobile-nav-link text-sm font-semibold uppercase tracking-wider text-neutral-300 hover:text-white py-2 w-full block transition-colors">Projects</a>
+    <a href="#services" class="mobile-nav-link text-sm font-semibold uppercase tracking-wider text-neutral-300 hover:text-white py-2 w-full block transition-colors">Services</a>
+</div>
     <!-- SCRIPTS -->
     <script>
+        const menuToggle = document.getElementById('menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+}
         // Live Clock
         function updateClock() {
             const now = new Date();

@@ -35,3 +35,5 @@ document.addEventListener('DOMContentLoaded', () => {
     updateTitle(DEFAULT_TITLE);
   });
 });
+
+
