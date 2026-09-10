@@ -46,7 +46,7 @@
             transform: translateY(-8px);
         }
 
-        /* Styling icon badge */
+      /* Styling icon badge */
         .icon-badge {
             width: 48px;
             height: 48px;
@@ -265,8 +265,7 @@
                                     class="text-xl md:text-2xl"></iconify-icon></div>
                             <div class="icon-badge" data-tech="Dart"><iconify-icon icon="logos:dart"
                                     class="text-xl md:text-2xl"></iconify-icon></div>
-                            <div class="icon-badge" data-tech="Flutter"><iconify-icon icon="logos:flutter"
-                                    class="text-xl md:text-2xl"></iconify-icon></div>
+                            <div class="icon-badge" data-tech="Flutter"><iconify-icon icon="devicon:flutter" class="text-xl md:text-2xl"></iconify-icon></div>
                             <div class="icon-badge" data-tech="UI/UX (Figma)"><iconify-icon icon="logos:figma"
                                     class="text-xl md:text-2xl"></iconify-icon></div>
                             <div class="icon-badge" data-tech="MongoDB"><iconify-icon icon="logos:mongodb-icon"
@@ -290,8 +289,9 @@
                                     class="text-xl md:text-2xl"></iconify-icon></div>
                             <div class="icon-badge" data-tech="Dart"><iconify-icon icon="logos:dart"
                                     class="text-xl md:text-2xl"></iconify-icon></div>
-                            <div class="icon-badge" data-tech="Flutter"><iconify-icon icon="logos:flutter"
-                                    class="text-xl md:text-2xl"></iconify-icon></div>
+<div class="icon-badge" data-tech="Flutter">
+    <iconify-icon icon="devicon:flutter" class="text-xl md:text-2xl"></iconify-icon>
+</div>
                             <div class="icon-badge" data-tech="UI/UX (Figma)"><iconify-icon icon="logos:figma"
                                     class="text-xl md:text-2xl"></iconify-icon></div>
                             <div class="icon-badge" data-tech="MongoDB"><iconify-icon icon="logos:mongodb-icon"
@@ -673,7 +673,6 @@
         const resumeOptions = document.getElementById('resume-options');
 
         resumeCard.addEventListener('click', (e) => {
-            // Prevent toggling if they clicked directly on the inner action buttons
             if (e.target.closest('a')) return;
 
             const isOpen = resumeOptions.classList.contains('opacity-100');
@@ -687,7 +686,7 @@
         });
 
 
-        const aboutCard = document.querySelector('[data-title="About"]'); // Or your card ID/class selector
+        const aboutCard = document.querySelector('[data-title="About"]'); 
         const aboutOverlay = document.getElementById('about-overlay');
         const closeAboutBtn = document.getElementById('close-about');
         const closeAboutActionBtn = document.getElementById('close-about-btn');
