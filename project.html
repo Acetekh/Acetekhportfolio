@@ -143,19 +143,75 @@
         </div>
 
         <!-- 10 Projects in Alternating Wide Layout -->
-        <!-- NOTE: every card has the SAME physical DOM order — media block first,
-             text block second — tagged with data-role="media" / data-role="text".
-             Left/right alternation is applied entirely by JS (syncAlternation),
-             recomputed on every filter change from the currently-visible set.
-
-             Every image is now wrapped in a link to its own case-study page
-             (matching the pattern project 1 already used), with a shared hover
-             treatment: dark tint + a circular frosted "+" badge. Each image
-             container also carries .tilt-card for the mouse-follow tilt effect
-             (see initTiltEffect() in the script below). -->
+        
         <div class="space-y-24" id="projects-container">
 
-            <!-- PROJECT 1 -->
+
+
+             <!-- PROJECT 1 -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="frontend">
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./case_study_sociallite.html" class="block" title="View SocialLite Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/sociallite.png" alt="SocialLite"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/70">Frontend / Social Media</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">SocialLite
+                    </h3>
+                    <div class="pt-2">
+                        <a href="https://social-lite-tau.vercel.app/" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="frontend">
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./case_study_remote.html" class="block" title="View Remote Work Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/remote.png" alt="Remote Work Platform"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/70">Frontend /
+                        Job Platform</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Remote Work
+                    </h3>
+                    <div class="pt-2">
+                        <a href="https://remote-olive.vercel.app/" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 3 -->
             <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
                 data-category="frontend">
                 <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
@@ -187,7 +243,7 @@
                 </div>
             </div>
 
-            <!-- PROJECT 2 -->
+            <!-- PROJECT 4 -->
             <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
                 data-category="frontend">
                 <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
@@ -218,6 +274,74 @@
                     </div>
                 </div>
             </div>
+
+
+
+             <!-- PROJECT 1 -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="frontend">
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./case_study_finance.html" class="block" title="View Finance Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/fams.png" alt="auth"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/70">Frontend / Auth</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Financial authenticated management system
+                    </h3>
+                    <div class="pt-2">
+                        <a href="https://fams-theta.vercel.app/" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 2 -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="frontend">
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./case_study_designflow.html" class="block" title="View DesignFlow Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/designflow.png" alt="DesignFlow"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/70">Frontend /
+                        Interior Design</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">DesignFlow
+                    </h3>
+                    <div class="pt-2">
+                        <a href="https://designflow-chi.vercel.app/" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            
 
             <!-- PROJECT 3 -->
             <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
@@ -372,6 +496,103 @@
                         </h3>
                     <div class="pt-2">
                         <a href="./coming_soon.html" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+             <!-- PROJECT 6 -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="uiux">
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./coming_soon.html" class="block" title="View Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/fashion.png" alt="Fashion Retail UI"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">UI/UX /
+                        Fashion</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Fashion Retail
+                        UI</h3>
+                    <div class="pt-2">
+                      <a href="./coming_soon.html" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 7 -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="uiux">
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./coming_soon.html" class="block" title="View Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/icey.png" alt="Ice cream Shop UI"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">UI/UX /
+                        E-Commerce</span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">Ice cream Shop
+                        </h3>
+                    <div class="pt-2">
+                        <a href="./coming_soon.html" target="_blank"
+                            class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+             <!-- PROJECT 6 -->
+            <div class="project-item grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+                data-category="uiux">
+                <div class="lg:col-span-7 relative group [perspective:900px]" data-role="media">
+                    <a href="./coming_soon.html" class="block" title="View Case Study">
+                        <div class="tilt-card relative w-full h-[340px] sm:h-[420px] bg-neutral-900 border border-white/10 rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="./image/chatp.png" alt="PayFlow Dashboard UI"
+                                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out">
+                            <div
+                                class="absolute inset-0 bg-neutral-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span
+                                    class="w-14 h-14 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 flex items-center justify-center shadow-xl scale-90 group-hover:scale-100 transition-transform duration-300">
+                                    <iconify-icon icon="lucide:plus" class="text-2xl text-white"></iconify-icon>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="lg:col-span-5 space-y-4 lg:px-4" data-role="text">
+                    <span class="text-xs font-mono font-semibold tracking-wider text-[#0adee5]/80">UI/UX /
+                        Chat App </span>
+                    <h3 class="text-2xl sm:text-4xl font-bold tracking-tight text-white leading-tight">ChatP
+                        UI</h3>
+                    <div class="pt-2">
+                      <a href="./coming_soon.html" target="_blank"
                             class="project-link w-12 h-12 rounded-full bg-neutral-900 border border-white/10 hover:border-[#0adee5]/70 text-white hover:text-[#0adee5]/70 flex items-center justify-center transition-all duration-300 hover:scale-105">
                             <iconify-icon icon="lucide:arrow-up-right" class="text-xl"></iconify-icon>
                         </a>
