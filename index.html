@@ -289,9 +289,9 @@
                                     class="text-xl md:text-2xl"></iconify-icon></div>
                             <div class="icon-badge" data-tech="Dart"><iconify-icon icon="logos:dart"
                                     class="text-xl md:text-2xl"></iconify-icon></div>
-<div class="icon-badge" data-tech="Flutter">
-    <iconify-icon icon="devicon:flutter" class="text-xl md:text-2xl"></iconify-icon>
-</div>
+                            <div class="icon-badge" data-tech="Flutter">
+                                <iconify-icon icon="devicon:flutter" class="text-xl md:text-2xl"></iconify-icon>
+                            </div>
                             <div class="icon-badge" data-tech="UI/UX (Figma)"><iconify-icon icon="logos:figma"
                                     class="text-xl md:text-2xl"></iconify-icon></div>
                             <div class="icon-badge" data-tech="MongoDB"><iconify-icon icon="logos:mongodb-icon"
@@ -443,7 +443,7 @@
 
         </div>
 
-        <!-- NEW: Speed & Client Satisfaction "Stunts" Section -->
+        <!-- Speed & Client Satisfaction Section -->
         <div class="border border-white/10 rounded-2xl p-6 bg-gradient-to-br from-white/[0.03] to-transparent flex flex-col gap-4">
             <div class="flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-[#0adee5] animate-pulse"></span>
@@ -499,18 +499,20 @@
                 if (progress >= 100) {
                     progress = 100;
                     clearInterval(interval);
-                    percentText.textContent = progress;
-                    progressBar.style.width = '100%';
-                    counterBox.style.left = '100%';
+                    if (percentText) percentText.textContent = progress;
+                    if (progressBar) progressBar.style.width = '100%';
+                    if (counterBox) counterBox.style.left = '100%';
 
                     setTimeout(() => {
-                        loader.classList.add('opacity-0', 'pointer-events-none');
-                        setTimeout(() => { loader.style.display = 'none'; }, 700);
+                        if (loader) {
+                            loader.classList.add('opacity-0', 'pointer-events-none');
+                            setTimeout(() => { loader.style.display = 'none'; }, 700);
+                        }
                     }, 400);
                 } else {
-                    percentText.textContent = progress;
-                    progressBar.style.width = `${progress}%`;
-                    counterBox.style.left = `${progress}%`;
+                    if (percentText) percentText.textContent = progress;
+                    if (progressBar) progressBar.style.width = `${progress}%`;
+                    if (counterBox) counterBox.style.left = `${progress}%`;
                 }
             }, 50);
         });
@@ -523,7 +525,7 @@
             const DEFAULT_TEXT = 'AceTekh';
 
             function updateTitle(newText) {
-                if (titleEl.textContent.trim() === newText) return;
+                if (!titleEl || titleEl.textContent.trim() === newText) return;
                 titleEl.classList.add('title-swap');
                 setTimeout(() => {
                     titleEl.textContent = newText;
@@ -538,9 +540,11 @@
                 });
             });
 
-            bentoGrid.addEventListener('mouseleave', () => {
-                updateTitle(DEFAULT_TEXT);
-            });
+            if (bentoGrid) {
+                bentoGrid.addEventListener('mouseleave', () => {
+                    updateTitle(DEFAULT_TEXT);
+                });
+            }
         });
 
         // Time and Location Widget
@@ -550,8 +554,10 @@
             const liveTimeEl = document.getElementById('live-time');
 
             function updateTime() {
-                const now = new Date();
-                liveTimeEl.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                if (liveTimeEl) {
+                    const now = new Date();
+                    liveTimeEl.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                }
             }
             updateTime();
             setInterval(updateTime, 10000);
@@ -560,44 +566,46 @@
             let defaultCity = 'Lagos';
             let isDetailed = false;
 
-            locationBtn.addEventListener('click', async () => {
-                if (isDetailed) {
-                    userLocationEl.textContent = defaultCity;
-                    isDetailed = false;
-                    return;
-                }
-                if (detailedArea) {
-                    userLocationEl.textContent = detailedArea;
-                    isDetailed = true;
-                    return;
-                }
+            if (locationBtn && userLocationEl) {
+                locationBtn.addEventListener('click', async () => {
+                    if (isDetailed) {
+                        userLocationEl.textContent = defaultCity;
+                        isDetailed = false;
+                        return;
+                    }
+                    if (detailedArea) {
+                        userLocationEl.textContent = detailedArea;
+                        isDetailed = true;
+                        return;
+                    }
 
-                userLocationEl.textContent = 'Locating...';
-                if ('geolocation' in navigator) {
-                    navigator.geolocation.getCurrentPosition(
-                        async (position) => {
-                            const { latitude, longitude } = position.coords;
-                            try {
-                                const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`);
-                                const data = await res.json();
-                                detailedArea = data.locality || data.city || data.principalSubdivision || 'Lagos';
-                                userLocationEl.textContent = detailedArea;
-                                isDetailed = true;
-                            } catch (err) {
+                    userLocationEl.textContent = 'Locating...';
+                    if ('geolocation' in navigator) {
+                        navigator.geolocation.getCurrentPosition(
+                            async (position) => {
+                                const { latitude, longitude } = position.coords;
+                                try {
+                                    const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`);
+                                    const data = await res.json();
+                                    detailedArea = data.locality || data.city || data.principalSubdivision || 'Lagos';
+                                    userLocationEl.textContent = detailedArea;
+                                    isDetailed = true;
+                                } catch (err) {
+                                    userLocationEl.textContent = 'Lagos';
+                                    isDetailed = false;
+                                }
+                            },
+                            (error) => {
                                 userLocationEl.textContent = 'Lagos';
                                 isDetailed = false;
-                            }
-                        },
-                        (error) => {
-                            userLocationEl.textContent = 'Lagos';
-                            isDetailed = false;
-                        },
-                        { timeout: 5000 }
-                    );
-                } else {
-                    userLocationEl.textContent = 'Lagos';
-                }
-            });
+                            },
+                            { timeout: 5000 }
+                        );
+                    } else {
+                        userLocationEl.textContent = 'Lagos';
+                    }
+                });
+            }
         });
 
         // AI Assistant Hints
@@ -630,6 +638,7 @@
             };
 
             function setAIMessage(htmlText) {
+                if (!aiMessage) return;
                 aiMessage.style.opacity = '0';
                 setTimeout(() => {
                     aiMessage.innerHTML = htmlText;
@@ -672,18 +681,20 @@
         const resumeCard = document.getElementById('resume-card');
         const resumeOptions = document.getElementById('resume-options');
 
-        resumeCard.addEventListener('click', (e) => {
-            if (e.target.closest('a')) return;
+        if (resumeCard && resumeOptions) {
+            resumeCard.addEventListener('click', (e) => {
+                if (e.target.closest('a')) return;
 
-            const isOpen = resumeOptions.classList.contains('opacity-100');
-            if (isOpen) {
-                resumeOptions.classList.remove('opacity-100', 'pointer-events-auto');
-                resumeOptions.classList.add('opacity-0', 'pointer-events-none');
-            } else {
-                resumeOptions.classList.remove('opacity-0', 'pointer-events-none');
-                resumeOptions.classList.add('opacity-100', 'pointer-events-auto');
-            }
-        });
+                const isOpen = resumeOptions.classList.contains('opacity-100');
+                if (isOpen) {
+                    resumeOptions.classList.remove('opacity-100', 'pointer-events-auto');
+                    resumeOptions.classList.add('opacity-0', 'pointer-events-none');
+                } else {
+                    resumeOptions.classList.remove('opacity-0', 'pointer-events-none');
+                    resumeOptions.classList.add('opacity-100', 'pointer-events-auto');
+                }
+            });
+        }
 
 
         const aboutCard = document.querySelector('[data-title="About"]'); 
@@ -692,10 +703,11 @@
         const closeAboutActionBtn = document.getElementById('close-about-btn');
 
         function toggleAbout(open) {
+            if (!aboutOverlay) return;
             if (open) {
                 aboutOverlay.classList.remove('opacity-0', 'pointer-events-none');
                 aboutOverlay.classList.add('opacity-100', 'pointer-events-auto');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                document.body.style.overflow = 'hidden';
             } else {
                 aboutOverlay.classList.remove('opacity-100', 'pointer-events-auto');
                 aboutOverlay.classList.add('opacity-0', 'pointer-events-none');
@@ -713,20 +725,25 @@
             closeAboutActionBtn.addEventListener('click', () => toggleAbout(false));
         }
 
-        // Close when clicking outside the inner modal box
-        aboutOverlay.addEventListener('click', (e) => {
-            if (e.target === aboutOverlay) toggleAbout(false);
-        });
-        document.querySelector('a[href="#contact"]').addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetSection = document.getElementById('contact');
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
+        if (aboutOverlay) {
+            aboutOverlay.addEventListener('click', (e) => {
+                if (e.target === aboutOverlay) toggleAbout(false);
+            });
+        }
 
+        // Smooth scroll listener safe check
+        const contactLink = document.querySelector('a[href="#contact"]');
+        if (contactLink) {
+            contactLink.addEventListener('click', function (e) {
+                const targetSection = document.getElementById('contact');
+                if (targetSection) {
+                    e.preventDefault();
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
     </script>
 </body>
 
