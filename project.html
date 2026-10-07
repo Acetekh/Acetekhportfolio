@@ -808,22 +808,21 @@ if (speakContainer && speakActions) {
     });
 }
         // Live Lagos Clock Function (Hours and Minutes only)
-        function updateClock() {
+       function updateClock() {
             const options = { timeZone: 'Africa/Lagos', hour: '2-digit', minute: '2-digit', hour12: true };
             const timeString = new Intl.DateTimeFormat([], options).format(new Date());
             const clockElement = document.getElementById('live-clock');
-            if (clockElement) {
-                clockElement.textContent = timeString;
-            }
+            if (clockElement) clockElement.textContent = timeString;
         }
         setInterval(updateClock, 1000);
         updateClock();
 
-        // ================= DYNAMIC LEFT/RIGHT ALTERNATION =================
-        // Tracks which filter is active and alternates media-left / media-right
-        // across the cards that WILL be visible for that filter — computed from
-        // the target category, not from current display state, so it stays
-        // correct even mid-transition.
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+       
         let currentFilter = 'all';
 
         function syncAlternation() {
