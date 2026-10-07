@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" class="dark bg-neutral-950 text-white">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icey Gourmet Gelato Ordering App Case Study | ACETEKH</title>
+    <link rel="icon" href="./image/Acetekhlogo.PNG" type="image/png">
+
+    <!-- Google Fonts (Inter + JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Iconify CDN -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #070707;
+            color: #ffffff;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Icey Gourmet Gelato & Dessert Mobile App | ACETEKH">
+    <meta name="description" content="Mobile UI/UX case study for Icey: ordering flow, category filtering, portion sizing, and dark micro-navigation for artisan gelato.">
+</head>
+<body class="min-h-screen flex flex-col justify-between relative overflow-x-hidden pb-32">
+
+    <!-- NAVBAR / HEADER -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full bg-neutral-950/50 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 grid grid-cols-3 items-center gap-1 sm:gap-3">
+
+            <!-- Left: Logo -->
+            <a href="./index.html" class="justify-self-start text-sm sm:text-lg font-bold tracking-wider text-white flex-shrink-0 hover:text-neutral-400 transition-colors">
+                ACETEKH
+            </a>
+
+            <!-- Center: Social Icons -->
+            <div class="justify-self-center flex items-center gap-2 sm:gap-4 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-full flex-shrink-0">
+                <a href="https://x.com/acetekh" target="_blank" class="text-neutral-400 hover:text-white transition-colors">
+                    <iconify-icon icon="simple-icons:x" class="text-xs sm:text-sm"></iconify-icon>
+                </a>
+                <a href="https://github.com/Ace-tech1" target="_blank" class="text-neutral-400 hover:text-white transition-colors">
+                    <iconify-icon icon="simple-icons:github" class="text-xs sm:text-sm"></iconify-icon>
+                </a>
+                <a href="https://www.instagram.com/armanii_beecroft/" target="_blank" class="text-neutral-400 hover:text-[#E4405F] transition-colors">
+                    <iconify-icon icon="simple-icons:instagram" class="text-xs sm:text-sm"></iconify-icon>
+                </a>
+                <a href="https://wa.me/2349167270900" target="_blank" class="text-neutral-400 hover:text-[#25D366] transition-colors">
+                    <iconify-icon icon="simple-icons:whatsapp" class="text-xs sm:text-sm"></iconify-icon>
+                </a>
+            </div>
+
+            <!-- Right: Location & Time Widget -->
+            <div class="justify-self-end flex items-center gap-1 sm:gap-2 text-[9px] sm:text-xs font-mono text-neutral-400 flex-shrink-0">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0adee5] animate-pulse flex-shrink-0"></span>
+                <span>Lagos</span>
+                <span>•</span>
+                <span id="live-clock">04:38 PM</span>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- MAIN CASE STUDY CONTENT -->
+    <main class="w-full max-w-7xl mx-auto px-4 py-12 flex-grow space-y-16 mt-16">
+
+        <!-- BACK LINK -->
+        <a href="./project.html" class="relative group inline-flex items-center justify-center px-4 py-2.5 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300">
+            <span class="absolute top-0 left-0 w-2.5 h-2.5 border-t-2 border-l-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"></span>
+            <span class="absolute top-0 right-0 w-2.5 h-2.5 border-t-2 border-r-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></span>
+            <span class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b-2 border-l-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:translate-y-0.5"></span>
+            <span class="absolute bottom-0 right-0 w-2.5 h-2.5 border-b-2 border-r-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"></span>
+
+            <span class="text-xs font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2 whitespace-nowrap">
+                <iconify-icon icon="lucide:arrow-left" class="text-sm text-[#0adee5] transition-transform duration-300 group-hover:-translate-x-1"></iconify-icon>
+                Back to project
+            </span>
+        </a>
+
+        <!-- HEADER SECTION -->
+        <section class="text-center space-y-6 max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#D81B60]/20 border border-[#D81B60]/40 text-[#FF4081] text-xs font-mono uppercase tracking-widest">
+                Mobile Food Tech & Micro-Interactions
+            </div>
+            <h1 class="text-3xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                Icey Gourmet Gelato & Dessert Ordering
+            </h1>
+            <p class="text-neutral-400 text-base sm:text-xl font-normal leading-relaxed max-w-3xl mx-auto">
+                Designing a tactile mobile ordering experience for artisanal gelato featuring instant category pills, customization, location detection, and streamlined checkout.
+            </p>
+        </section>
+
+        <!-- METADATA BOXES -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="p-6 bg-white/[0.03] backdrop-blur-md text-center border border-white/10 hover:border-neutral-500 transition-all rounded-2xl space-y-1">
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">App Concept</span>
+                <h3 class="text-lg font-semibold text-white">Icey Gelato</h3>
+            </div>
+            <div class="p-6 bg-white/[0.03] backdrop-blur-md text-center border border-white/10 hover:border-neutral-500 transition-all rounded-2xl space-y-1">
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Role</span>
+                <h3 class="text-lg font-semibold text-white">UI/UX Designer</h3>
+            </div>
+            <div class="p-6 bg-white/[0.03] backdrop-blur-md text-center border border-white/10 hover:border-neutral-500 transition-all rounded-2xl space-y-1">
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Platform</span>
+                <h3 class="text-lg font-semibold text-white">iOS & Android</h3>
+            </div>
+            <div class="p-6 bg-white/[0.03] backdrop-blur-md text-center border border-white/10 hover:border-neutral-500 transition-all rounded-2xl space-y-1">
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Year</span>
+                <h3 class="text-lg font-semibold text-white">2026</h3>
+            </div>
+        </section>
+
+        <!-- TOP SHOWCASE: 4-SCREEN MOBILE ROW -->
+        <section class="pt-4">
+            <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Screen 1: Home Feed -->
+                <div data-lightbox-src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791339987/Ox_Ice_cream_buzpky.png" class="lightbox-trigger group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 bg-neutral-900">
+                    <img src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791339987/Ox_Ice_cream_buzpky.png" alt="Icey Home Feed & Category Filters" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <!-- Screen 2: Promo Banner Feed -->
+                <div data-lightbox-src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791340134/icecasestudy2_gp17hz.png" class="lightbox-trigger group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 bg-neutral-900">
+                    <img src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791340134/icecasestudy2_gp17hz.png" alt="Icey Daily Special Banner" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <!-- Screen 3: Flavor Options & Toppings -->
+                <div data-lightbox-src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791339905/icecasestudy3_a3eru3.png" class="lightbox-trigger group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 bg-neutral-900">
+                    <img src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791339905/icecasestudy3_a3eru3.png" alt="Oreo Gelato Flavor Selection" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <!-- Screen 4: Size Selection & Cart -->
+                <div data-lightbox-src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791339903/icecasestudy4_fdywox.png" class="lightbox-trigger group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 bg-neutral-900">
+                    <img src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791339903/icecasestudy4_fdywox.png" alt="Portion Sizing & Add to Cart" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+        </section>
+
+        <!-- DESIGN SYSTEM & TOKENS -->
+        <section class="p-8 bg-white/[0.02] backdrop-blur-md border border-white/10 rounded-3xl space-y-8">
+            <div class="flex items-center gap-3 text-neutral-400">
+                <span class="w-8 h-[1px] bg-neutral-600"></span>
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">00 / Design Tokens & Visual Architecture</span>
+            </div>
+            
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">Visual Language & Ordering Tokens</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Color Palette -->
+                <div class="p-6 bg-white/[0.03] border border-white/5 rounded-2xl space-y-4">
+                    <h3 class="text-xs font-mono text-neutral-400 uppercase tracking-wider">Color Palette</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-[#D81B60] border border-white/10"></span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Raspberry Rose (#D81B60)</p>
+                                <p class="text-xs text-neutral-400">Primary CTAs, Cart Triggers & Radios</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-[#1E2022] border border-white/20"></span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Floating Dock Slate (#1E2022)</p>
+                                <p class="text-xs text-neutral-400">Bottom Navigation Bar Container</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-[#FAFAFA] border border-white/10"></span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Clean Cream (#FAFAFA)</p>
+                                <p class="text-xs text-neutral-400">Tactile Screen Canvas Background</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Typography -->
+                <div class="p-6 bg-white/[0.03] border border-white/5 rounded-2xl space-y-4">
+                    <h3 class="text-xs font-mono text-neutral-400 uppercase tracking-wider">Typography Scale</h3>
+                    <div class="space-y-2 text-neutral-300 text-sm">
+                        <p><strong class="text-white">Product Headings:</strong> Inter Bold (18px - 22px)</p>
+                        <p><strong class="text-white">Price & Delivery Badges:</strong> JetBrains Mono (12px)</p>
+                        <p><strong class="text-white">Category Labels:</strong> Inter Medium (11px)</p>
+                    </div>
+                </div>
+
+                <!-- Touch Targets & UX -->
+                <div class="p-6 bg-white/[0.03] border border-white/5 rounded-2xl space-y-4">
+                    <h3 class="text-xs font-mono text-neutral-400 uppercase tracking-wider">Ergonomics</h3>
+                    <div class="space-y-2 text-xs text-neutral-400">
+                        <p><strong class="text-white">Bottom Nav:</strong> Dark Pill Bar with Home, Heart, Cart & Profile</p>
+                        <p><strong class="text-white">Visual Category Filtering:</strong> Circular Dessert Icons</p>
+                        <p><strong class="text-white">Portion Picker:</strong> Small, Medium, Large Thumbnail Cards</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THREE CORE BEATS WITH PAIRED SCREENS -->
+        <section class="w-full max-w-6xl mx-auto px-4 py-8 space-y-20">
+
+            <!-- SECTION 1: Problem & Discovery Feed -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-4 lg:sticky lg:top-24">
+                    <div class="flex items-center gap-3 text-neutral-400">
+                        <span class="w-8 h-[1px] bg-neutral-600"></span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">01 / Discovery & Feed</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">High-Impact Visual Appetite Appeal</h2>
+                </div>
+                <div class="lg:col-span-8 space-y-6 text-neutral-400 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        Food delivery apps often suffer from generic text-heavy lists that fail to invoke culinary desire. For artisanal gelato, texture, toppings, and scoop vibrance are primary purchase motivators.
+                    </p>
+                    <p>
+                        **Icey** solves this through card layouts featuring close-up photography, delivery time badges, toppings availability tags, and an instant category bar (`Double Oreo`, `Lotus Biscoff`, `Pistachio`, `Cookies & Cream`).
+                    </p>
+
+                    <!-- Paired Screens: icey1.png & icey2.png -->
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div data-lightbox-src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791339987/Ox_Ice_cream_buzpky.png" class="lightbox-trigger group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 bg-neutral-900">
+                            <img src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791339987/Ox_Ice_cream_buzpky.png" alt="Icey Feed Screen" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                        <div data-lightbox-src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791340134/icecasestudy2_gp17hz.png" class="lightbox-trigger group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 bg-neutral-900">
+                            <img src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791340134/icecasestudy2_gp17hz.png" alt="Icey Special Banner" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-white/10">
+
+            <!-- SECTION 2: Customization & Toppings -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-4 lg:sticky lg:top-24">
+                    <div class="flex items-center gap-3 text-neutral-400">
+                        <span class="w-8 h-[1px] bg-neutral-600"></span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">02 / Customization</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Granular Flavor & Topping Selection</h2>
+                </div>
+                <div class="lg:col-span-8 space-y-6 text-neutral-400 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        Allowing customers to personalize their dessert options without cluttering the screen:
+                    </p>
+                    <ul class="space-y-4 list-disc pl-5">
+                        <li><strong class="text-white">Popular Flavors List:</strong> Radio selection for Chunky Crushed Oreo, Mint Cookies & Cream, and Chocolate Oreo Fudge.</li>
+                        <li><strong class="text-white">Clear Pricing Indicators:</strong> Direct itemized pricing per customization option.</li>
+                    </ul>
+
+                    <!-- Paired Screen: icey3.png -->
+                    <div class="max-w-xs mt-6">
+                        <div data-lightbox-src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791339905/icecasestudy3_a3eru3.png" class="lightbox-trigger group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 bg-neutral-900">
+                            <img src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791339905/icecasestudy3_a3eru3.png" alt="Toppings Customization Screen" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-white/10">
+
+            <!-- SECTION 3: Sizing & One-Tap Cart -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-4 lg:sticky lg:top-24">
+                    <div class="flex items-center gap-3 text-neutral-400">
+                        <span class="w-8 h-[1px] bg-neutral-600"></span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">03 / Portioning & Cart</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Tactile Sizing & Instant Cart Hand-Off</h2>
+                </div>
+                <div class="lg:col-span-8 space-y-6 text-neutral-400 text-base sm:text-lg leading-relaxed">
+                    <ul class="space-y-4 list-disc pl-5">
+                        <li><strong class="text-white">Visual Tub Portioning:</strong> Circular thumbnail selectors for Small, Medium, and Large portions.</li>
+                        <li><strong class="text-white">High-Contrast Action CTA:</strong> Full-width Raspberry Rose (`#D81B60`) `Add to cart` button aligned directly within bottom thumb reach.</li>
+                    </ul>
+
+                    <!-- Paired Screen: icey4.png -->
+                    <div class="max-w-xs mt-6">
+                        <div data-lightbox-src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791339903/icecasestudy4_fdywox.png" class="lightbox-trigger group relative rounded-2xl overflow-hidden cursor-pointer border border-white/10 bg-neutral-900">
+                            <img src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791339903/icecasestudy4_fdywox.png" alt="Portion Sizing and Add to Cart" class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- NEXT PROJECT BANNER -->
+        <section class="w-full max-w-5xl mx-auto px-4 py-8">
+            <a href="./coming_soon.html"
+                class="group relative block w-full overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 p-8 sm:p-12 transition-all duration-300 hover:border-neutral-700">
+                
+                <div class="absolute inset-0 z-0">
+                    <img src="./image/chatp.png" alt="AWear Mobile preview"
+                        class="h-full w-full object-cover object-center opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-500 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-transparent"></div>
+                </div>
+
+                <div class="relative z-10 flex flex-col justify-end min-h-[220px]">
+                    <div class="flex items-end justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">Next Project</span>
+                            <h3 class="text-3xl sm:text-4xl font-semibold text-white mt-1 tracking-tight">
+                                AWear Mobile
+                            </h3>
+                        </div>
+
+                        <div class="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+
+            </a>
+        </section>
+
+    </main>
+
+    <!-- LIGHTBOX MODAL CONTAINER -->
+    <div id="imageLightbox" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-2xl hidden items-center justify-center p-4 sm:p-8">
+        <div class="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center">
+            <button type="button" id="lightboxClose" class="absolute -top-12 right-0 text-neutral-300 hover:text-white text-xs font-mono uppercase tracking-wider flex items-center gap-2 bg-white/[0.05] backdrop-blur-md border border-white/10 px-4 py-2 rounded-full transition-all">
+                <span>Close</span>
+                <iconify-icon icon="lucide:x" class="text-base"></iconify-icon>
+            </button>
+            <img id="lightboxImg" src="" alt="Expanded Preview" class="max-w-full max-h-[85vh] object-contain rounded-3xl shadow-2xl border border-white/10">
+        </div>
+    </div>
+
+  <!-- FOOTER -->
+    <footer class="relative z-10 border-t border-white/5 bg-[#070707] pt-10 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="flex flex-col items-center sm:items-start gap-1">
+                    <span class="text-lg font-bold tracking-wider text-white">ACETEKH</span>
+                    <p class="text-neutral-500 text-xs font-mono">
+                        © <span id="footer-year">2026</span> All rights reserved.
+                    </p>
+                </div>
+                <button type="button" id="backToTop"
+                    class="relative group inline-flex items-center justify-center px-5 py-2.5 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300">
+                    <span class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white/60"></span>
+                    <span class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white/60"></span>
+                    <span class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white/60"></span>
+                    <span class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white/60"></span>
+                    <span class="text-[10px] font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2">
+                        Back to Top
+                        <iconify-icon icon="lucide:arrow-up"
+                            class="text-sm text-[#0adee5] group-hover:-translate-y-0.5 transition-transform duration-300"></iconify-icon>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        function updateClock() {
+            const options = { timeZone: 'Africa/Lagos', hour: '2-digit', minute: '2-digit', hour12: true };
+            const timeString = new Intl.DateTimeFormat([], options).format(new Date());
+            const clockElement = document.getElementById('live-clock');
+            if (clockElement) clockElement.textContent = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('flex');
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.querySelectorAll('.lightbox-trigger').forEach((el) => {
+            el.addEventListener('click', () => openLightbox(el.dataset.lightboxSrc));
+        });
+
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
