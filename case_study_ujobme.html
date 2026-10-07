@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ujobme</title>
+    <title>UJobMe Case Study — ACETEKH</title>
     <link rel="icon" href="./image/Acetekhlogo.PNG" type="image/png">
 
     <!-- Google Fonts (Inter + JetBrains Mono) -->
@@ -16,17 +16,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Iconify CDN -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-    
 
     <style>
-
-         body {
+        body {
             font-family: 'Inter', sans-serif;
             background-color: #070707;
             color: #ffffff;
-            
         }
-html {
+        html {
             scroll-behavior: smooth;
         }
         .font-mono {
@@ -34,41 +31,30 @@ html {
         }
     </style>
 
-
-
-<!-- Primary Meta Tags -->
-    <meta name="title" content="ACETEKH — Frontend Developer & UI/UX Designer Portfolio">
-    <meta name="description" content="Portfolio of Philip Clement, showcasing frontend development projects, UI/UX design case studies, and web applications.">
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="UJobMe  UI/UX Case Study by ACETEKH">
+    <meta name="description" content="UI/UX case study and responsive design system for UJobMe, built by Philip Clement.">
 
     <!-- Open Graph / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://acetekhportfolio.vercel.app/">
-    <meta property="og:title" content="ACETEKH — Frontend Developer & UI/UX Designer Portfolio">
-    <meta property="og:description" content="Explore my latest projects, case studies, and UI/UX design work.">
-    <meta property="og:image" content="./image/Acetekhlogo.PNG">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://acetekh.vercel.app/">
-    <meta property="twitter:title" content="ACETEKH — Frontend Developer & UI/UX Designer Portfolio">
-    <meta property="twitter:description" content="Explore my latest projects, case studies, and UI/UX design work.">
-    <meta property="twitter:image" content="./image/Acetekhlogo.PNG">
+    <meta property="og:title" content="UJobMe  UI/UX Case Study by ACETEKH">
+    <meta property="og:description" content="Explore the design system, user journeys, and UI choices behind UJobMe.">
+    <meta property="og:image" content="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791332983/ujobmecasestudy2_mlc1j6.png">
 </head>
 <body class="min-h-screen flex flex-col justify-between relative overflow-x-hidden pb-32">
 
     <!-- NAVBAR / HEADER -->
-<header class="fixed top-0 left-0 right-0 z-50 w-full bg-neutral-950/50 backdrop-blur-md border-b border-white/10 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 grid grid-cols-3 items-center gap-1 sm:gap-3">
+    <header class="fixed top-0 left-0 right-0 z-50 w-full bg-neutral-950/50 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 grid grid-cols-3 items-center gap-1 sm:gap-3">
+            <!-- Left: Logo -->
+            <a href="./index.html" class="justify-self-start text-sm sm:text-lg font-bold tracking-wider text-white flex-shrink-0 hover:text-neutral-400 transition-colors">
+                ACETEKH
+            </a>
 
-        <!-- Left: Logo -->
-        <a href="./index.html" class="justify-self-start text-sm sm:text-lg font-bold tracking-wider text-white flex-shrink-0 hover:text-neutral-400 transition-colors">
-            ACETEKH
-        </a>
-
-        <!-- Center: Social Icons -->
-        <div
-            class="justify-self-center flex items-center gap-2 sm:gap-4 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-full flex-shrink-0">
-                 <a href="https://x.com/acetekh" target="_blank" class="text-neutral-400 hover:text-white transition-colors">
+            <!-- Center: Social Icons -->
+            <div class="justify-self-center flex items-center gap-2 sm:gap-4 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-full flex-shrink-0">
+                <a href="https://x.com/acetekh" target="_blank" class="text-neutral-400 hover:text-white transition-colors">
                     <iconify-icon icon="simple-icons:x" class="text-xs sm:text-sm"></iconify-icon>
                 </a>
                 <a href="https://github.com/Ace-tech1" target="_blank" class="text-neutral-400 hover:text-white transition-colors">
@@ -80,226 +66,266 @@ html {
                 <a href="https://wa.me/2349167270900" target="_blank" class="text-neutral-400 hover:text-[#25D366] transition-colors">
                     <iconify-icon icon="simple-icons:whatsapp" class="text-xs sm:text-sm"></iconify-icon>
                 </a>
-        </div>
+            </div>
 
-        <!-- Right: Location & Time Widget -->
-        <div class="justify-self-end flex items-center gap-1 sm:gap-2 text-[9px] sm:text-xs font-mono text-neutral-400 flex-shrink-0">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#0adee5] animate-pulse flex-shrink-0"></span>
-            <span>Lagos</span>
-            <span>•</span>
-            <span id="live-clock">04:38 PM</span>
+            <!-- Right: Location & Time Widget -->
+            <div class="justify-self-end flex items-center gap-1 sm:gap-2 text-[9px] sm:text-xs font-mono text-neutral-400 flex-shrink-0">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0adee5] animate-pulse flex-shrink-0"></span>
+                <span>Lagos</span>
+                <span>•</span>
+                <span id="live-clock">04:38 PM</span>
+            </div>
         </div>
-
-    </div>
-</header>
+    </header>
 
     <!-- MAIN CASE STUDY CONTENT -->
-    <main class="w-full max-w-7xl mx-auto px-4 py-12 flex-grow space-y-16">
+    <main class="w-full max-w-7xl mx-auto px-4 py-12 flex-grow space-y-16 mt-16">
 
         <a href="./project.html" class="relative group inline-flex items-center justify-center px-4 py-2.5 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300">
-        <span class="absolute top-0 left-0 w-2.5 h-2.5 border-t-2 border-l-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"></span>
-        <span class="absolute top-0 right-0 w-2.5 h-2.5 border-t-2 border-r-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></span>
-        <span class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b-2 border-l-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:translate-y-0.5"></span>
-        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 border-b-2 border-r-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"></span>
+            <span class="absolute top-0 left-0 w-2.5 h-2.5 border-t-2 border-l-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"></span>
+            <span class="absolute top-0 right-0 w-2.5 h-2.5 border-t-2 border-r-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></span>
+            <span class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b-2 border-l-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:translate-y-0.5"></span>
+            <span class="absolute bottom-0 right-0 w-2.5 h-2.5 border-b-2 border-r-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"></span>
 
-        <span class="text-xs font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2 whitespace-nowrap">
-          <iconify-icon icon="lucide:arrow-left" class="text-sm text-[#0adee5] transition-transform duration-300 group-hover:-translate-x-1"></iconify-icon>
-          Back to project
-        </span>
-      </a>
+            <span class="text-xs font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2 whitespace-nowrap">
+                <iconify-icon icon="lucide:arrow-left" class="text-sm text-[#0adee5] transition-transform duration-300 group-hover:-translate-x-1"></iconify-icon>
+                Back to projects
+            </span>
+        </a>
 
         <!-- HEADER SECTION -->
-        <section class="text-center space-y-8 max-w-4xl mx-auto">
+        <section class="text-center space-y-6 max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-xs font-mono uppercase tracking-widest">
+                UI/UX Case Study & Design System
+            </div>
             <h1 class="text-3xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                Vitalo - Personal training & coaching Framer template
+                UJobMe Career Center & Student Job Match Platform
             </h1>
             <p class="text-neutral-400 text-base sm:text-xl font-normal leading-relaxed max-w-3xl mx-auto">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+                Designing a seamless user journey for students, career centers, and top employers using intuitive visual hierarchy, clear navigation, and scalable design components.
             </p>
         </section>
 
-        <!-- 4 METADATA GLASS BOXES -->
+        <!-- METADATA BOXES -->
         <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <!-- Box 1: Client -->
             <div class="p-6 bg-white/[0.03] backdrop-blur-md text-center border border-white/10 hover:border-neutral-500 transition-all duration-200 rounded-2xl shadow-xl space-y-2">
-                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Client</span>
-                <h3 class="text-lg font-semibold text-white">Aruna</h3>
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Client / Platform</span>
+                <h3 class="text-lg font-semibold text-white">UJobMe</h3>
             </div>
-            <!-- Box 2: Role -->
             <div class="p-6 bg-white/[0.03] backdrop-blur-md border text-center border-white/10 rounded-2xl shadow-xl space-y-2 hover:border-neutral-500 transition-all duration-200">
                 <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Role</span>
-                <h3 class="text-lg font-semibold text-white">Frontend Dev</h3>
+                <h3 class="text-lg font-semibold text-white">UI/UX & Product Designer</h3>
             </div>
-            <!-- Box 3: Duration -->
             <div class="p-6 bg-white/[0.03] text-center backdrop-blur-md border border-white/10 rounded-2xl shadow-xl space-y-2 hover:border-neutral-500 transition-all duration-200">
-                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Duration</span>
-                <h3 class="text-lg font-semibold text-white">2 weeks</h3>
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Focus</span>
+                <h3 class="text-lg font-semibold text-white">Design System & User Journey</h3>
             </div>
-            <!-- Box 4: Year -->
             <div class="p-6 bg-white/[0.03] backdrop-blur-md border text-center border-white/10 rounded-2xl shadow-xl space-y-2 hover:border-neutral-500 transition-all duration-200">
                 <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Year</span>
                 <h3 class="text-lg font-semibold text-white">2026</h3>
             </div>
         </section>
 
-        <!-- IMAGE SHOWCASE SECTION -->
+        <!-- MAIN MOCKUP / HERO IMAGE -->
         <section class="pt-6">
-            <div data-lightbox-src="./image/ujobme.png" class="lightbox-trigger group relative w-full h-[300px] sm:h-[400px] rounded-3xl overflow-hidden cursor-pointer">
-                <img src="./image/ujobme.png" alt="Vitalo project mockup" class="w-full h-[600px] sm:h-[690px]   object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
+            <div data-lightbox-src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791332983/ujobmecasestudy2_id71on.png" class="lightbox-trigger group relative w-full h-[320px] sm:h-[480px] rounded-3xl overflow-hidden cursor-pointer border border-white/10">
+                <img src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791332983/ujobmecasestudy2_id71on.png" alt="UJobMe Portal Interface" class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
             </div>
         </section>
 
-        <!-- LIGHTBOX MODAL CONTAINER -->
-        <div id="imageLightbox" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-2xl hidden items-center justify-center p-4 sm:p-8">
-            <div class="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center">
-                <!-- Glass Close Button -->
-                <button type="button" id="lightboxClose" class="absolute -top-12 right-0 text-neutral-300 hover:text-white text-xs font-mono uppercase tracking-wider flex items-center gap-2 bg-white/[0.05] backdrop-blur-md border border-white/10 px-4 py-2 rounded-full transition-all hover:border-white/20">
-                    <span>Close</span>
-                    <iconify-icon icon="lucide:x" class="text-base"></iconify-icon>
-                </button>
-
-                <!-- Expanded Image Container -->
-                <img id="lightboxImg" src="" alt="Expanded Preview" class="max-w-full max-h-[85vh] object-contain rounded-3xl shadow-2xl border border-white/10">
+        <!-- DESIGN SYSTEM & STYLE GUIDE SECTION -->
+        <section class="p-8 bg-white/[0.02] backdrop-blur-md border border-white/10 rounded-3xl space-y-8">
+            <div class="flex items-center gap-3 text-neutral-400">
+                <span class="w-8 h-[1px] bg-neutral-600"></span>
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">00 / Design Tokens & Visual Language</span>
             </div>
-        </div>
+            
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">Design System Architecture</h2>
 
-        <!-- WORK DETAILS & CASE STUDY SECTIONS (trimmed to 3 core beats) -->
-        <section class="w-full max-w-6xl mx-auto px-4 py-16 space-y-24">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Color Palette -->
+                <div class="p-6 bg-white/[0.03] border border-white/5 rounded-2xl space-y-4">
+                    <h3 class="text-sm font-mono text-neutral-400 uppercase tracking-wider">Color Palette</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-[#FF8A00] border border-white/10"></span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Primary Orange (#FF8A00)</p>
+                                <p class="text-xs text-neutral-400">Main CTAs & Brand Identity</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-[#000000] border border-white/20"></span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Dark Neutral (#000000)</p>
+                                <p class="text-xs text-neutral-400">Pills, Header Cards & Contrast</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-[#F5F5F7] border border-white/10"></span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Soft Light Gray (#F5F5F7)</p>
+                                <p class="text-xs text-neutral-400">Backgrounds & Clean Containers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- SECTION 1: Problem -->
+                <!-- Typography -->
+                <div class="p-6 bg-white/[0.03] border border-white/5 rounded-2xl space-y-4">
+                    <h3 class="text-sm font-mono text-neutral-400 uppercase tracking-wider">Typography Scale</h3>
+                    <div class="space-y-2 text-neutral-300 text-sm">
+                        <p><strong class="text-white">Font Family:</strong> Inter (Sans-serif) & JetBrains Mono</p>
+                        <ul class="space-y-1 text-xs text-neutral-400 list-disc pl-4">
+                            <li><strong>H1 Hero Title:</strong> Inter Bold / 32px – 48px</li>
+                            <li><strong>Section Headings:</strong> Inter Bold / 20px – 28px</li>
+                            <li><strong>Body Copy:</strong> Inter Regular / 14px – 16px (1.6 Line Height)</li>
+                            <li><strong>Tags & Badges:</strong> Inter Medium / 12px (Uppercase Tracking)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Spacing & Layout Architecture -->
+                <div class="p-6 bg-white/[0.03] border border-white/5 rounded-2xl space-y-4">
+                    <h3 class="text-sm font-mono text-neutral-400 uppercase tracking-wider">Layout & Spacing</h3>
+                    <div class="space-y-2 text-xs text-neutral-400">
+                        <p><strong class="text-white">Grid System:</strong> 12-Column Responsive Layout</p>
+                        <p><strong class="text-white">Spacing Scale:</strong> 8-point spatial grid (8px, 16px, 24px, 32px, 48px)</p>
+                        <p><strong class="text-white">Border Radius:</strong> 16px to 24px (Modern Rounded Cards)</p>
+                        <p><strong class="text-white">Accessibility:</strong> WCAG AAA Compliant contrast ratio on text & interactive triggers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASE STUDY DETAILS SECTIONS -->
+        <section class="w-full max-w-6xl mx-auto px-4 py-8 space-y-20">
+
+            <!-- SECTION 1: Problem & User Journeys -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <div class="lg:col-span-4 lg:sticky lg:top-24">
                     <div class="flex items-center gap-3 text-neutral-400">
                         <span class="w-8 h-[1px] bg-neutral-600"></span>
-                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">01 / Problem</span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">01 / Challenge & User Journey</span>
                     </div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Understanding the challenge</h2>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Simplifying Complex Career Portals</h2>
                 </div>
                 <div class="lg:col-span-8 space-y-6 text-neutral-400 text-base sm:text-lg leading-relaxed">
                     <p>
-The Nigerian luxury real estate market lacks digital platforms that seamlessly blend high end aesthetics with real time property data, advanced investment forecasting, and lightning fast search filters. High net worth buyers in locations like Lekki and Ikoyi require an immersive, friction free digital experience that mirrors physical exclusivity.                    </p>
-                    <div data-lightbox-src="./image/aruna.png" class="lightbox-trigger group relative w-full h-[340px] sm:h-[350px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
-                        <img src="./image/aruna.png" alt="Challenge Overview" class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
+                        Career service portals frequently suffer from cognitive overload—cluttered filter controls, unclear account handoffs between universities and candidates, and low scannability for fast-paced job applications.
+                    </p>
+                    <p>
+                        The goal was to own the visual hierarchy from first sign up to daily exploration , creating distinct, intuitive paths for candidates seeking university career centers while keeping job discovery effortless.
+                    </p>
+                    <div data-lightbox-src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791332983/ujobmecasestudy_mlc1j6.png" class="lightbox-trigger group relative w-full h-[320px] sm:h-[380px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
+                        <img src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791332983/ujobmecasestudy_mlc1j6.png" alt="Company Discovery View" class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
                 </div>
             </div>
 
             <hr class="border-white/10">
 
-         <!-- SECTION 2: Approach & Solution -->
+            <!-- SECTION 2: Design Approach & Principles -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <div class="lg:col-span-4 lg:sticky lg:top-24">
                     <div class="flex items-center gap-3 text-neutral-400">
                         <span class="w-8 h-[1px] bg-neutral-600"></span>
-                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">02 / Approach & Solution</span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">02 / Design Approach</span>
                     </div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Designing a seamless experience</h2>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Visual Hierarchy & Cognitive Load Management</h2>
                 </div>
                 <div class="lg:col-span-8 space-y-6 text-neutral-400 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        Applying fundamental UX psychology principles (such as Hick's Law and Gestalt principles), the interface prioritizes high-value actions while eliminating visual noise:
+                    </p>
                     <ul class="space-y-4 list-disc pl-5">
-                        <li><strong class="text-white">Tech Stack:</strong> Built entirely using HTML5, Tailwind CSS for custom styling, and vanilla JavaScript to handle dynamic API image integration and interactive UI components.</li>
-                        <li><strong class="text-white">Interactive Investment Calculators:</strong> Developed live calculation components allowing users to dynamically forecast property appreciation, ROI percentages, and hold periods over decades.</li>
-                        <li><strong class="text-white">Curated Layout System:</strong> Designed bespoke Bento-style service cards and property grid structures optimized for luxury branding.</li>
+                        <li><strong class="text-white">Split-Screen Entry Architecture:</strong> Direct distinction between direct UJobMe user login and university-partnered Career Center access.</li>
+                        <li><strong class="text-white">Frictionless Filtering & Choice Architecture:</strong> Unified search bar grouping keyword search, contract type, and geographical location into a single pill-shaped component to minimize cognitive effort.</li>
+                        <li><strong class="text-white">Scannable Opportunity Cards:</strong> Structured job listings highlighting role title, location, contract type, and fresh post timestamps in a clean layout with generous whitespace.</li>
                     </ul>
-                    <div data-lightbox-src="./image/investment.png" class="lightbox-trigger group relative w-full h-[340px] sm:h-[350px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
-                        <img src="./image/investment.png" alt="Design Solution Mockups" class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div data-lightbox-src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791332983/ujobmecasestudy3_vgjnp3.png" class="lightbox-trigger group relative w-full h-[320px] sm:h-[380px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
+                        <img src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791332983/ujobmecasestudy3_vgjnp3.png" alt="Job Search Interface" class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
                 </div>
             </div>
 
             <hr class="border-white/10">
 
-            <!-- SECTION 3: Result -->
+            <!-- SECTION 3: Company Page & Information Architecture -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <div class="lg:col-span-4 lg:sticky lg:top-24">
                     <div class="flex items-center gap-3 text-neutral-400">
                         <span class="w-8 h-[1px] bg-neutral-600"></span>
-                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">03 / Result</span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">03 / Implementation & Scannability</span>
                     </div>
-                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Design solution & results</h2>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Company Insights & Dynamic Layouts</h2>
                 </div>
                 <div class="lg:col-span-8 space-y-6 text-neutral-400 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        To give applicants confidence before applying, employer profile pages balance corporate metrics with authentic media:
+                    </p>
                     <ul class="space-y-4 list-disc pl-5">
-                        <li>Delivered a fully responsive, high-performance luxury real estate platform featuring dynamic property listings, cinematic tour video embeds, and precise financial projection tools.</li>
-                        <li>Achieved a flawless cross-device layout with smooth transitions, meeting the high standards expected by modern real estate buyers and tech recruiters alike.</li>
+                        <li><strong class="text-white">Structured Metadata Banner:</strong> Highlighting company size, sector, and location using crisp icon-label groupings.</li>
+                        <li><strong class="text-white">Culture Media Carousel:</strong> Integrated visual gallery giving applicants immediate insight into workplace environment.</li>
+                        <li><strong class="text-white">Responsive Grid Layouts:</strong> Engineered layout components that adapt fluidly across desktop, tablet, and mobile views.</li>
                     </ul>
-                    <div data-lightbox-src="./image/properties.png" class="lightbox-trigger group relative w-full h-[340px] sm:h-[350px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
-                        <img src="./image/properties.png" alt="Conclusion Results" class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
+                    <div data-lightbox-src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791332984/ujobmecasestudy1_blgr33.png" class="lightbox-trigger group relative w-full h-[320px] sm:h-[380px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
+                        <img src="https://res.cloudinary.com/dvcuxyh99/image/upload/v1791332984/ujobmecasestudy1_blgr33.png" alt="Employer Details View" class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
                     </div>
                 </div>
             </div>
+
         </section>
 
-      <!-- ================= CLIENT TESTIMONIAL SECTION ================= -->
-<section class="w-full max-w-4xl mx-auto px-4 py-12">
- <div class="border-l-2 border-white/20 pl-6 sm:pl-10 py-2 space-y-6">
- 
-  <!-- Metadata bar -->
-  <div class="flex items-center gap-3 text-xs font-mono text-neutral-500 uppercase tracking-wider">
-   <span>Feedback</span>
-   <span>•</span>
- <span>Verified Project</span>
-  </div>
 
-  <!-- Raw Quote -->
-  <blockquote class="text-xl sm:text-2xl text-neutral-200 font-normal leading-relaxed max-w-2xl">
-   "Execution was fast, communication was clear, and the visual detail on the frontend was top-tier."
-  </blockquote>
-
-  <!-- Sign-off -->
-  <div class="text-sm font-mono text-neutral-400">
-   <strong class="text-white font-normal">Client Name</strong>, Role @ Company
-  </div>
-
- </div>
-</section>
-<section class="w-full max-w-5xl mx-auto px-4 py-8">
-    <a href="./coming_soon.html"
-        class="group relative block w-full overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 p-8 sm:p-12 transition-all duration-300 hover:border-neutral-700">
-        
-        <!-- Background Image with Subtle Hover Zoom -->
-        <div class="absolute inset-0 z-0">
-            <img src="./image/crestone.png" alt="PlugOnJerseys preview"
-                class="h-full w-full object-cover object-center opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-500 ease-out">
-            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-transparent"></div>
-        </div>
-
-        <!-- Card Content -->
-        <div class="relative z-10 flex flex-col justify-end min-h-[220px]">
-            <div class="flex items-end justify-between gap-4">
-                <div>
-                    <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">Next Project</span>
-                    <h3 class="text-3xl sm:text-4xl font-semibold text-white mt-1 tracking-tight">
-                        Crestone Living
-                    </h3>
+        <!-- NEXT PROJECT CARD -->
+        <section class="w-full max-w-5xl mx-auto px-4 py-8">
+            <a href="./coming_soon.html"
+                class="group relative block w-full overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 p-8 sm:p-12 transition-all duration-300 hover:border-neutral-700">
+                <div class="absolute inset-0 z-0">
+                    <img src="./image/crestone.png" alt="Crestone Living preview"
+                        class="h-full w-full object-cover object-center opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-500 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-transparent"></div>
                 </div>
-
-                <!-- Minimal Action Icon -->
-                <div class="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300">
-                    <iconify-icon icon="lucide:arrow-up-right" class="text-xl transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300"></iconify-icon>
+                <div class="relative z-10 flex flex-col justify-end min-h-[220px]">
+                    <div class="flex items-end justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">Next Project</span>
+                            <h3 class="text-3xl sm:text-4xl font-semibold text-white mt-1 tracking-tight">
+                                Crestone Living
+                            </h3>
+                        </div>
+                        <div class="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300"></iconify-icon>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-    </a>
-</section>
+            </a>
+        </section>
 
     </main>
 
-    <!-- ================= FOOTER ================= -->
+    <!-- LIGHTBOX MODAL CONTAINER -->
+    <div id="imageLightbox" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-2xl hidden items-center justify-center p-4 sm:p-8">
+        <div class="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center">
+            <button type="button" id="lightboxClose" class="absolute -top-12 right-0 text-neutral-300 hover:text-white text-xs font-mono uppercase tracking-wider flex items-center gap-2 bg-white/[0.05] backdrop-blur-md border border-white/10 px-4 py-2 rounded-full transition-all hover:border-white/20">
+                <span>Close</span>
+                <iconify-icon icon="lucide:x" class="text-base"></iconify-icon>
+            </button>
+            <img id="lightboxImg" src="" alt="Expanded Preview" class="max-w-full max-h-[85vh] object-contain rounded-3xl shadow-2xl border border-white/10">
+        </div>
+    </div>
+
+    <!-- FOOTER -->
     <footer class="relative z-10 border-t border-white/5 bg-[#070707] pt-10 pb-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
-
-                <!-- Brand + Copyright -->
                 <div class="flex flex-col items-center sm:items-start gap-1">
                     <span class="text-lg font-bold tracking-wider text-white">ACETEKH</span>
                     <p class="text-neutral-500 text-xs font-mono">
                         © <span id="footer-year">2026</span> All rights reserved.
                     </p>
                 </div>
-
-                <!-- Back to top -->
                 <button type="button" id="backToTop"
                     class="relative group inline-flex items-center justify-center px-5 py-2.5 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300">
                     <span class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white/60"></span>
@@ -312,35 +338,27 @@ The Nigerian luxury real estate market lacks digital platforms that seamlessly b
                             class="text-sm text-[#0adee5] group-hover:-translate-y-0.5 transition-transform duration-300"></iconify-icon>
                     </span>
                 </button>
-
             </div>
         </div>
     </footer>
 
     <!-- SCRIPTS -->
     <script>
-        // Live Lagos clock
         function updateClock() {
             const options = { timeZone: 'Africa/Lagos', hour: '2-digit', minute: '2-digit', hour12: true };
             const timeString = new Intl.DateTimeFormat([], options).format(new Date());
             const clockElement = document.getElementById('live-clock');
-            if (clockElement) {
-                clockElement.textContent = timeString;
-            }
+            if (clockElement) clockElement.textContent = timeString;
         }
         setInterval(updateClock, 1000);
         updateClock();
 
-        // Footer year - was hardcoded before, now actually computed
         document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-        // Back to top
         document.getElementById('backToTop').addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Lightbox - single delegated handler instead of an inline onclick
-        // on every image card
         const lightbox = document.getElementById('imageLightbox');
         const lightboxImg = document.getElementById('lightboxImg');
 
