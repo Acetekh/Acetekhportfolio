@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" class="dark bg-neutral-950 text-white">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nkiru Ventures — EV Infrastructure Platform Case Study | ACETEKH</title>
+    <link rel="icon" href="./image/Acetekhlogo.PNG" type="image/png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Iconify CDN -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #070707;
+            color: #ffffff;
+        }
+        .font-serif-luxury {
+            font-family: 'Cinzel', serif;
+        }
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+    <!-- Meta Tags -->
+    <meta name="title" content="Nkiru Ventures — EV Infrastructure Planning Platform Case Study">
+    <meta name="description" content="UI/UX Case study for Nkiru Ventures EV charging infrastructure planning platform by Philip Clement.">
+        <!-- Open Graph / LinkedIn / WhatsApp -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://acetekhportfolio.vercel.app/">
+    <meta property="og:title" content="Nkiru Ventures — EV Infrastructure Planning Platform Case Study by ACETEKH">
+    <meta property="og:description" content="Explore the UI/UX design process and visual system for Nkiru Ventures EV Infrastructure Platform.">
+    <meta property="og:image" content="./image/nkiru-hero.jpg">
+</head>
+<body class="min-h-screen flex flex-col justify-between relative overflow-x-hidden pb-32">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full bg-neutral-950/50 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 sm:py-4 grid grid-cols-3 items-center gap-1 sm:gap-3">
+
+            <!-- Left: Logo -->
+            <a href="./index.html" class="justify-self-start text-sm sm:text-lg font-bold tracking-wider text-white flex-shrink-0 hover:text-neutral-400 transition-colors">
+                ACETEKH
+            </a>
+
+            <!-- Center: Social Icons -->
+            <div
+                class="justify-self-center flex items-center gap-2 sm:gap-4 px-2.5 sm:px-4 py-1.5 sm:py-2 bg-white/[0.03] backdrop-blur-md border border-white/10 rounded-full flex-shrink-0">
+                    <a href="https://x.com/acetekh" target="_blank" class="text-neutral-400 hover:text-white transition-colors">
+                        <iconify-icon icon="simple-icons:x" class="text-xs sm:text-sm"></iconify-icon>
+                    </a>
+                    <a href="https://github.com/Ace-tech1" target="_blank" class="text-neutral-400 hover:text-white transition-colors">
+                        <iconify-icon icon="simple-icons:github" class="text-xs sm:text-sm"></iconify-icon>
+                    </a>
+                    <a href="https://www.instagram.com/armanii_beecroft/" target="_blank" class="text-neutral-400 hover:text-[#E4405F] transition-colors">
+                        <iconify-icon icon="simple-icons:instagram" class="text-xs sm:text-sm"></iconify-icon>
+                    </a>
+                    <a href="https://wa.me/2349167270900" target="_blank" class="text-neutral-400 hover:text-[#25D366] transition-colors">
+                        <iconify-icon icon="simple-icons:whatsapp" class="text-xs sm:text-sm"></iconify-icon>
+                    </a>
+            </div>
+
+            <!-- Right: Location & Time Widget -->
+            <div class="justify-self-end flex items-center gap-1 sm:gap-2 text-[9px] sm:text-xs font-mono text-neutral-400 flex-shrink-0">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0adee5] animate-pulse flex-shrink-0"></span>
+                <span>Lagos</span>
+                <span>•</span>
+                <span id="live-clock">04:38 PM</span>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- MAIN CASE STUDY CONTENT -->
+    <main class="w-full max-w-7xl mx-auto px-4 py-12 flex-grow space-y-16 mt-16">
+
+        <!-- BACK LINK -->
+        <a href="./project.html" class="relative group inline-flex items-center justify-center px-4 py-2.5 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300">
+            <span class="absolute top-0 left-0 w-2.5 h-2.5 border-t-2 border-l-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5"></span>
+            <span class="absolute top-0 right-0 w-2.5 h-2.5 border-t-2 border-r-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></span>
+            <span class="absolute bottom-0 left-0 w-2.5 h-2.5 border-b-2 border-l-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:translate-y-0.5"></span>
+            <span class="absolute bottom-0 right-0 w-2.5 h-2.5 border-b-2 border-r-2 border-white/80 pointer-events-none transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5"></span>
+
+            <span class="text-xs font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2 whitespace-nowrap">
+                <iconify-icon icon="lucide:arrow-left" class="text-sm text-[#0adee5] transition-transform duration-300 group-hover:-translate-x-1"></iconify-icon>
+                Back to project
+            </span>
+        </a>
+
+        <!-- HERO HEADER SECTION -->
+        <section class="text-center space-y-6 max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0066FF]/20 border border-[#0066FF]/40 text-[#66A3FF] text-xs font-mono uppercase tracking-widest">
+                Client Project & Commercial Platform UI/UX
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight font-serif-luxury">
+                Nkiru Ventures EV Infrastructure Platform
+            </h1>
+            <p class="text-neutral-400 text-base sm:text-xl font-normal leading-relaxed max-w-3xl mx-auto">
+                End-to-end UI/UX design system and desktop interface layout for a Utah-based commercial EV charging infrastructure planning firm.
+            </p>
+        </section>
+
+        <!-- METADATA GRID -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="p-6 bg-white/[0.03] backdrop-blur-md text-center border border-white/10 hover:border-neutral-500 transition-all rounded-2xl space-y-1">
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Client</span>
+                <h3 class="text-lg font-semibold text-white">Nkiru Ventures</h3>
+            </div>
+            <div class="p-6 bg-white/[0.03] backdrop-blur-md text-center border border-white/10 hover:border-neutral-500 transition-all rounded-2xl space-y-1">
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Role</span>
+                <h3 class="text-lg font-semibold text-white">UI/UX Designer</h3>
+            </div>
+            <div class="p-6 bg-white/[0.03] backdrop-blur-md text-center border border-white/10 hover:border-neutral-500 transition-all rounded-2xl space-y-1">
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Duration</span>
+                <h3 class="text-lg font-semibold text-white">2 weeks</h3>
+            </div>
+            <div class="p-6 bg-white/[0.03] backdrop-blur-md text-center border border-white/10 hover:border-neutral-500 transition-all rounded-2xl space-y-1">
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-500 block">Year</span>
+                <h3 class="text-lg font-semibold text-white">2026</h3>
+            </div>
+        </section>
+
+        <!-- MAIN MOCKUP SHOWCASE (IMAGE 1) -->
+        <section class="pt-4">
+            <div data-lightbox-src="./image/nkiru-hero.jpg" class="lightbox-trigger group relative w-full h-[340px] sm:h-[500px] rounded-3xl overflow-hidden cursor-pointer border border-white/10">
+                <img src="./image/nkiru-hero.jpg" alt="Nkiru Ventures Hero Desktop View" class="w-full h-full object-cover object-top rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
+            </div>
+        </section>
+
+        <!-- DESIGN SYSTEM & TOKENS -->
+        <section class="p-8 bg-white/[0.02] backdrop-blur-md border border-white/10 rounded-3xl space-y-8">
+            <div class="flex items-center gap-3 text-neutral-400">
+                <span class="w-8 h-[1px] bg-neutral-600"></span>
+                <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">00 / Design Tokens & Brand System</span>
+            </div>
+            
+            <h2 class="text-2xl sm:text-3xl font-bold text-white">Design Tokens & Visual Language</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Colors -->
+                <div class="p-6 bg-white/[0.03] border border-white/5 rounded-2xl space-y-4">
+                    <h3 class="text-xs font-mono text-neutral-400 uppercase tracking-wider">Color Palette</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-[#0066FF] border border-white/10"></span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Electric Blue (#0066FF)</p>
+                                <p class="text-xs text-neutral-400">Primary Brand CTAs & Active Indicators</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-[#0B0F17] border border-white/20"></span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Infrastructure Dark (#0B0F17)</p>
+                                <p class="text-xs text-neutral-400">Dark Mode Canvas & Section Contrast</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-lg bg-[#F8FAFC] border border-white/10"></span>
+                            <div>
+                                <p class="text-sm font-semibold text-white">Slate White (#F8FAFC)</p>
+                                <p class="text-xs text-neutral-400">Light Mode Background & Content Cards</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Typography -->
+                <div class="p-6 bg-white/[0.03] border border-white/5 rounded-2xl space-y-4">
+                    <h3 class="text-xs font-mono text-neutral-400 uppercase tracking-wider">Typography Hierarchy</h3>
+                    <div class="space-y-2 text-neutral-300 text-sm">
+                        <p><strong class="text-white">Headings:</strong> Space Grotesk (Geometric Bold)</p>
+                        <p><strong class="text-white">Body Copy:</strong> Plus Jakarta Sans (Readable Clean Text)</p>
+                        <p><strong class="text-white">Metrics & Specs:</strong> JetBrains Mono (Data & Feasibility)</p>
+                    </div>
+                </div>
+
+                <!-- Architecture -->
+                <div class="p-6 bg-white/[0.03] border border-white/5 rounded-2xl space-y-4">
+                    <h3 class="text-xs font-mono text-neutral-400 uppercase tracking-wider">UX Features</h3>
+                    <div class="space-y-2 text-xs text-neutral-400">
+                        <p><strong class="text-white">Site Feasibility Cards:</strong> Power Load & Compliance</p>
+                        <p><strong class="text-white">Target Personas:</strong> Commercial Properties & HOAs</p>
+                        <p><strong class="text-white">Interactive Accordions:</strong> Turnkey Infrastructure Steps</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THREE CORE BEATS -->
+        <section class="w-full max-w-6xl mx-auto px-4 py-8 space-y-20">
+
+            <!-- SECTION 1: Problem & Brand Narrative -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-4 lg:sticky lg:top-24">
+                    <div class="flex items-center gap-3 text-neutral-400">
+                        <span class="w-8 h-[1px] bg-neutral-600"></span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">01 / Problem & Narrative</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Understanding the Challenge</h2>
+                </div>
+                <div class="lg:col-span-8 space-y-6 text-neutral-400 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        EV infrastructure planning involves complex engineering data—such as electrical transformer proximity, load limits, ADA compliance, and municipal codes[cite: 1]. Commercial property developers and HOA boards needed a clean, non-technical platform that clearly maps out pre-construction site capacity before concrete is poured[cite: 1, 4].
+                    </p>
+                    <p>
+                        The challenge was to design a platform where **technical site evaluations, capital planning, and turnkey project execution** are communicated seamlessly to decision-makers[cite: 1, 2, 4].
+                    </p>
+                    <div data-lightbox-src="./image/nkiru-persona.jpg" class="lightbox-trigger group relative w-full h-[320px] sm:h-[380px] rounded-3xl overflow-hidden cursor-pointer mt-6 border border-white/10">
+                        <img src="./image/nkiru-persona.jpg" alt="Who We Serve Persona Grid" class="w-full h-full object-cover rounded-3xl group-hover:scale-105 transition-transform duration-700 ease-out">
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-white/10">
+
+            <!-- SECTION 2: Approach & Component Architecture -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-4 lg:sticky lg:top-24">
+                    <div class="flex items-center gap-3 text-neutral-400">
+                        <span class="w-8 h-[1px] bg-neutral-600"></span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">02 / Approach & Details</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Designing a Structured System</h2>
+                </div>
+                <div class="lg:col-span-8 space-y-6 text-neutral-400 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        To ensure property managers can evaluate site readiness effortlessly, the design breaks down complex infrastructure stages into structured component blocks[cite: 1]:
+                    </p>
+                    <ul class="space-y-4 list-disc pl-5">
+                        <li><strong class="text-white">Design Tokens & Typography:</strong> Geometric Space Grotesk headings paired with clean Plus Jakarta Sans body copy[cite: 2, 4].</li>
+                        <li><strong class="text-white">Structured Service Breakdown:</strong> Components displaying key benefits, audit checklists, and high-impact hardware visuals[cite: 1, 3].</li>
+                        <li><strong class="text-white">Interactive Accordions:</strong> Clear step-by-step guidance on electrical grid assessment, permitting, and hardware installation[cite: 1, 2].</li>
+                        <li><strong class="text-white">Persona Targeting:</strong> Tailored navigation paths for Multi-Family HOAs, Commercial Retail, and Fleet Operations[cite: 1, 2].</li>
+                    </ul>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                        <div data-lightbox-src="./image/nkiru-service-detail.jpg" class="lightbox-trigger group relative w-full h-[260px] rounded-2xl overflow-hidden cursor-pointer border border-white/10">
+                            <img src="./image/nkiru-service-detail.jpg" alt="Figma Service Detail Screen" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700 ease-out">
+                        </div>
+                        <div data-lightbox-src="./image/nkiru-why-section.jpg" class="lightbox-trigger group relative w-full h-[260px] rounded-2xl overflow-hidden cursor-pointer border border-white/10">
+                            <img src="./image/nkiru-why-section.jpg" alt="Why Nkiru Interactive Section" class="w-full h-full object-cover rounded-2xl group-hover:scale-105 transition-transform duration-700 ease-out">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-white/10">
+
+            <!-- SECTION 3: Deliverables & Results -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-4 lg:sticky lg:top-24">
+                    <div class="flex items-center gap-3 text-neutral-400">
+                        <span class="w-8 h-[1px] bg-neutral-600"></span>
+                        <span class="text-xs font-mono uppercase tracking-widest text-neutral-300">03 / Result & Deliverables</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mt-3">Design Solution & Impact</h2>
+                </div>
+                <div class="lg:col-span-8 space-y-6 text-neutral-400 text-base sm:text-lg leading-relaxed">
+                    <p>
+                        Delivered a complete, high-converting desktop platform layout and reusable Figma component UI kit[cite: 1]:
+                    </p>
+                    <ul class="space-y-4 list-disc pl-5">
+                        <li><strong class="text-white">Figma Desktop System:</strong> Full responsive screen layouts and scalable UI library built in 2 weeks[cite: 1].</li>
+                        <li><strong class="text-white">Clarity in Audits:</strong> Converted dense engineering data into visual cards, interactive accordions, and clear decision trees[cite: 1, 2, 3].</li>
+                        <li><strong class="text-white">Media Curation:</strong> Curated high-resolution commercial property and EV charger media to reflect real-world installation environments[cite: 1, 3, 4].</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- NEXT PROJECT BANNER -->
+        <section class="w-full max-w-5xl mx-auto px-4 py-8">
+            <a href="./coming_soon.html"
+                class="group relative block w-full overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 p-8 sm:p-12 transition-all duration-300 hover:border-neutral-700">
+                
+                <!-- Background Image with Subtle Hover Zoom -->
+                <div class="absolute inset-0 z-0">
+                    <img src="./image/plugonjerseys.png" alt="PlugOnJerseys preview"
+                        class="h-full w-full object-cover object-center opacity-25 group-hover:opacity-40 group-hover:scale-105 transition-all duration-500 ease-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-transparent"></div>
+                </div>
+
+                <!-- Card Content -->
+                <div class="relative z-10 flex flex-col justify-end min-h-[220px]">
+                    <div class="flex items-end justify-between gap-4">
+                        <div>
+                            <span class="text-xs font-mono uppercase tracking-widest text-neutral-400">Next Project</span>
+                            <h3 class="text-3xl sm:text-4xl font-semibold text-white mt-1 tracking-tight">
+                                PlugOnJerseys
+                            </h3>
+                        </div>
+
+                        <!-- Minimal Action Icon -->
+                        <div class="w-12 h-12 rounded-full border border-white/10 bg-white/5 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300">
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-xl transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 duration-300"></iconify-icon>
+                        </div>
+                    </div>
+                </div>
+
+            </a>
+        </section>
+
+    </main>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="imageLightbox" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-2xl hidden items-center justify-center p-4 sm:p-8">
+        <div class="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center">
+            <button type="button" id="lightboxClose" class="absolute -top-12 right-0 text-neutral-300 hover:text-white text-xs font-mono uppercase tracking-wider flex items-center gap-2 bg-white/[0.05] backdrop-blur-md border border-white/10 px-4 py-2 rounded-full transition-all">
+                <span>Close</span>
+                <iconify-icon icon="lucide:x" class="text-base"></iconify-icon>
+            </button>
+            <img id="lightboxImg" src="" alt="Expanded Preview" class="max-w-full max-h-[85vh] object-contain rounded-3xl shadow-2xl border border-white/10">
+        </div>
+    </div>
+
+   <!-- FOOTER -->
+    <footer class="relative z-10 border-t border-white/5 bg-[#070707] pt-10 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+                <div class="flex flex-col items-center sm:items-start gap-1">
+                    <span class="text-lg font-bold tracking-wider text-white">ACETEKH</span>
+                    <p class="text-neutral-500 text-xs font-mono">
+                        © <span id="footer-year">2026</span> All rights reserved.
+                    </p>
+                </div>
+                <button type="button" id="backToTop"
+                    class="relative group inline-flex items-center justify-center px-5 py-2.5 bg-white/[0.03] hover:bg-white/[0.08] backdrop-blur-md border border-white/10 transition-all duration-300">
+                    <span class="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-white/60"></span>
+                    <span class="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-white/60"></span>
+                    <span class="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-white/60"></span>
+                    <span class="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-white/60"></span>
+                    <span class="text-[10px] font-mono tracking-[0.15em] uppercase text-white font-semibold flex items-center gap-2">
+                        Back to Top
+                        <iconify-icon icon="lucide:arrow-up"
+                            class="text-sm text-[#0adee5] group-hover:-translate-y-0.5 transition-transform duration-300"></iconify-icon>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        function updateClock() {
+            const options = { timeZone: 'Africa/Lagos', hour: '2-digit', minute: '2-digit', hour12: true };
+            const timeString = new Intl.DateTimeFormat([], options).format(new Date());
+            const clockElement = document.getElementById('live-clock');
+            if (clockElement) clockElement.textContent = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        const lightbox = document.getElementById('imageLightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.remove('hidden');
+            lightbox.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('flex');
+            lightbox.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.querySelectorAll('.lightbox-trigger').forEach((el) => {
+            el.addEventListener('click', () => openLightbox(el.dataset.lightboxSrc));
+        });
+
+        document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
